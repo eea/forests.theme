@@ -5,7 +5,25 @@
 
   <theme href="page.html" />
 
-  <replace theme="/html/head" content="/html/head" />
+  <!-- =============[ Head ]============= -->
+  <copy css:content="html" css:theme="html" attributes="lang dir" />
+  <drop css:theme="head script" />
+  <after css:content="head style, head link, head script, head meta" css:theme-children="head" />
+  <replace css:content="head title" css:theme="head title" />
+  <drop css:theme="head link[rel='canonical']" />
+  <drop css:theme="head link[rel='stylesheet']" />
+  <drop css:content="head link[rel='shortcut icon']" />
+  <drop css:content="head link[rel='apple-touch-icon']" />
+  <!-- <copy css:content="head base" css:theme="head base" /> -->
+
+  <!-- Base tag -->
+  <before theme="/html/head/title" content="/html/head/base"/>
+
+  <!-- ===========[ Content ]============= -->
+  <merge attributes="class" css:content="body" css:theme="body" />
+  <copy attributes="id dir" css:content="body" css:theme="body" />
+
+  <!--<replace theme="/html/head" content="/html/head" />-->
   <replace theme="/html/body" content="/html/body" />
 
 </rules>
