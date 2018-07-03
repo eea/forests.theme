@@ -4,19 +4,19 @@
 
  <object name="fise_theme_images"
     meta_type="Filesystem Directory View"
-    directory="fise.theme:skins/fise_theme_images"/>
+    directory="forests.theme:skins/fise_theme_images"/>
  <object name="fise_theme_templates"
     meta_type="Filesystem Directory View"
-    directory="fise.theme:skins/fise_theme_templates"/>
+    directory="forests.theme:skins/fise_theme_templates"/>
  <object name="fise_theme_styles"
     meta_type="Filesystem Directory View"
-    directory="fise.theme:skins/fise_theme_styles"/>
+    directory="forests.theme:skins/fise_theme_styles"/>
  <object name="fise_theme_js"
     meta_type="Filesystem Directory View"
-    directory="fise.theme:skins/fise_theme_js"/>
+    directory="forests.theme:skins/fise_theme_js"/>
  <object name="fise_theme_overrides"
     meta_type="Filesystem Directory View"
-    directory="fise.theme:skins/fise_theme_overrides"/>
+    directory="forests.theme:skins/fise_theme_overrides"/>
 
 
  <skin-path name="FISETheme" based-on="Sunburst Theme">

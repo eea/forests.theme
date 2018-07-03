@@ -1,0 +1,95 @@
+/* header */
+body {
+    font-size: 15pt;
+    line-height: 20pt;
+    color: rgba(0,0,0,0.8);
+}
+
+h1 {
+    font-size: 3em;
+}
+h2 {
+    font-size: 2.5em;
+}
+h3 {
+    font-size: 2em;
+}
+
+h4 {
+    font-size: 1.5em;
+}
+
+h5 {
+    font-size: 1em;
+}
+
+a, #content a,
+#content a:link, dl.portlet a:link
+{
+    color: #1F8CC9;
+}
+.state-published {
+    color: #1F8CC9 !important;
+}
+/* header */
+#portal-top {
+    background: #ebe8df url("header-bg.jpg") no-repeat top left;
+    min-height: 500px;
+    margin-bottom: 2em;
+}
+/* search */
+.searchSection,
+.LSBox .searchButton {
+    display: none;
+}
+#searchGadget {
+    width: 30em;
+    padding: 1em;
+    border: 0;
+    background-color: rgba(255,255,255,0.8);
+}
+/* navigation */
+#portal-globalnav,
+#portal-globalnav li a {
+    background-color: transparent;
+}
+#portaltab-index_html {
+    display: none;    
+}
+/* content */
+#breadcrumbs-you-are-here {
+    display: none;
+}
+#portal-columns {
+    max-width: 1024px;
+    margin: 0 auto;
+    float: none;
+}
+
+/* portlets */
+.portlet {
+    border: 1px solid lightgray;
+    padding: 1.5em;
+    border-radius: 10px;
+}
+dl.portlet dt {
+    background-color: transparent;
+    padding: 0.42em 0;
+}
+dl.portlet ul.navTreeLevel0 > .navTreeItem {
+    border: 0;
+}
+dl.portlet ul.navTreeLevel0 > .navTreeItem {
+    padding: 0;
+}
+/* footer */
+#portal-footer-wrapper {
+    background-color: #ebe8df;
+    border-bottom: 5px solid #269776;
+}
+#portal-footer {
+    background-color: transparent;
+ }
+#portal-footer-wrapper a {
+    color: #269776;
+}
