@@ -3,7 +3,7 @@
   xmlns:css="http://namespaces.plone.org/diazo/css"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-  <theme href="index.html" />
+  <theme href="page.html" />
 
   <replace theme="/html/head" content="/html/head" />
   <replace theme="/html/body" content="/html/body" />
