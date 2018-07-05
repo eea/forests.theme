@@ -1,0 +1,24 @@
+<div id="portal-footer-wrapper" class="row">
+    <div id="portal-footer" class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h4>About</h4>
+                <p>The Forests Information System for Europe (FISE) is a single entry point for data and information on biodiversity supporting the implementation of the EU strategy and the Aichi targets in Europe.
+                </p>
+                <a href="/about-us">More</a>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="footer-logos">
+                    <ul class="list-footer-logos">
+                        <li><a href="http://europa.eu/"><img src="https://demo-biodiversity.eea.europa.eu/++theme++bise-diazo-theme-2/img/logo-eu.png" alt="EU flag" height="48" width="auto"></a></li>
+                        <li><a href="http://www.eea.europa.eu/"><img src="https://demo-biodiversity.eea.europa.eu/++theme++bise-diazo-theme-2/img/logo-eea.png" alt="EEA Logo" height="60" width="auto"></a></li>
+                        <li><a href="https://www.chm-cbd.net/"><img src="https://demo-biodiversity.eea.europa.eu/++theme++bise-diazo-theme-2/img/logo-chm.png" alt="CHM Logo" height="66" width="auto"></a></li>
+                        <li><a href="https://www.cbd.int/2011-2020/"><img src="https://demo-biodiversity.eea.europa.eu/++theme++bise-diazo-theme-2/img/logo-undb.png" alt="United Nations Decade on Biodiversity Logo" height="48" width="auto"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
