@@ -225,6 +225,7 @@ dl.portlet ul.navTreeLevel0 > .navTreeItem {
     .portaltype-plone-site #portal-top {
         min-height: 500px;
         background-position: top left;
+        background-size: cover;
     }
 
     #portal-header {
