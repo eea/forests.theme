@@ -31,23 +31,18 @@ a, #content a,
 .state-published {
     color: #1F8CC9 !important;
 }
-/* header */
-#portal-top {
-    background: #ebe8df url("header-bg.jpg") no-repeat 0 -235px;
-    min-height: 250px;
+
+.list > li {
+    display: block;
+}
+
+.mb2 {
     margin-bottom: 2em;
 }
-.portaltype-plone-site #portal-top {
-    min-height: 500px;
-    background-position: top left;
+.row {
+    margin: 0;
 }
-#portal-header {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    max-width: 1440px;
-    margin: 1.375em auto 0 auto
-}
+/* header */
 #portal-logo {
     margin: 0;
 }
@@ -109,9 +104,6 @@ a, #content a,
     order: 2;
     flex-basis: 100%;
     margin-top: 2em;
-}
-.portaltype-plone-site #portal-searchbox {
-    margin-top: 6em;
 }
 #portal-searchbox form {
     max-width: 1024px;
@@ -187,4 +179,78 @@ dl.portlet ul.navTreeLevel0 > .navTreeItem {
  }
 #portal-footer-wrapper a {
     color: #269776;
+}
+
+@media screen and (max-width: 767px) {
+    #portal-header {
+        background-color: #ebe8df;
+        margin-top: 0;
+        justify-content: end;
+    }
+    #portal-globalnav {
+        margin: 1em 1em 0 1em;
+    }
+    #portal-globalnav li {
+        display: block;
+    }
+    #portal-personaltools-wrapper {
+        display: none;
+    }
+    #portal-columns {
+        margin-top: 90px;
+    }
+    .navbar-collapse.in {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    div.width-full {
+        width: 100%;
+    }
+    div.position-0 {
+        margin-left: -100%;
+    }
+    .navbar-default {
+        background-color: #fef8f8;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #portal-top {
+        background: #ebe8df url("header-bg.jpg") no-repeat 0 -235px;
+        min-height: 250px;
+        margin-bottom: 2em;
+    }
+
+    .portaltype-plone-site #portal-top {
+        min-height: 500px;
+        background-position: top left;
+    }
+
+    #portal-header {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        max-width: 1440px;
+        margin: 1.375em auto 0 auto
+    }
+
+    .portaltype-plone-site #portal-searchbox {
+        margin-top: 6em;
+    }
+
+    #portal-logo-link-header {
+        display: none;
+    }
+    .navbar-header {
+        float: none;
+    }
+    .navbar-fixed-top {
+        position: relative;
+        background-color: white;
+        border: 0;
+    }
+    #mobile-header-container {
+        padding: 0;
+    }
 }
