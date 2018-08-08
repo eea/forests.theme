@@ -3,4 +3,5 @@ jQuery(function($){
    if (window.innerWidth < 768) {
       $(".frontpage_promo").insertBefore('.frontpage-content');
    }
+   $("#portal-globalnav").appendTo("#portal-globalnav-wrapper");
 });

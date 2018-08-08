@@ -8,16 +8,232 @@
          metal:use-macro="context/main_template/macros/master">
 
 <body>
-<metal:top metal:fill-slot="portal_top" tal:condition="python: context.layout == 'frontpage'">
-    <div class="container frontpage_promo">
-        <div class="row"> <div class="col-sm-6 col-md-4"> <div class="thumbnail text-center"> <img alt="100%x200" data-src="holder.js/100%x200" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTY0NjlhYjQ3OTMgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNjQ2OWFiNDc5MyI+PHJlY3Qgd2lkdGg9IjI0MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS4xMDkzNzUiIHk9IjEwNS4yNzgxMjUiPjI0MngyMDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> <div class="caption"> <h4>Quick link</h4> <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> <p><a href="#" class="" role="button">Link</a></p>  </div> </div> </div> <div class="col-sm-6 col-md-4"> <div class="thumbnail text-center"> <img alt="100%x200" data-src="holder.js/100%x200" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTY0NjlhYjNkZGEgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNjQ2OWFiM2RkYSI+PHJlY3Qgd2lkdGg9IjI0MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS4xMDkzNzUiIHk9IjEwNS4yNzgxMjUiPjI0MngyMDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> <div class="caption"> <h4>Quick link</h4> <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> <p><a href="#" class="" role="button">Link</a></p> </div> </div> </div> <div class="col-sm-6 col-md-4"> <div class="thumbnail text-center"> <img alt="100%x200" data-src="holder.js/100%x200" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTY0NjlhYjE2ZjkgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNjQ2OWFiMTZmOSI+PHJlY3Qgd2lkdGg9IjI0MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS4xMDkzNzUiIHk9IjEwNS4yNzgxMjUiPjI0MngyMDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> <div class="caption"> <h4>Quick link</h4> <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> <p><a href="#" class="" role="button">Link</a></p> </div> </div> </div> </div>
+<!--metal:top metal:fill-slot="portal_top" tal:condition="python: context.layout == 'frontpage'" -->
+<metal:top metal:fill-slot="portal_top" >
+    <div id="highlights-slider">
+        <div class="highlight-placeholder">
+            <img src="/Plone/placeholder.jpg"/>
+        </div>
+        <div class="header-bottom-section">
 
+        </div>
+        <div class="header-logos-wrapper">
+            <div class="header-logos">
+
+            </div>
+        </div>
+        <div id="highlights-slider-content">
+
+            <div class="highlight-photos">
+                <picture class="highlight-photo current">
+                    <img src="/Plone/1-md-sm.jpg" />
+                </picture>
+                <picture class="highlight-photo" style="display: none; ">
+                    <img src="/Plone/2-md-sm.jpg" />
+                </picture>
+                <picture class="highlight-photo" style="display: none; ">
+                    <img src="/Plone/3-md-sm.jpg" />
+                </picture>
+            </div>
+            <div class="slider-highlights">
+                <div class="highlights" id="hlslider-slides">
+                    <div class="highlight">
+                        <h1 class="highlight-description">Welcome to FISE – the entry point to information on European forest issues in support of knowledge based forest governance and sustainable use and management of forests</h1>
+                    </div>
+                    <div class="highlight" style="display: none; ">
+                        <h1 class="highlight-description">Accurate and timely information of the state of forests ecosystems and their resources is essential to achieve sustainable bioeconomy</h1>
+                    </div>
+                    <div class="highlight" style="display: none; ">
+                        <h1 class="highlight-description">A comprehensive knowledge base is our most valuable resource</h1>
+                    </div>
+
+                </div>
+                <div id="slider-nav"><span class="slider-prev" id="hlslider-prev"></span> <span class="slider-next" id="hlslider-next"></span></div>
+            </div>
+        </div>
     </div>
+    <style>
+        #highlights-slider {
+            padding-bottom: 3rem!important;
+            height: 500px;
+        }
+        @media (max-width: 800px){
+            #highlights-slider {
+                display: none;
+            }
+
+        }
+
+
+        #highlights-slider {
+            position: relative;
+            padding-top: 150px;
+        }
+
+        .highlight-placeholder,
+        .highlight-photos {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        /*   .highlight-placeholder {
+               background: url('++theme++wise/img/slider/placeholder.jpg');
+               background-size: cover;
+           }*/
+
+        .slick-slide {
+            height: auto;
+        }
+
+        .highlight-placeholder {
+            z-index: 1;
+            opacity: 1;
+            transition: opacity 1s;
+        }
+
+        .highlight-placeholder img,
+        .highlight-photos img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .highlight-photo {
+            position: absolute;
+            z-index: 100;
+            top: 0;
+            left: 0;
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .highlight-photo.current {
+            display: block!important;
+            z-index: 50;
+        }
+
+        .slider-header {
+            display: inline-block;
+            font-size: larger;
+            background-color: rgba(0, 0, 0, .4);
+            padding: 10px;
+            color: #fff;
+        }
+
+        .slider-highlights {
+
+            z-index: 150;
+        }
+
+        .slider-title {
+            display: inline-block;
+            margin: 0;
+            font: inherit;
+            color: inherit;
+            line-height: inherit;
+        }
+
+        .highlight-title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 30px;
+            line-height: 35px;
+            color: inherit;
+        }
+
+        .highlight-title a {
+            color: inherit;
+        }
+
+        .highlight-description {
+            font-size: larger;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+
+        @media (max-width: 600px) {
+            .highlight-photos img {
+                height: 100%;
+                width: auto;
+            }
+        }
+
+        @media (min-width: 800px) {
+            #highlights-slider {
+                padding-top: 240px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            #highlights-slider {
+                padding-top: 376px;
+            }
+            .highlight-title {
+                font-size: 36px;
+                line-height: 44px;
+            }
+        }
+
+        @media (min-width: 1200px) and (max-width: 1331px) {
+            #highlights-slider {
+                padding-top: 308px;
+            }
+        }
+
+        @media (min-width: 1600px){
+            #highlights-slider {
+                padding-top: 500px;
+            }
+        }
+
+        @media print {
+
+            .slick-track {
+                width: auto!important;
+                opacity: 1!important;
+                transform: none!important;
+            }
+
+            .slick-cloned {
+                display: none!important;
+            }
+            #slider-nav,
+            .slider-counter {
+                display: none;
+            }
+            .slick-slider {
+                min-height: auto!important;
+            }
+            #highlights-slider {
+                padding: 0;
+                border-bottom: 0!important;
+                margin: 0;
+                position: static!important;
+                padding-bottom: 0!important;
+            }
+            .slick-slide {
+                width: auto!important;
+                padding: 0!important;
+            }
+        }
+    </style>
 </metal:top>
 
 
 <metal:content metal:fill-slot="content">
-    <div class="frontpage-content">
+    <div class="frontpage-content clearfix">
+
+        <div class="frontpage_promo clearfix">
+            <div class="row"> <div class="col-sm-6 col-md-4"> <div class="thumbnail text-center"> <img alt="100%x200" data-src="holder.js/100%x200" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTY0NjlhYjQ3OTMgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNjQ2OWFiNDc5MyI+PHJlY3Qgd2lkdGg9IjI0MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS4xMDkzNzUiIHk9IjEwNS4yNzgxMjUiPjI0MngyMDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> <div class="caption"> <h4>Quick link</h4> <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> <p><a href="#" class="" role="button">Link</a></p>  </div> </div> </div> <div class="col-sm-6 col-md-4"> <div class="thumbnail text-center"> <img alt="100%x200" data-src="holder.js/100%x200" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTY0NjlhYjNkZGEgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNjQ2OWFiM2RkYSI+PHJlY3Qgd2lkdGg9IjI0MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS4xMDkzNzUiIHk9IjEwNS4yNzgxMjUiPjI0MngyMDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> <div class="caption"> <h4>Quick link</h4> <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> <p><a href="#" class="" role="button">Link</a></p> </div> </div> </div> <div class="col-sm-6 col-md-4"> <div class="thumbnail text-center"> <img alt="100%x200" data-src="holder.js/100%x200" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTY0NjlhYjE2ZjkgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNjQ2OWFiMTZmOSI+PHJlY3Qgd2lkdGg9IjI0MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS4xMDkzNzUiIHk9IjEwNS4yNzgxMjUiPjI0MngyMDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> <div class="caption"> <h4>Quick link</h4> <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> <p><a href="#" class="" role="button">Link</a></p> </div> </div> </div> </div>
+
+        </div>
+
         <div class="row text-center mb2">
 
             <div class="col-md-10 col-md-offset-1 mb2">

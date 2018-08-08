@@ -47,7 +47,10 @@
                   classes python:context.restrictedTraverse('@@sunburstview').getColumnsClasses(view)"
     tal:attributes="class body_class;
                     dir python:isRTL and 'rtl' or 'ltr'">
-
+<div id="site-admin">
+    <div class="page-container">
+    </div>
+</div>
 <div id="visual-portal-wrapper">
 
     <div class="mobile-header navbar navbar-default navbar-fixed-top">
@@ -67,10 +70,18 @@
                          class="row"
                              i18n:domain="plone"
                              tal:condition="not:ajax_load">
-                        <div class="cell width-full position-0">
+                        <div class="header">
                             <div tal:replace="structure provider:plone.portaltop"></div>
-                            <metal:portal_top define-slot="portal_top" />
+
                         </div>
+
+                        <div class="header-nav">
+                            <div id="portal-globalnav-wrapper">
+
+                            </div>
+                        </div>
+                         <metal:portal_top define-slot="portal_top" />
+
                     </div>
                 </div>
             </div>
@@ -190,4 +201,3 @@
 </html>
 
 </metal:page>
-
