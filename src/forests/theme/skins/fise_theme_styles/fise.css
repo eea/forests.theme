@@ -79,6 +79,7 @@ label {
 }
 #searchGadget,
 .LSBox .searchField {
+    /*width: 540px;*/
     width: 290px;
     padding: 1em;
     border: 0;
