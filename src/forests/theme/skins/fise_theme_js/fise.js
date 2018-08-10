@@ -6,6 +6,15 @@ jQuery(function($){
    $("#edit-bar").appendTo('.page-container');
    $("#portal-globalnav").appendTo("#portal-globalnav-wrapper");
    $("#portal-header, #portal-footer, #portal-globalnav-wrapper").addClass('container');
-   $("#portal-columns").removeClass('row').addClass('container');
+   var $portal_columns = $("#portal-columns");
+   $portal_columns.removeClass('row');
+   var $left_column = $("#portal-column-one");
+   var $body = $("body");
+   if ($left_column.length) {
+      $body.addClass('fise-two-columns');
+   }
+   else {
+       $portal_columns.addClass('container');
+   }
 });
 

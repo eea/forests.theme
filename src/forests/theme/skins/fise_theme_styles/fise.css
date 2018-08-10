@@ -29,9 +29,9 @@ a, #content a,
 {
     color: #1F8CC9;
 }
-.state-published {
-    color: #1F8CC9 !important;
-}
+/*.state-published {*/
+    /*color: #1F8CC9 !important;*/
+/*}*/
 
 .list > li {
     display: block;
@@ -156,7 +156,6 @@ label {
 #portal-globalnav li a {
     border-right: 0;
     min-width: 1px;
-    font-size: 125%;
     font-weight: bold;
     color: #525659;
     padding: 1.5em;
@@ -197,9 +196,7 @@ label {
 
 /* portlets */
 .portlet {
-    border: 1px solid lightgray;
     padding: 1.5em;
-    border-radius: 10px;
 }
 dl.portlet dt {
     background-color: transparent;
@@ -211,6 +208,23 @@ dl.portlet ul.navTreeLevel0 > .navTreeItem {
 dl.portlet ul.navTreeLevel0 > .navTreeItem {
     padding: 0;
 }
+dl.portlet dt a:link, dl.portlet dt a:visited, dl.portlet dt a:hover {
+    color: #fff;
+}
+dl.portlet ul.navTree .navTreeCurrentItem {
+    color: #ffe39a;
+    margin: 0;
+    border: 0;
+    background: none;
+}
+dl.portlet ul.navTree li a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 0 1em;
+    margin-left: -1em;
+    text-decoration: none;
+}
+
 /* footer */
 #portal-footer-wrapper {
     background-color: #e5e5e5;
@@ -218,6 +232,7 @@ dl.portlet ul.navTreeLevel0 > .navTreeItem {
 #portal-footer {
     background-color: transparent;
     margin: 0 auto;
+    padding: 2em 0;
 }
 #portal-footer-wrapper a {
     /*color: #269776;*/
@@ -261,12 +276,31 @@ dl.portlet ul.navTreeLevel0 > .navTreeItem {
 @media screen and (min-width: 768px) {
     #portal-top {
         /*background: #ebe8df url("header-bg.jpg") no-repeat 0 -235px;*/
-        min-height: 250px;
         margin-bottom: 2em;
+    }
+    .fise-two-columns #portal-top {
+        margin-bottom: 0;
     }
     #portal-globalnav {
         margin-bottom: 0;
         display: flex;
+    }
+    .fise-two-columns #portal-columns {
+        display: flex;
+    }
+
+    .fise-two-columns #portal-column-content {
+        margin-top: 2em;
+        order: 2;
+        max-width: 1040px;
+        flex-basis: 100%;
+        margin-left: 3em;
+    }
+    .fise-two-columns #portal-column-one {
+        padding: 2em;
+        background-color: #4bbbca;
+        order: 1;
+        width: 23%;
     }
 
     /*.portaltype-plone-site #portal-top {*/
@@ -378,6 +412,10 @@ dl.portlet ul.navTreeLevel0 > .navTreeItem {
 
 .navbar-fixed-bottom, .navbar-fixed-top {
     z-index: 950;
+}
+
+.fise-two-columns .navbar {
+    margin-bottom: 0;
 }
 
 .plonepopup {

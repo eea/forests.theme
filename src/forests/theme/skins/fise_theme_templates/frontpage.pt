@@ -121,9 +121,6 @@
  </script>
 </metal:javascriptslot>
 
-
-
-
 <metal:top metal:fill-slot="portal_top">
     <div id="highlights-slider">
         <div class="highlight-placeholder">
