@@ -2,7 +2,7 @@
 body {
   font-size: 15pt;
   line-height: 20pt;
-  color: rgba(0, 0, 0, 0.8);
+  color: #333;
   background-color: #e5e5e5;
 }
 h1 {
@@ -178,6 +178,13 @@ label {
   float: none;
   overflow: hidden;
 }
+.documentDescription {
+  color: #333;
+  margin-bottom: 1em;
+}
+#content-core {
+  color: #666;
+}
 /* portlets */
 .portlet {
   padding: 1.5em;
@@ -227,6 +234,18 @@ dl.portlet ul.navTree li a:hover {
 #portal-footer-wrapper a {
   /*color: #269776;*/
   color: #525659;
+}
+.newsImageContainer {
+  max-width: 350px;
+}
+.newsImageContainer img {
+  width: 100%;
+  height: auto;
+}
+.newsImageContainer div {
+  padding: 0.5em 1em;
+  text-align: center;
+  background-color: lightgrey;
 }
 @media screen and (max-width: 767px) {
   #portal-header {
