@@ -17,7 +17,7 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   <!-- -*- extra stuff goes here -*- -->
-  <plone:static name="forests.theme" directory="static" type="theme" />
 
   <cmf:registerDirectory name="skins" directory="skins" recursive="True" />
+
 </configure>
