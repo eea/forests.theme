@@ -177,6 +177,7 @@ label {
   margin: 0 auto;
   float: none;
   overflow: hidden;
+  background: url("footer-bg.png") no-repeat center 100%;
 }
 .documentDescription {
   color: #333;
@@ -224,7 +225,7 @@ dl.portlet ul.navTree li a:hover {
 }
 /* footer */
 #portal-footer-wrapper {
-  background-color: #e5e5e5;
+  background-color: #f1f1f1;
 }
 #portal-footer {
   background-color: transparent;
