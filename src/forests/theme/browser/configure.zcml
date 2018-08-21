@@ -1,0 +1,29 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:plone="http://namespaces.plone.org/plone"
+  i18n_domain="forests.theme">
+
+  <!--<include file="overrides.zcml" />-->
+
+  <browser:page
+    class=".admin.MainNavigationMenuEdit"
+    for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
+    name="edit-navigation-menu"
+    permission="cmf.ManagePortal"
+  />
+
+  <browser:page
+    name="site_navbar"
+    class=".site.Navbar"
+    for="*"
+    permission="zope.Public"
+    template="pt/navbar.pt"
+  />
+
+  <!--<include package="z3c.jbot" file="meta.zcml" />-->
+
+  <!--<browser:jbot-->
+    <!--directory="overrides" />-->
+
+</configure>

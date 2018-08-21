@@ -72,12 +72,11 @@
                              tal:condition="not:ajax_load">
                         <div class="header">
                             <div tal:replace="structure provider:plone.portaltop"></div>
-
+                            <metal:globalmenu tal:replace="structure context/site_navbar"></metal:globalmenu>
                         </div>
 
                         <div class="header-nav">
                             <div id="portal-globalnav-wrapper">
-
                             </div>
                         </div>
                          <metal:portal_top define-slot="portal_top" />
