@@ -236,6 +236,20 @@ dl.portlet ul.navTree li a:hover {
   /*color: #269776;*/
   color: #525659;
 }
+.portal-footer-bottom-area {
+  background-color: #FFF;
+  padding: 1em 0;
+  display: flex;
+}
+.portal-footer-logos {
+  align-items: center;
+}
+.flex {
+  display: flex;
+}
+.right-aligned {
+  margin: 0 0 0 auto;
+}
 .newsImageContainer {
   max-width: 350px;
 }
@@ -325,14 +339,14 @@ dl.portlet ul.navTree li a:hover {
     /*max-width: 1440px;*/
     /*margin: 1.375em auto 0 auto*/
     margin: 0 auto 0 auto;
-    min-height: 150px;
+    height: 80px;
     padding-top: 1.5em;
   }
   #portal-logo img {
     margin-top: -1.5em;
   }
   .header {
-    background-color: #ffd157;
+    background-color: #8bc53c;
   }
   .header-nav {
     background-color: #eee;
@@ -600,7 +614,6 @@ ul {
   display: -ms-flexbox;
   display: -moz-box;
   display: flex;
-  text-align: center;
   position: relative;
   z-index: 10;
   background-color: #8bc53c;
@@ -626,9 +639,10 @@ ul {
 .sub-menu {
   min-width: 200px;
   text-align: left;
+  padding: 1.5em;
 }
 .main-nav-item:hover > .sub-menu-wrapper {
-  display: block;
+  display: flex;
 }
 .sub-menu-wrapper {
   position: absolute;
@@ -636,7 +650,7 @@ ul {
   height: auto;
   background-color: #0d8442;
   z-index: 10;
-  padding: 5px 10px;
+  padding: 0;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
   display: none;
 }
@@ -654,6 +668,7 @@ ul {
 }
 .sub-sub-menu-item {
   display: block;
+  margin-left: 1em;
 }
 .sub-sub-menu-item:first-child {
   padding-bottom: 8px;

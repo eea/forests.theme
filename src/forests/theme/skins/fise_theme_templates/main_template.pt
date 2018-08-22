@@ -73,7 +73,31 @@
                         <div class="header">
                             <div tal:replace="structure provider:plone.portaltop"></div>
                             <metal:globalmenu tal:replace="structure context/site_navbar"></metal:globalmenu>
-                        </div>
+
+                            <div class="header-info">
+                                <ul id="portal-siteactions">
+
+                                    <li id="siteaction-about"><a href="/Plone/about-us" accesskey="" title="About WISE Marine">About</a></li>
+                                    <li id="siteaction-sitemap"><a href="/Plone/sitemap" accesskey="3" title="Site Map">Sitemap</a></li>
+                                </ul></div>
+                            <div class="header-actions">
+                                <div class="search">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="login">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                            </div>
+                            <span class="mobile-menu-trigger-wrapper">
+                                <div class="mobile-menu-trigger">
+                                    <i id="nav-icon1">
+                                      <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    </i>
+                                </div>
+                            </span>
+                            </div>
 
                         <div class="header-nav">
                             <div id="portal-globalnav-wrapper">
@@ -188,7 +212,6 @@
         i18n:domain="plone"
         tal:condition="not:ajax_load">
         <div class="cell width-full position-0">
-            <div tal:replace="structure provider:plone.portalfooter" />
             <div tal:replace="structure context/custom_footer"></div>
         </div>
     </div>
