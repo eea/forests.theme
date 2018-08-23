@@ -16,5 +16,7 @@ jQuery(function($){
    else {
        $portal_columns.addClass('container');
    }
+   $(".header-info").insertBefore("#portal-personaltools-wrapper");
+   $("#navbar").insertBefore(".header-info");
 });
 

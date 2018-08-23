@@ -79,26 +79,27 @@
 
                                     <li id="siteaction-about"><a href="/Plone/about-us" accesskey="" title="About WISE Marine">About</a></li>
                                     <li id="siteaction-sitemap"><a href="/Plone/sitemap" accesskey="3" title="Site Map">Sitemap</a></li>
-                                </ul></div>
-                            <div class="header-actions">
+                                </ul>
                                 <div class="search">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                    <i class="fa fa-lg fa-search" aria-hidden="true"></i>
                                 </div>
-                            </div>
-                            <div class="login">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                            </div>
-                            <span class="mobile-menu-trigger-wrapper">
-                                <div class="mobile-menu-trigger">
-                                    <i id="nav-icon1">
-                                      <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    </i>
+                                <div class="login">
+                                    <i class="fa fa-lg fa-user" aria-hidden="true"></i>
                                 </div>
-                            </span>
+                                <span class="mobile-menu-trigger-wrapper">
+                                    <div class="mobile-menu-trigger">
+                                        <i id="nav-icon1">
+                                          <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        </i>
+                                    </div>
+                                </span>
                             </div>
-
+                        <div class="header-image">
+                            <img src="" tal:attributes="src string:${context/absolute_url}/header-image.png" alt="">
+                            <h1 tal:content="context/Title" class="header-image-title">Page Title here</h1>
+                        </div>
                         <div class="header-nav">
                             <div id="portal-globalnav-wrapper">
                             </div>

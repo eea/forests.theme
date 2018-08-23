@@ -20,17 +20,21 @@ ul {
   display: flex;
   position: relative;
   z-index: 10;
-  background-color: @primary-green;
-  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.40);
+  flex: 1;
+  margin: 0;
 }
 
 .main-nav-item {
   flex-grow: 1;
   position: relative;
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
 
 .main-nav-item > a {
-  display: block;
+  display: flex;
+  align-items: center;
   padding: 12px 0;
   color: #fff;
   font-size: 17px;
@@ -43,6 +47,13 @@ ul {
   color: @secondary-green;
   text-decoration: none;
 }
+.main-nav-item:hover:before {
+    content: " ";
+    border-top: 10px solid @secondary-green;
+    height: 10px;
+    width: 100%;
+    position: absolute;
+}
 
 .sub-menu {
   min-width: 200px;
@@ -52,6 +63,7 @@ ul {
 
 .main-nav-item:hover > .sub-menu-wrapper {
   display: flex;
+  margin-top: 74px;
 }
 
 .sub-menu-wrapper {
