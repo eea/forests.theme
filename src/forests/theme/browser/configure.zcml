@@ -21,6 +21,22 @@
     template="pt/navbar.pt"
   />
 
+  <browser:page
+    name="external_styles_view"
+    class=".site.ExternalResourcesView"
+    for="*"
+    permission="zope.Public"
+    template="pt/styles.pt"
+  />
+
+  <browser:page
+    name="external_javascripts_view"
+    class=".site.ExternalResourcesView"
+    for="*"
+    permission="zope.Public"
+    template="pt/scripts.pt"
+  />
+
   <!--<include package="z3c.jbot" file="meta.zcml" />-->
 
   <!--<browser:jbot-->

@@ -4,8 +4,12 @@
 import logging
 import re
 
+from hashlib import md5
+from Acquisition import aq_inner
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
+from Products.PythonScripts.standard import url_quote
+from time import time
 from zope.component.hooks import getSite
 
 
@@ -182,3 +186,87 @@ class Navbar(BrowserView):
         except Exception, e:
             logger.exception("Error while rendering navigation menu: %s", e)
             return _extract_menu(DEFAULT_MENU, site_url)
+
+
+class ExternalResourcesView(BrowserView):
+    """ The global site navbar
+    """
+    def registry(self, name=None):
+        name = name or 'css'
+        return getToolByName(aq_inner(self.context), 'portal_' + name)
+
+    def skinname(self):
+        return aq_inner(self.context).getCurrentSkinName()
+
+    def generateId(self, resource, other=None):
+        """Generate a random id."""
+        res_id = resource.getId()
+        filename_appendix = '.css'
+
+        if other is not None:
+            other_id = other.getId()
+            key = md5(other_id)
+            key.update(res_id)
+            base = res_id.rsplit('-')[0]
+            key = "%s-" % (base, key.hexdigest())
+            ext = "." + res_id.rsplit('.', 1)[1]
+        else:
+            base = res_id.replace('++', '').replace('/', '').rsplit('.', 1)[0]
+            key = md5(res_id)
+            key.update(str(int(time() * 1000)))
+            key = "%s-cachekey-%s" % (base, key.hexdigest())
+            ext = filename_appendix
+
+        return key + ext
+
+    def cook_resources(self, resource_type=None, bundle=None):
+        bundle_id = bundle or 'external_templates'
+        tool = self.registry(name=resource_type)
+        results = []
+        concatenatedResources = {}
+        resources = [r.copy() for r in tool.getResources() if r.getEnabled() and
+                     r.getBundle() in [bundle_id]]
+        for resource in resources:
+            if resource.getCookable() or resource.getCacheable():
+                # magic_id = self.generateId(resource)
+                # concatenatedResources[magic_id] = [resource.getId()]
+                magic_id = resource.getId()
+                resource._setId(magic_id)
+            results.append(resource)
+        return tuple(results)
+
+    def styles(self):
+        # import pdb; pdb.set_trace()
+        styles = self.cook_resources(resource_type='css')
+        registry = self.registry()
+        registry_url = registry.absolute_url()
+        skinname = url_quote(self.skinname())
+        result = []
+        for style in styles:
+            rendering = style.getRendering()
+            src = "%s/%s/%s" % (registry_url, skinname, style.getId())
+            data = {'rendering': rendering,
+                    'media': style.getMedia(),
+                    'rel': style.getRel(),
+                    'title': style.getTitle(),
+                    'conditionalcomment' : style.getConditionalcomment(),
+                    'src': src}
+            result.append(data)
+        return result
+
+    def scripts(self):
+        registry = self.registry(name='javascripts')
+        registry_url = registry.absolute_url()
+        context = aq_inner(self.context)
+
+        #scripts = registry.getEvaluatedResources(context)
+        scripts = self.cook_resources(resource_type='javascripts')
+        skinname = url_quote(self.skinname())
+        result = []
+        for script in scripts:
+            src = "%s/%s/%s" % (registry_url, skinname, script.getId())
+            data = {'inline': False,
+                    'conditionalcomment' : script.getConditionalcomment(),
+                    'src': src}
+            result.append(data)
+        return result

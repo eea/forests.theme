@@ -1,0 +1,24 @@
+<metal:page define-macro="master"
+         tal:define="view context/@@plone;">
+    <div id="header-holder">
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only" i18n:translate="">Toggle navigation</span>
+                        <span class="icon-bar">&nbsp;</span>
+                        <span class="icon-bar">&nbsp;</span>
+                        <span class="icon-bar">&nbsp;</span>
+                    </button>
+                    <div id="bs-example-navbar-collapse-1" class="navbar-collapse collapse">
+                        <div id="portal-top">
+                            <div tal:replace="structure provider:plone.portaltop">
+                                <!-- -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</metal:page>
