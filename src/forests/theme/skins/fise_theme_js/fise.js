@@ -1,5 +1,6 @@
 jQuery(function($){
-   $("<span class='fa fa-search fise-search-icon' />").insertAfter('.LSBox .searchField');
+   $("#portal-searchbox").appendTo(".search");
+   $("#portal-personaltools-wrapper").appendTo(".login-container");
    if (window.innerWidth < 768) {
       $(".frontpage_promo").insertBefore('.frontpage-content');
    }
@@ -16,7 +17,29 @@ jQuery(function($){
    else {
        $portal_columns.addClass('container');
    }
-   $(".header-info").insertBefore("#portal-personaltools-wrapper");
+   $(".header-info").appendTo("#portal-header");
    $("#navbar").insertBefore(".header-info");
+
+    $('.login i').on('click', function() {
+        $(this).toggleClass('action-selected');
+        $('.search i').removeClass('action-selected');
+        $('.login-container ').animate({
+            'height': 'toggle'
+        }, 200);
+        $('#portal-searchbox ').animate({
+            'height': 'hide'
+        }, 200);
+    });
+
+    $('.search i').on('click', function() {
+        $(this).toggleClass('action-selected');
+        $('.login i').removeClass('action-selected');
+        $('#portal-searchbox ').animate({
+            'height': 'toggle'
+        }, 200);
+        $('.login-container ').animate({
+            'height': 'hide'
+        }, 200);
+    });
 });
 

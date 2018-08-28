@@ -336,6 +336,8 @@
 
 <metal:content metal:fill-slot="content">
     <div class="frontpage-content clearfix">
+        <object type="image/svg+xml" data="leaf.svg" class="logo">
+        </object>
         <div class="categories-wrapper clearfix">
             <div class="categories">
                 <a tal:attributes="href string:${portal_url}/policy" class="square policy">

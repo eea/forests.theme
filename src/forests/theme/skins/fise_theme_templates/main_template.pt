@@ -84,7 +84,8 @@
                                     <i class="fa fa-lg fa-search" aria-hidden="true"></i>
                                 </div>
                                 <div class="login">
-                                    <i class="fa fa-lg fa-user" aria-hidden="true"></i>
+                                    <i class="fa fa-lg fa-user-circle-o" aria-hidden="true"></i>
+                                    <div class="login-container"></div>
                                 </div>
                                 <span class="mobile-menu-trigger-wrapper">
                                     <div class="mobile-menu-trigger">

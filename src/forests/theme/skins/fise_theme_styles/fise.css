@@ -24,7 +24,7 @@ a {
   color: #1F8CC9;
 }
 .portlet a {
-  color: #FFF;
+  color: #333;
 }
 /*.state-published {*/
 /*color: #1F8CC9 !important;*/
@@ -56,30 +56,33 @@ label {
 }
 /* header */
 #visual-portal-wrapper {
-  background-color: #fff;
+  background-color: #FFF;
 }
 #portal-logo {
   margin: 0;
   z-index: 10;
 }
 /* search */
-.searchSection,
-.LSBox .searchButton {
+.searchSection {
   display: none;
 }
+.LSBox .searchButton {
+  width: 100%;
+  display: block;
+}
 .LSBox {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #8dc63f;
+  padding: 0.5em;
 }
 #searchGadget,
 .LSBox .searchField {
-  /*width: 540px;*/
-  width: 290px;
-  padding: 1em;
+  padding: 0.2em 0.5em;
+  border-radius: 5px;
   border: 0;
-  background: none;
-  font-weight: bold;
-  font-size: 1em;
+  font-size: 90%;
   position: relative;
+  margin-bottom: 0.5em;
+  background: #FFF;
 }
 .LSBox .searchField:before {
   font-family: 'FontAwesome', serif;
@@ -102,17 +105,12 @@ label {
 #portal-personaltools a {
   font-weight: bold;
   font-size: 1.25em;
-  /*color: #269776;*/
-  color: #525659;
+  color: #FFF;
 }
 #portal-personaltools-wrapper {
   /*order: 1;*/
   order: 3;
   position: relative;
-}
-#portal-personaltools-wrapper,
-#portal-searchbox {
-  display: none;
 }
 .header-info {
   margin: 0 0 0 auto;
@@ -128,6 +126,11 @@ label {
   content: " ";
   z-index: 0;
 }
+.search > .fa-search,
+.login .fa {
+  color: #5f5f5f;
+  padding: 0.5em;
+}
 .search,
 #portal-siteactions,
 .login {
@@ -135,6 +138,23 @@ label {
   position: relative;
   padding: 0 0.5em;
   margin: 0;
+}
+.action-selected {
+  background-color: #8dc63f;
+  border-radius: 5px 5px 0 0;
+}
+.login-container,
+#portal-searchbox {
+  display: none;
+  min-width: 134px;
+  position: absolute;
+  right: -50px;
+  text-align: center;
+  background: #8dc63f;
+  border-radius: 6px;
+  overflow: hidden;
+  top: 100%;
+  z-index: 1;
 }
 .header-image {
   height: 270px;
@@ -157,6 +177,7 @@ label {
 }
 #portal-siteactions a {
   font-size: 18px;
+  color: #5f5f5f;
 }
 /*#portal-personaltools-wrapper:before {*/
 /*content: " ";*/
@@ -167,7 +188,11 @@ label {
 /*height: 50px;*/
 /*}*/
 #portal-personaltools dd {
-  background: #ebe8df;
+  background: none;
+  position: relative;
+}
+#portal-personaltools.deactivated dd {
+  display: block;
 }
 #portal-searchbox {
   float: none;
@@ -220,6 +245,13 @@ label {
 #breadcrumbs-you-are-here {
   display: none;
 }
+#portal-breadcrumbs a,
+.breadcrumbSeparator {
+  color: #5f5f5f;
+}
+#breadcrumbs-current {
+  color: #8dc63f;
+}
 #portal-columns {
   min-height: 550px;
   margin: 0 auto;
@@ -227,6 +259,9 @@ label {
   overflow: hidden;
   background: url("footer-bg.png") no-repeat center 100%;
   padding-bottom: 8em;
+}
+.documentFirstHeading {
+  display: none;
 }
 .documentDescription {
   color: #333;
@@ -256,18 +291,17 @@ dl.portlet ul.navTreeLevel0 > .navTreeItem {
 dl.portlet dt a:link,
 dl.portlet dt a:visited,
 dl.portlet dt a:hover {
-  color: #fff;
+  color: #8dc63f;
 }
 dl.portlet ul.navTree .navTreeCurrentItem {
-  color: #ffe39a;
   margin: 0;
   border: 0;
   background: none;
   font-weight: bold;
 }
 dl.portlet ul.navTree li a:hover {
-  background-color: rgba(0, 0, 0, 0.3);
-  color: white;
+  background-color: #0d8442;
+  color: white !important;
   padding: 0 1em;
   margin-left: -1em;
   text-decoration: none;
@@ -391,7 +425,7 @@ dl.portlet ul.navTree li a:hover {
     padding: 0;
   }
   .header {
-    background-color: #8bc53c;
+    background-color: #8dc63f;
     box-shadow: 0 3px 2px rgba(0, 0, 0, 0.4);
   }
   .header-nav {
@@ -687,7 +721,7 @@ ul {
   font-weight: bold;
 }
 .main-nav-item:hover > a {
-  background: #8bc53c;
+  background: #8dc63f;
   color: #0d8442;
   text-decoration: none;
 }
@@ -705,7 +739,7 @@ ul {
 }
 .main-nav-item:hover > .sub-menu-wrapper {
   display: flex;
-  margin-top: 74px;
+  margin-top: 73px;
 }
 .sub-menu-wrapper {
   position: absolute;
@@ -718,7 +752,7 @@ ul {
   display: none;
 }
 .sub-menu-link {
-  color: #8bc53c;
+  color: #8dc63f;
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
@@ -726,7 +760,7 @@ ul {
   padding: 10px 0;
 }
 .sub-menu-link--more {
-  color: #fed100;
+  color: #ffd200;
   font-weight: normal;
 }
 .sub-sub-menu-item {
@@ -746,7 +780,7 @@ ul {
 }
 .sub-menu-link:hover,
 .sub-sub-menu-link:hover {
-  color: #8bc53c;
+  color: #8dc63f;
 }
 .toggle-down {
   border: none;

@@ -2,7 +2,7 @@
 body {
   font-size: 15pt;
   line-height: 20pt;
-  color: #333;
+  color: @primary-text-color;
   background-color: #e5e5e5;
 }
 
@@ -29,7 +29,7 @@ a
   color: #1F8CC9;
 }
 .portlet a {
-  color: #FFF;
+  color: @primary-text-color;
 }
 /*.state-published {*/
 /*color: #1F8CC9 !important;*/
@@ -64,7 +64,7 @@ label {
 }
 /* header */
 #visual-portal-wrapper {
-  background-color: #fff;
+  background-color: @light-color;
 }
 #portal-logo {
   margin: 0;
@@ -72,24 +72,27 @@ label {
   //order: 1;
 }
 /* search */
-.searchSection,
-.LSBox .searchButton {
+.searchSection
+ {
   display: none;
+}
+.LSBox .searchButton {
+  width: 100%;
+  display: block;
 }
 
 .LSBox {
-  background-color: rgba(0,0,0,0.1);
+  background-color: @primary-green;
+  padding: 0.5em;
 }
 #searchGadget,
 .LSBox .searchField {
-  /*width: 540px;*/
-  width: 290px;
-  padding: 1em;
-  border: 0;
-  background: none;
-  font-weight: bold;
-  font-size: 1em;
+  padding: 0.2em 0.5em;
+  border-radius: 5px;  border: 0;
+  font-size: 90%;
   position: relative;
+  margin-bottom: 0.5em;
+  background: @light-color;
 }
 .LSBox .searchField:before {
   font-family: 'FontAwesome', serif;
@@ -112,8 +115,7 @@ label {
 #portal-personaltools a {
   font-weight: bold;
   font-size: 1.25em;
-  /*color: #269776;*/
-  color: #525659;
+  color: @light-color;
 
 }
 #portal-personaltools-wrapper {
@@ -122,11 +124,11 @@ label {
   position: relative;
 }
 
-#portal-personaltools-wrapper,
-#portal-searchbox
-{
-  display: none;
-}
+//#portal-personaltools-wrapper,
+//#portal-searchbox
+//{
+//  display: none;
+//}
 .header-info {
   margin: 0 0 0 auto;
   display: flex;
@@ -134,13 +136,18 @@ label {
 }
 .header-info:before {
   width: 100%;
-  background-color: #FFF;
+  background-color: @light-color;
   position: absolute;
   min-width: 300px;
   min-height: 73px;
   content: " ";
   z-index: 0;
 }
+.search > .fa-search, .login .fa {
+  color: @mute-gray;
+  padding: 0.5em;
+}
+
 .search,
 #portal-siteactions,
 .login {
@@ -149,6 +156,25 @@ label {
   padding: 0 0.5em;
   margin: 0;
 }
+.action-selected {
+  background-color: @primary-green;
+  border-radius: 5px 5px 0 0;
+}
+
+
+.login-container, #portal-searchbox {
+  display: none;
+  min-width: 134px;
+  position: absolute;
+  right: -50px;
+  text-align: center;
+  background: @primary-green;
+  border-radius: 6px;
+  overflow: hidden;
+  top: 100%;
+  z-index: 1;
+}
+
 .header-image {
   height: 270px;
   overflow: hidden;
@@ -171,7 +197,9 @@ label {
 
 #portal-siteactions a {
   font-size: 18px;
+  color: @mute-gray;
 }
+
 /*#portal-personaltools-wrapper:before {*/
 /*content: " ";*/
 /*border-left: 1px solid #BBB;*/
@@ -181,7 +209,12 @@ label {
 /*height: 50px;*/
 /*}*/
 #portal-personaltools dd {
-  background: #ebe8df;
+  background: none;
+  position: relative;
+}
+
+#portal-personaltools.deactivated dd {
+  display: block;
 }
 #portal-searchbox {
   float: none;
@@ -237,8 +270,17 @@ label {
 .portaltype-plone-site #portal-breadcrumbs {
   display: none;
 }
+
 #breadcrumbs-you-are-here {
   display: none;
+}
+#portal-breadcrumbs a,
+.breadcrumbSeparator
+{
+  color: @mute-gray;
+}
+#breadcrumbs-current {
+  color: @primary-green;
 }
 
 #portal-columns {
@@ -250,6 +292,9 @@ label {
   padding-bottom: 8em;
 }
 
+.documentFirstHeading {
+  display: none;
+}
 .documentDescription {
   color: #333;
   margin-bottom: 1em;
@@ -278,18 +323,17 @@ dl.portlet ul.navTreeLevel0 > .navTreeItem {
   padding: 0;
 }
 dl.portlet dt a:link, dl.portlet dt a:visited, dl.portlet dt a:hover {
-  color: #fff;
+  color: @primary-green;
 }
 dl.portlet ul.navTree .navTreeCurrentItem {
-  color: #ffe39a;
   margin: 0;
   border: 0;
   background: none;
   font-weight: bold;
 }
 dl.portlet ul.navTree li a:hover {
-  background-color: rgba(0, 0, 0, 0.3);
-  color: white;
+  background-color: @secondary-green;
+  color: white !important;
   padding: 0 1em;
   margin-left: -1em;
   text-decoration: none;
@@ -309,7 +353,7 @@ dl.portlet ul.navTree li a:hover {
   color: #525659;
 }
 .portal-footer-bottom-area {
-  background-color: #FFF;
+  background-color: @light-color;
   padding: 1em 0;
   display: flex;
 }
