@@ -18,7 +18,7 @@ jQuery(function($){
        $portal_columns.addClass('container');
    }
    $(".header-info").appendTo("#portal-header");
-   $("#navbar").insertBefore(".header-info");
+   // $("#navbar").insertBefore(".header-info");
 
     $('.login i').on('click', function() {
         $(this).toggleClass('action-selected');

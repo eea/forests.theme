@@ -1,0 +1,23 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:i18n="http://namespaces.zope.org/i18n"
+  i18n_domain="forests.theme">
+
+  <!--<browser:page-->
+    <!--class=".views.CountryCheckoutView"-->
+    <!--for="*"-->
+    <!--name="countryrep_checkout_actions"-->
+    <!--permission="plone.app.iterate.CheckOutContent"-->
+    <!--template="pt/checkout_view.pt"-->
+  <!--/>-->
+
+  <browser:viewlet
+    name="plone.global_sections"
+    manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+    layer="forests.theme.interfaces.IForestsThemeLayer"
+    class=".viewlets.ForestsSectionsViewlet"
+    permission="zope2.View"
+  />
+
+</configure>

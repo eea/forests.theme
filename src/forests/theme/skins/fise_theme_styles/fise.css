@@ -130,6 +130,7 @@ label {
 .login .fa {
   color: #5f5f5f;
   padding: 0.5em;
+  cursor: pointer;
 }
 .search,
 #portal-siteactions,
