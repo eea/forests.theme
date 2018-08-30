@@ -1,24 +1,176 @@
+<!--?<metal:page define-macro="master"-->
+         <!--?tal:define="view context/@@plone;">-->
+    <!--?<div id="header-holder">-->
+        <!--?<div class="navbar navbar-default navbar-fixed-top">-->
+            <!--?<div class="container-fluid">-->
+                <!--?<div class="navbar-header">-->
+                    <!--?<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">-->
+                        <!--?<span class="sr-only" i18n:translate="">Toggle navigation</span>-->
+                        <!--?<span class="icon-bar">&nbsp;</span>-->
+                        <!--?<span class="icon-bar">&nbsp;</span>-->
+                        <!--?<span class="icon-bar">&nbsp;</span>-->
+                    <!--?</button>-->
+                    <!--?<div id="bs-example-navbar-collapse-1" class="navbar-collapse collapse">-->
+                        <!--?<div id="portal-top">-->
+                            <!--?<div tal:replace="structure provider:plone.portaltop">-->
+                                <!--?<!-- -->
+                            <!--?</div>-->
+                        <!--?</div>-->
+                    <!--?</div>-->
+                <!--?</div>-->
+            <!--?</div>-->
+        <!--?</div>-->
+    <!--?</div>-->
+<!--?</metal:page>-->
+
 <metal:page define-macro="master"
-         tal:define="view context/@@plone;">
-    <div id="header-holder">
-        <div class="navbar navbar-default navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only" i18n:translate="">Toggle navigation</span>
-                        <span class="icon-bar">&nbsp;</span>
-                        <span class="icon-bar">&nbsp;</span>
-                        <span class="icon-bar">&nbsp;</span>
-                    </button>
-                    <div id="bs-example-navbar-collapse-1" class="navbar-collapse collapse">
-                        <div id="portal-top">
-                            <div tal:replace="structure provider:plone.portaltop">
-                                <!-- -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    tal:define="view context/@@plone;">
+        <metal:external metal:use-macro="context/main_template/macros/external-header"></metal:external>
 </metal:page>
+
+<!--?<div class="mobile-header navbar navbar-default navbar-fixed-top">-->
+    <!--?<div id="mobile-header-container" class="container-fluid">-->
+        <!--?<div class="navbar-header">-->
+            <!--?<a href="https://demo-forests.eea.europa.eu/" accesskey="1" id="portal-logo-link-header" title="Fise logo">-->
+                <!--?<img class="nav-logo" src="http://localhost:8190/Plone/logo.png">-->
+            <!--?</a>-->
+            <!--?<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">-->
+                <!--?<span class="sr-only">Toggle navigation</span>-->
+                <!--?<span class="icon-bar"></span>-->
+                <!--?<span class="icon-bar"></span>-->
+                <!--?<span class="icon-bar"></span>-->
+            <!--?</button>-->
+            <!--?<div class="collapse navbar-collapse" id="navbar-collapse">-->
+                <!--?<div id="portal-top" class="row">-->
+                    <!--?<div class="header">-->
+                        <!--?<div id="portal-header">-->
+                            <!--?<a id="portal-logo" title="Forest Information System for Europe" accesskey="1" href="http://localhost:8190/Plone">-->
+                                <!--?<img src="http://localhost:8190/Plone/logo.png" alt="Forest Information System for Europe" title="Forest Information System for Europe" height="139" width="265"></a>-->
+
+                            <!--?<ul id="navbar" class="main-nav">-->
+                                <!--?<li class="main-nav-item">-->
+
+
+                                    <!--?<a href="http://localhost:8190/Plone/topics" data-toggle="False" class="">-->
+                                        <!--?<span>Topics</span>-->
+
+                                    <!--?</a>-->
+
+
+                                <!--?</li>-->
+                                <!--?<li class="main-nav-item">-->
+
+
+                                    <!--?<a href="http://localhost:8190/Plone/data-and-maps" data-toggle="False" class="">-->
+                                        <!--?<span>Data and maps</span>-->
+
+                                    <!--?</a>-->
+
+
+                                <!--?</li>-->
+                                <!--?<li class="main-nav-item">-->
+
+
+                                    <!--?<a href="http://localhost:8190/Plone/indicators" data-toggle="False" class="">-->
+                                        <!--?<span>Indicators</span>-->
+
+                                    <!--?</a>-->
+
+
+                                <!--?</li>-->
+                                <!--?<li class="main-nav-item">-->
+
+
+                                    <!--?<a href="http://localhost:8190/Plone/countries-and-regions" data-toggle="dropdown" class="dropdown-toggle">-->
+                                        <!--?<span>Countries and regions</span>-->
+                                        <!--?<button class="toggle-down"><i class="angle-down-icon"></i></button>-->
+                                    <!--?</a>-->
+
+                                    <!--?<div class="sub-menu-wrapper">-->
+
+
+                                        <!--?<ul class="sub-menu">-->
+                                            <!--?<li class="sub-menu-item">-->
+                                                <!--?<a href="http://localhost:8190/Plone/countries-and-regions" class="sub-menu-link ">Countries</a>-->
+                                                <!--?<ul class="sub-sub-menu-wrapper">-->
+                                                    <!--?<li class="sub-sub-menu-item">-->
+                                                        <!--?<a href="http://localhost:8190/Plone/countries-and-regions/albania" class="sub-sub-menu-link">Albania</a>-->
+                                                    <!--?</li>-->
+                                                    <!--?<li class="sub-sub-menu-item">-->
+                                                        <!--?<a href="http://localhost:8190/Plone/countries-and-regions/austria" class="sub-sub-menu-link">Austria</a>-->
+                                                    <!--?</li>-->
+                                                    <!--?<li class="sub-sub-menu-item">-->
+                                                        <!--?<a href="http://localhost:8190/Plone/countries-and-regions/belgium" class="sub-sub-menu-link">Belgium</a>-->
+                                                    <!--?</li>-->
+                                                <!--?</ul>-->
+                                            <!--?</li>-->
+                                            <!--?<li class="sub-menu-item">-->
+                                                <!--?<a href="http://localhost:8190/Plone/countries-and-regions" class="sub-menu-link sub-menu-link--more">See all countries</a>-->
+
+                                            <!--?</li>-->
+                                        <!--?</ul>-->
+
+
+
+                                        <!--?<ul class="sub-menu">-->
+                                            <!--?<li class="sub-menu-item">-->
+                                                <!--?<a href="http://localhost:8190/Plone/countries-and-regions" class="sub-menu-link ">Regions</a>-->
+                                                <!--?<ul class="sub-sub-menu-wrapper">-->
+                                                    <!--?<li class="sub-sub-menu-item">-->
+                                                        <!--?<a href="http://localhost:8190/Plone/countries-and-regions/eu28" class="sub-sub-menu-link">Eu28</a>-->
+                                                    <!--?</li>-->
+                                                    <!--?<li class="sub-sub-menu-item">-->
+                                                        <!--?<a href="http://localhost:8190/Plone/countries-and-regions/eu39" class="sub-sub-menu-link">Eu39</a>-->
+                                                    <!--?</li>-->
+                                                <!--?</ul>-->
+                                            <!--?</li>-->
+                                            <!--?<li class="sub-menu-item">-->
+                                                <!--?<a href="http://localhost:8190/Plone/countries-and-regions" class="sub-menu-link sub-menu-link--more">See all regions</a>-->
+
+                                            <!--?</li>-->
+                                        <!--?</ul>-->
+
+                                    <!--?</div>-->
+                                <!--?</li>-->
+                                <!--?<li class="main-nav-item">-->
+
+
+                                    <!--?<a href="http://localhost:8190/Plone/tools" data-toggle="False" class="">-->
+                                        <!--?<span>Tools</span>-->
+
+                                    <!--?</a>-->
+
+
+                                <!--?</li>-->
+                            <!--?</ul>-->
+                        <!--?</div>-->
+
+
+
+                        <!--?<div class="header-info">-->
+                            <!--?<ul id="portal-siteactions">-->
+
+                                <!--?<li id="siteaction-about"><a href="/Plone/about-us" accesskey="" title="About WISE Marine">About</a></li>-->
+                                <!--?<li id="siteaction-sitemap"><a href="/Plone/sitemap" accesskey="3" title="Site Map">Sitemap</a></li>-->
+                            <!--?</ul>-->
+
+
+                            <!--?<span class="mobile-menu-trigger-wrapper">-->
+                                    <!--?<div class="mobile-menu-trigger">-->
+                                        <!--?<i id="nav-icon1">-->
+                                          <!--?<span></span>-->
+                                        <!--?<span></span>-->
+                                        <!--?<span></span>-->
+                                        <!--?</i>-->
+                                    <!--?</div>-->
+                                <!--?</span>-->
+                        <!--?</div>-->
+
+
+
+                    <!--?</div>-->
+                <!--?</div>-->
+            <!--?</div>-->
+        <!--?</div>-->
+    <!--?</div>-->
+<!--?</div>-->

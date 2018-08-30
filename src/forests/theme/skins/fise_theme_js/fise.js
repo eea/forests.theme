@@ -1,6 +1,4 @@
 jQuery(function($){
-   $("#portal-searchbox").appendTo(".search");
-   $("#portal-personaltools-wrapper").appendTo(".login-container");
    if (window.innerWidth < 768) {
       $(".frontpage_promo").insertBefore('.frontpage-content');
    }
@@ -17,8 +15,6 @@ jQuery(function($){
    else {
        $portal_columns.addClass('container');
    }
-   $(".header-info").appendTo("#portal-header");
-   // $("#navbar").insertBefore(".header-info");
 
     $('.login i').on('click', function() {
         $(this).toggleClass('action-selected');

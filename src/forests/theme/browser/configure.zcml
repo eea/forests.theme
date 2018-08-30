@@ -37,9 +37,17 @@
     template="pt/scripts.pt"
   />
 
-  <!--<include package="z3c.jbot" file="meta.zcml" />-->
+  <browser:viewlet
+    name="forests.sections"
+    manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+    layer="forests.theme.interfaces.IForestsThemeLayer"
+    permission="zope2.View"
+    template="pt/sections-viewlet.pt"
+  />
 
-  <!--<browser:jbot-->
-    <!--directory="overrides" />-->
+  <include package="z3c.jbot" file="meta.zcml" />
+
+  <browser:jbot
+    directory="overrides" />
 
 </configure>
