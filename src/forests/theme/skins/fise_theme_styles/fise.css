@@ -186,6 +186,7 @@ label {
   font-weight: bold;
   font-size: 325%;
   width: 100%;
+  text-shadow: 0 1px 5px black;
 }
 #portal-siteactions a {
   font-size: 18px;
@@ -271,6 +272,72 @@ label {
 }
 #content-core {
   color: #666;
+}
+/* content area styles */
+.pullquote:before,
+.pullquote:after,
+.pullquote > :last-child:before,
+.pullquote > :last-child:after {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: solid green;
+  content: ' ';
+}
+#content .pullquote {
+  position: relative;
+  background: #8dc63f;
+  border: 10px solid #FFF;
+  width: 100%;
+  float: none;
+  padding: 1.5em 1em 2em 2em;
+  color: #FFF;
+  line-height: 1.5;
+  letter-spacing: normal !important;
+  font-weight: lighter;
+  font-size: 1.3em;
+  font-style: italic;
+}
+.pullquote:before {
+  top: -15px;
+  left: -15px;
+  border-width: 7px 0 0 7px;
+}
+.pullquote:after {
+  bottom: -15px;
+  right: -15px;
+  border-width: 0 7px 7px 0;
+}
+#content .callout {
+  background: none;
+  border-left: 5px solid #0d8442;
+  font-weight: bold;
+  font-style: italic;
+}
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+table > tbody > tr > td,
+table > tfoot > tr > td,
+table > tfoot > tr > th,
+table > thead > tr > td,
+table > thead > tr > th {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+table.plain {
+  border-bottom: 2px solid #000;
+}
+table.plain th {
+  border-width: 0 0 2px 0;
+  border-color: #000;
+}
+table.plain td {
+  border-width: 0 0 1px 0;
 }
 /* portlets */
 .portlet {
