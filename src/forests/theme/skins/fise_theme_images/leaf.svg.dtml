@@ -165,13 +165,13 @@
 
     options.forEach(function(item,index) {
         item.addEventListener('mouseenter', function(e){
-            item.className += ' entered';
+            item.className.baseVal = 'option entered';
             var bg = item.querySelector('.option-bg')
             var current_rect = bg.querySelector('rect')
             current_rect.setAttribute("width", rectSize[current_rect.getAttribute("id")].width)
         })
         item.addEventListener('mouseleave', function(e){
-            item.className -= 'entered';
+            item.className.baseVal = 'option';
             var bg = item.querySelector('.option-bg')
             var current_rect = bg.querySelector('rect')
             current_rect.setAttribute("width", 0)
