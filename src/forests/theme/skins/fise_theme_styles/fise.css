@@ -799,6 +799,7 @@ ul {
   height: 10px;
   width: 100%;
   position: absolute;
+  left: 0;
 }
 .sub-menu {
   min-width: 200px;
