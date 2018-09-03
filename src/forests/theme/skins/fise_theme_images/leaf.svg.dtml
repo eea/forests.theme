@@ -1,42 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="100%" height="100%" viewBox="0 0 748 387" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:10;">
-   	<style>
-   		.option-bg path{
-   			opacity: 0;
-   			transition: all 400ms;
-   		}
+    <style>
+        .option-bg path{
+            opacity: 0;
+            transition: all 400ms;
+            -webkit-transition: all 400ms;
+            -moz-transition: all 400ms;
+            -ms-transition: all 400ms;
 
-   		.option-bg rect {
-   			transition: all 400ms;
-   			-moz-transition: all 400ms;
-   		}
+        }
 
-   		.option:hover path {
-   			opacity: 1;
-   		}
-   		.option {
-   			pointer-events: all;
-   		}
-   		.entered .option-content path,
-   		.entered .option-content text  {
-   			transition: all 200ms;
-   			fill: white!important;
-   		}
+        .option-bg rect {
+            transition: all 400ms;
+            -webkit-transition: all 400ms;
+            -moz-transition: all 400ms;
+            -ms-transition: all 400ms;
+        }
 
-   		.stroked, .circle {
-   			transition: all 200ms;
-   		}
+        .option:hover path {
+            opacity: 1;
+        }
+        .option {
+            pointer-events: all;
+        }
+        .entered .option-content path,
+        .entered .option-content text  {
+            transition: all 200ms;
+            -webkit-transition: all 200ms;
+            -moz-transition: all 200ms;
+            -ms-transition: all 200ms;
+            fill: white!important;
+        }
 
-   		.entered .option-content .stroked {
-   			stroke: white!important;
-   		}
+        .stroked, .circle {
+            transition: all 200ms;
+            -webkit-transition: all 200ms;
+            -moz-transition: all 200ms;
+            -ms-transition: all 200ms;
+        }
 
-   		.entered .option-content .circle {
-   			fill: #8dc63f!important;
-   		}
+        .entered .option-content .stroked {
+            stroke: white!important;
+        }
 
-   	</style>
+        .entered .option-content .circle {
+            fill: #8dc63f!important;
+        }
+    </style>
     <rect id="Artboard1" x="0" y="0" width="747.54" height="386.82" style="fill:none;" />
     <clipPath id="_clip1">
         <rect x="0" y="0" width="747.54" height="386.82" />
@@ -56,7 +67,7 @@
                     <g transform="matrix(1,0,-1.73312e-17,1,-111.671,-62.8426)">
                        <text x="147.491px" y="349.814px"  style="font-family:'Roboto-Medium', 'Roboto';font-weight:500;font-size:19.5px;fill:#1d1d1d;">COUNTRIES AND REGIONS</text>
                     </g>
-             		<path d="M303.11,253.657c0,-11.643 -9.439,-21.084 -21.083,-21.084c-11.643,0 -21.084,9.441 -21.084,21.084c0,11.645 9.441,21.083 21.084,21.083c11.644,0 21.083,-9.438 21.083,-21.083" style="fill:#fff;fill-rule:nonzero;" />
+                    <path d="M303.11,253.657c0,-11.643 -9.439,-21.084 -21.083,-21.084c-11.643,0 -21.084,9.441 -21.084,21.084c0,11.645 9.441,21.083 21.084,21.083c11.644,0 21.083,-9.438 21.083,-21.083" style="fill:#fff;fill-rule:nonzero;" />
                     <path d="M303.11,253.657c0,-11.636 -9.447,-21.084 -21.084,-21.084c-11.636,0 -21.083,9.448 -21.083,21.084c0,11.636 9.447,21.083 21.084,21.083c11.636,0 21.083,-9.447 21.083,-21.083Z" style="fill:none;stroke:#999;stroke-width:2px;" />
                     <path class="circle" d="M291.36,253.657c0,-5.154 -4.179,-9.334 -9.333,-9.334c-5.154,0 -9.334,4.18 -9.334,9.334c0,5.154 4.18,9.333 9.334,9.333c5.154,0 9.333,-4.179 9.333,-9.333" style="fill:#b3b3b3;fill-rule:nonzero;" />
                     <path class="stroked" d="M34.36,253.657l247.666,0" style="fill:none;stroke:#999;stroke-width:1px;stroke-dasharray:4,3;" />
@@ -129,6 +140,7 @@
             </a>
         </g>
     </g>
+
 <script>
 
      // Function to make IE9+ support forEach:
@@ -140,30 +152,31 @@
         })();
 
 
-	var options = document.querySelectorAll('.option')
-	var rects = document.querySelectorAll('.option-bg rect')
+    var options = document.querySelectorAll('.option')
+    var rects = document.querySelectorAll('.option-bg rect')
 
-	rectSize = {};
+    rectSize = {};
 
-	rects.forEach(function(item,index){
-		item.setAttribute("id", "rect" + index)
-		rectSize["rect"+index] = {width: item.getAttribute("width")}
-		item.setAttribute("width", 0)
-	})
+    rects.forEach(function(item,index){
+        item.setAttribute("id", "rect" + index)
+        rectSize["rect"+index] = {width: item.getAttribute("width")}
+        item.setAttribute("width", 0)
+    })
 
-	options.forEach(function(item,index) {
-		item.addEventListener('mouseenter', function(e){
-			item.classList.add('entered')
-			var bg = item.querySelector('.option-bg')
-			var current_rect = bg.querySelector('rect')
-			current_rect.setAttribute("width", rectSize[current_rect.getAttribute("id")].width)
-		})
-		item.addEventListener('mouseleave', function(e){
-			item.classList.remove('entered')
-			var bg = item.querySelector('.option-bg')
-			var current_rect = bg.querySelector('rect')
-			current_rect.setAttribute("width", 0)
-		})
-	})
+    options.forEach(function(item,index) {
+        item.addEventListener('mouseenter', function(e){
+            item.className += ' entered';
+            var bg = item.querySelector('.option-bg')
+            var current_rect = bg.querySelector('rect')
+            current_rect.setAttribute("width", rectSize[current_rect.getAttribute("id")].width)
+        })
+        item.addEventListener('mouseleave', function(e){
+            item.className -= 'entered';
+            var bg = item.querySelector('.option-bg')
+            var current_rect = bg.querySelector('rect')
+            current_rect.setAttribute("width", 0)
+        })
+    })
 </script>
+
 </svg>

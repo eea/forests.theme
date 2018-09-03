@@ -112,6 +112,9 @@ label {
   order: 3;
   position: relative;
 }
+.header {
+  overflow: hidden;
+}
 .search,
 .login,
 .header-info {
@@ -131,6 +134,7 @@ label {
   position: absolute;
   min-width: 2000px;
   min-height: 73px;
+  top: 0;
   content: " ";
   z-index: 0;
 }
