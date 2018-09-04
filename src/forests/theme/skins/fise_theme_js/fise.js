@@ -1,20 +1,12 @@
 jQuery(function($){
-   if (window.innerWidth < 768) {
-      $(".frontpage_promo").insertBefore('.frontpage-content');
-   }
-   $("#edit-bar").appendTo('.page-container');
-   $("#portal-globalnav").appendTo("#portal-globalnav-wrapper");
-   $("#portal-header, #portal-footer, #portal-globalnav-wrapper").addClass('container');
-   var $portal_columns = $("#portal-columns");
-   $portal_columns.removeClass('row');
-   var $left_column = $("#portal-column-one");
-   var $body = $("body");
-   if ($left_column.length) {
-      $body.addClass('fise-two-columns');
-   }
-   else {
-       $portal_columns.addClass('container');
-   }
+    if (window.innerWidth < 768) {
+        $(".frontpage_promo").insertBefore('.frontpage-content');
+    }
+    $("#edit-bar").appendTo('.page-container');
+    $("#portal-globalnav").appendTo("#portal-globalnav-wrapper");
+    $("#portal-header, #portal-footer, #portal-globalnav-wrapper").addClass('container');
+    var $portal_columns = $("#portal-columns");
+    $portal_columns.removeClass('row').addClass('container');
 
     $('.login i').on('click', function() {
         $(this).toggleClass('action-selected');

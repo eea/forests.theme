@@ -6,4 +6,9 @@
   <stylesheet title="" cacheable="True" compression="safe"
     cookable="True" enabled="1" expression="" id="bootstrap.min.css"
     media="" rel="stylesheet" rendering="link" insert-before="fise.css" />
+
+  <stylesheet title="" cacheable="True" compression="safe"
+    cookable="True" enabled="1" expression="" id="admin.css"
+    media="" rel="stylesheet" rendering="link" insert-after="authoring.css" />
+
 </object>

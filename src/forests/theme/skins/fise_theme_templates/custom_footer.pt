@@ -1,41 +1,30 @@
-<div class="portal-footer-top-area">
+<div class="portal-footer-top-area" tal:define="portal_url context/plone_portal_state/portal_url">
     <div id="portal-footer" class="container">
-        <div class="row">
+        <div class="clearfix portal-footer-colophon">
             <div class="col-md-4">
                 <h4>About</h4>
                 <p>The Forests Information System for Europe (FISE) is a single entry point for data and information on biodiversity supporting the implementation of the EU strategy and the Aichi targets in Europe.
                 </p>
                 <a href="/about-us">More</a>
             </div>
-            <div class="col-md-2 col-md-offset-2">
-              <h4 class="bold">Forestry</h4>
+            <div class="col-md-3 col-md-offset-2">
+              <h4 class="bold">Sitemap</h4>
                 <ul class="list">
-                    <li><a href="http://europa.eu/">Link</a></li>
-                    <li><a href="http://europa.eu/">Link</a></li>
-                    <li><a href="http://europa.eu/">Link</a></li>
-                    <li><a href="http://europa.eu/">Link</a></li>
+                    <li><a href="http://europa.eu/">Legal notice</a></li>
+                    <li><a href="http://europa.eu/">Privacy policy</a></li>
+                    <li><a href="http://europa.eu/">Cookies</a></li>
                 </ul>
             </div>
-            <div class="col-md-2">
-                <h4 class="bold">Data</h4>
-                <ul class="list">
-                    <li><a href="http://europa.eu/">Link</a></li>
-                    <li><a href="http://europa.eu/">Link</a></li>
-                    <li><a href="http://europa.eu/">Link</a></li>
-                    <li><a href="http://europa.eu/">Link</a></li>
-                </ul>
-            </div>
-            <div class="col-md-2">
-                <h4 class="bold">Links</h4>
-                <ul class="list">
-                    <li><a href="http://europa.eu/">Link</a></li>
-                    <li><a href="http://europa.eu/">Link</a></li>
-                    <li><a href="http://europa.eu/">Link</a></li>
-                    <li><a href="http://europa.eu/">Link</a></li>
-                </ul>
+            <div class="col-md-3">
+                <h4 class="bold">Partners</h4>
+                <a href="https://ec.europa.eu/" class="inline-block"><img tal:attributes="src string:${portal_url}/footer-european-comission.png" width="111" height="77" alt="European Comunity">
+                </a>
+                <a href="https://ec.europa.eu/" class="inline-block"><img tal:attributes="src string:${portal_url}/footer-eea-logo.png" width="134" height="47" alt="European Environment Agency">
+                </a>
             </div>
         </div>
-
+        <hr class="footer-hr" />
+        <tal:category_title tal:replace="structure context/category-title"></tal:category_title>
     </div>
 </div>
 <div class="portal-footer-bottom-area">
