@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxM.woff) format('woff');
+}
 /* latin-ext */
 @font-face {
   font-family: 'Roboto';
@@ -19,7 +25,7 @@ body {
   line-height: 20pt;
   color: #333;
   background-color: #e5e5e5;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
 }
 h1 {
   font-size: 3em;
