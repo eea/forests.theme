@@ -11,6 +11,7 @@
 
 <metal:cssslot fill-slot="style_slot">
     <link rel="stylesheet" tal:attributes="href string:${portal_url}/slick.css" />
+    <link rel="stylesheet" tal:attributes="href string:${portal_url}/slider.css" />
 </metal:cssslot>
 <metal:javascriptslot fill-slot="javascript_head_slot">
     <script type="text/javascript" tal:attributes="src string:${portal_url}/jquery.slick.js"></script>

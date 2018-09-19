@@ -239,7 +239,7 @@
   right: 0;
 }
 .slider-next:before {
-  content: "\f0da";
+  content: "›";
   font-family: FontAwesome;
   font-size: 11rem;
 }
@@ -248,7 +248,7 @@
   left: 0;
 }
 .slider-prev:before {
-  content: "\f0d9";
+  content: "‹";
   font-family: FontAwesome;
   font-size: 11rem;
 }
