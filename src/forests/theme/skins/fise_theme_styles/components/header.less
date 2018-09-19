@@ -70,10 +70,6 @@
   margin: 0;
   float: none;
 }
-#personaltools-login {
-  display: block;
-  padding: 2rem;
-}
 #portal-personaltools a {
   font-weight: bold;
   font-size: 1.25em;
@@ -85,9 +81,9 @@
   position: relative;
 }
 
-.header {
-  overflow: hidden;
-}
+//.header {
+//  overflow: hidden;
+//}
 .search, .login, .header-info {
   margin: 0 0 0 auto;
   display: flex;
@@ -148,14 +144,9 @@
 }
 
 .login-container {
-  display: block;
-  top: initial;
-  position: relative;
-  right: initial;
-  min-width: initial;
-  overflow: initial;
-  width: calc(100% + 60px);
-  margin: 0 -30px;
+  top: calc(100% - 2rem);
+  right: calc(100%);
+  margin-right: -47.5px;
 }
 
 .header-image {
@@ -180,22 +171,13 @@
   text-shadow: 0 1px 5px black;
 }
 
-#portal-siteactions {
-  display: block;
-  width: 100%;
-}
 #portal-siteactions a {
-  font-size: 3rem;
+  font-size: 1.4rem;
   margin-right: 1rem;
   margin-left: 1rem;
-  color: @light-color;
+  color: @mute-gray;
 }
 
-#siteaction-about {
-  display: block;
-  text-align: center;
-  color: @light-color;
-}
 
 #portal-personaltools dd {
   background: none;
@@ -208,14 +190,8 @@
 #portal-searchbox {
   float: none;
   order: 2;
-  box-shadow: -2px 6px 5px 0 #00000078;
-  display: block;
-  position: relative;
-  right: initial;
-  width: calc(100% + 60px);
-  margin-top: 2rem;
-  margin-right: -30px;
-  margin-left: -30px;
+  margin: -16px 3px 0 auto;
+  box-shadow: -2px 6px 5px 0px #00000078;
 }
 #portal-searchbox form {
   max-width: 1024px;
@@ -334,9 +310,76 @@
 }
 
 @media (max-width: 762px) {
+  .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
+    max-height: calc(100vh - 95px);
+    overflow: auto;
+  }
   .navbar-header {
     background: white;
     text-align: center;
+  }
+
+  #portal-header {
+    background: @primary-green;
+  }
+
+  #portal-logo {
+    display: none;
+  }
+
+  #portal-siteactions {
+    display: block;
+    width: 100%;
+  }
+
+  #portal-siteactions a {
+    color: @light-color;
+    font-size: 3rem;
+  }
+
+  #siteaction-about {
+    display: block;
+    text-align: center;
+    color: @light-color;
+  }
+  #personaltools-login {
+    display: block;
+    padding: 2rem;
+  }
+
+  #portal-searchbox {
+    display: block;
+    position: relative;
+    right: initial;
+    width: calc(100% + 60px);
+    margin-top: 2rem;
+    margin-right: -30px;
+    margin-left: -30px;
+  }
+
+  .login, .header-info, .search {
+    background: @primary-green;
+  }
+
+  .login-container {
+    display: block;
+    top: initial;
+    position: relative;
+    right: initial;
+    min-width: initial;
+    overflow: initial;
+    margin: 0;
+    width: calc(100% + 60px);
+    margin-right: -30px;
+    margin-left: -30px;
+  }
+
+  .search>.fa-search, .login .fa {
+    display: none;
+  }
+
+  #portal-personaltools-wrapper {
+    display: block;
   }
 }
 

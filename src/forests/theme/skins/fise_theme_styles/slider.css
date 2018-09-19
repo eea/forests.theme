@@ -257,11 +257,10 @@
 }
 
 .frontpage-image-wrapper {
-  width: 80%;
-  max-width: 100%;
-  margin: 4rem auto auto;
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
 }
-
 
 .slider-highlights .slick-track {
   display: flex!important;
@@ -269,6 +268,13 @@
   align-items: center;
 }
 
+@media (max-width: 762px) {
+  .frontpage-image-wrapper {
+    max-width: 100%;
+    margin-top: 4rem;
+  }
+
+}
 @media (min-width: 1600px) {
   .highlight-photos img {
     position: relative;

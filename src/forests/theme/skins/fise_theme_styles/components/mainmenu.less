@@ -22,8 +22,6 @@ ul {
   z-index: 10;
   flex: 1;
   margin: 0;
-  flex-direction: column;
-  background: @primary-green;
 }
 
 .main-nav-item {
@@ -41,7 +39,7 @@ ul {
   align-items: center;
   padding: 12px 0;
   color: #fff;
-  font-size: 3rem;
+  font-size: 17px;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -64,7 +62,7 @@ ul {
   min-width: 200px;
   text-align: left;
   line-height: 1;
-  padding: 1rem;
+  padding: 1.5em;
 }
 
 .main-nav-item:hover > .sub-menu-wrapper {
@@ -74,22 +72,19 @@ ul {
 }
 
 .sub-menu-wrapper {
+  position: absolute;
   left: 0;
   height: auto;
   background-color: @secondary-green;
   z-index: 10;
   padding: 0;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.40);
-
-  position: relative;
-  display: flex!important;
-  margin-top: 0!important;
-  width: 100%;
+  display: none;
 }
 
 .sub-menu-link {
   color: @primary-green;
-  font-size: 2rem;
+  font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
   display: block;
@@ -117,8 +112,8 @@ ul {
   color: @light-color;
   //font-family: RobotoR;
   text-transform: none;
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  font-size: 13px;
+  margin-bottom: .5rem;
   display: block;
 }
 
@@ -134,6 +129,36 @@ ul {
   margin-left: 1rem;
 }
 
+@media (max-width: 762px) {
+  .main-nav {
+    flex-direction: column;
+    background: @primary-green;
+  }
+
+  .main-nav-item {
+    align-items: center;
+    flex-direction: column;
+  }
+  .main-nav-item > a {
+    font-size: 3rem;
+  }
+  .sub-menu-wrapper {
+    position: relative;
+    display: flex;
+    margin-top: 0;
+    width: 100%;
+  }
+  .sub-menu-link {
+    font-size: 2rem;
+  }
+  .sub-menu {
+    padding: 1rem;
+  }
+  .sub-sub-menu-link {
+    font-size:2rem;
+    margin-bottom: 2rem;
+  }
+}
 @media (max-width: 920px) {
   .main-nav-item>a {
     font-size: 1.2rem;
