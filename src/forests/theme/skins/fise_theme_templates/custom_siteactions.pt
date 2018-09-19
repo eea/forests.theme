@@ -1,7 +1,6 @@
 <div class="header-info"
     tal:define="portal_url context/plone_portal_state/portal_url">
     <ul id="portal-siteactions">
-        <li id="siteaction-about"><a tal:attributes="href string:${portal_url}/about-us" accesskey="" title="About WISE Marine">About</a></li>
-        <li id="siteaction-sitemap"><a tal:attributes="href string:${portal_url}/sitemap" accesskey="3" title="Site Map">Sitemap</a></li>
+        <li><a href="http://nfi-search.dev.eaudeweb.ro/">NFI search</a></li>
     </ul>
 </div>

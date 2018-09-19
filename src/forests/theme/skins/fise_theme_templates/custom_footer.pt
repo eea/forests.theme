@@ -3,33 +3,33 @@
         <div class="clearfix portal-footer-colophon">
             <div class="col-md-4">
                 <h5 class="bold">About</h5>
-                <p>The Forests Information System for Europe (FISE) is a single entry point for data and information on biodiversity supporting the implementation of the EU strategy and the Aichi targets in Europe.
+                <p>The Forests Information System for Europe (FISE) is a single entry point for data and information on European forests.
                 </p>
                 <a href="/about-us">More</a>
             </div>
             <div class="col-md-3 col-md-offset-2">
-                <h5 class="bold">Sitemap</h5>
+              <h5 class="bold">Links</h5>
                 <ul class="list">
-                    <li><a href="http://europa.eu/">Legal notice</a></li>
-                    <li><a href="http://europa.eu/">Privacy policy</a></li>
-                    <li><a href="http://europa.eu/">Cookies</a></li>
+                    <li><a tal:attributes="href string:${portal_url}/legal/">Legal notice</a></li>
+                    <li><a tal:attributes="href string:${portal_url}/legal/privacy">Privacy policy</a></li>
+                    <li><a  tal:attributes="href string:${portal_url}/legal/credits">Credits</a></li>
                 </ul>
             </div>
             <div class="col-md-3">
                 <h5 class="bold">Partners</h5>
-                <a href="https://ec.europa.eu/" class="inline-block"><img tal:attributes="src string:${portal_url}/footer-european-comission.png" width="111" height="77" alt="European Comunity">
+                <a href="http://ec.europa.eu/dgs/environment/" class="inline-block"><img tal:attributes="src string:${portal_url}/footer-european-comission.png" width="111" height="77" alt="European Commission - Directorate-General for Environment">
                 </a>
-                <a href="https://ec.europa.eu/" class="inline-block"><img tal:attributes="src string:${portal_url}/footer-eea-logo.png" width="134" height="47" alt="European Environment Agency">
+                <a href="https://eea.europa.eu/" class="inline-block"><img tal:attributes="src string:${portal_url}/footer-eea-logo.png" width="134" height="47" alt="European Environment Agency">
                 </a>
             </div>
         </div>
-        <hr class="footer-hr" />
-        <tal:category_title tal:replace="structure context/category-title"></tal:category_title>
+        <!-- hr class="footer-hr" />
+        <tal:category_title tal:replace="structure context/category-title"></tal:category_title -->
     </div>
 </div>
 <div class="portal-footer-bottom-area">
-    <div class="portal-footer-logos container flex">
-        <img src="" alt="" tal:attributes="src string:${context/portal_url}/logo-green-footer.png" />
-        <p class="right-aligned">&copy; Copyright 2018 FISE</p>
-    </div>
+       <div class="portal-footer-logos container flex">
+           <img src="" alt="" tal:attributes="src string:${context/portal_url}/logo-green-footer.png" />
+           <p class="right-aligned">&copy; Copyright 2018 DG Environment</p>
+       </div>
 </div>

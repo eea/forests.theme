@@ -10,12 +10,115 @@
 <body>
 
 <metal:cssslot fill-slot="style_slot">
-    <link rel="stylesheet" tal:attributes="href string:${portal_url}/slick.css">
-    <link rel="stylesheet" tal:attributes="href string:${portal_url}/slider.css">
+    <link rel="stylesheet" tal:attributes="href string:${portal_url}/slick.css" />
 </metal:cssslot>
 <metal:javascriptslot fill-slot="javascript_head_slot">
     <script type="text/javascript" tal:attributes="src string:${portal_url}/jquery.slick.js"></script>
-    <script type="text/javascript" tal:attributes="src string:${portal_url}/slider_init.js"></script>
+    <script type="text/javascript">
+        if (window.matchMedia("(min-width: 800px)").matches) {
+            (function($) {
+                jQuery.extend(jQuery.easing, {
+                    'easeOutQuint': function(x, t, b, c, d) {
+                        return c * ((t = t / d - 1) * t * t * t * t + 1) + b;
+                    }
+                });
+                $(document).ready(function() {
+
+                    var $hlSlider = $('#hlslider-slides'),
+                            $hlSliderCounter = $('#hlslider-counter'),
+                            $hlSliderPrev = $('#hlslider-prev'),
+                            $hlSliderNext = $('#hlslider-next'),
+                            $hlSliderPhotos = $('.highlight-photos').children();
+
+
+                    var $hlSliderPlaceholder = $('.highlight-placeholder');
+                    // $('#highlights-slider').prepend($hlSliderPlaceholder);
+
+                    var $hlFirstSlide = $($hlSliderPhotos[0]);
+
+                    $hlFirstSlide.css({
+                        'visibility': 'visible'
+                    }).addClass('current');
+                    initSlider();
+                    $hlSliderPlaceholder.css('opacity', '0');
+
+                    function initSlider() {
+                        $hlSlider.children().css({'display': 'block'});
+                        if (!$hlSlider.slick) {
+                            return;
+                        }
+                        $hlSlider.slick({
+                            autoplay: true,
+                            autoplaySpeed: 6000,
+                            speed: 1000,
+                            easing: 'easeOutQuint',
+                            adaptiveHeight: false,
+                            nextArrow: '',
+                            prevArrow: '',
+                            useCSS: false
+                        });
+
+                        var updateBackgroundPhoto = function(current, next, count) {
+
+                            var dir = next - current;
+                            if (next === 0 && current === count - 1) {
+                                dir = 1;
+                            }
+                            if (next === count - 1 && current === 0) {
+                                dir = -1;
+                            }
+
+                            var $currentImg = $($hlSliderPhotos[current]);
+                            var $nextImg = $($hlSliderPhotos[next]);
+                            $nextImg.show();
+
+                            var percent = dir * 100 + '%';
+
+                            $nextImg.css({
+                                'display': 'block',
+                                'transform': 'translate3d(' + percent + ', 0, 0)'
+                            });
+
+                            $({'percent': dir * 100}).animate({
+                                'percent': 0
+                            }, {
+                                duration: 1000,
+                                easing: 'easeOutQuint',
+                                step: function(now) {
+                                    $nextImg.css({
+                                        'transform': 'translate3d(' + now + '%, 0, 0)'
+                                    });
+                                },
+                                done: function() {
+                                    $currentImg.removeClass('current').hide();
+                                    $nextImg.addClass('current');
+                                }
+                            });
+                        };
+
+                        var i;
+
+                        $hlSlider.on('beforeChange', function(e, slick, currentSlide, nextSlide) {
+                            i = (nextSlide ? nextSlide : 0) + 1;
+                            $hlSliderCounter.text(i + '/' + slick.slideCount);
+
+                            updateBackgroundPhoto(currentSlide, nextSlide, slick.slideCount);
+                        });
+
+                        $hlSliderNext.click(function() {
+                            $hlSlider.slick('slickNext');
+                        });
+                        $hlSliderPrev.click(function() {
+                            $hlSlider.slick('slickPrev');
+                        });
+
+                    }
+
+                });
+
+            }(jQuery))
+        }
+    </script>
 </metal:javascriptslot>
 
 <metal:top metal:fill-slot="portal_top">
@@ -62,13 +165,181 @@
         </div>
     </div>
     <style>
+        #highlights-slider {
+            padding-bottom: 3rem!important;
+            height: 500px;
+        }
+        @media (max-width: 800px){
+            #highlights-slider {
+                display: none;
+            }
+
+        }
+
+
+        #highlights-slider {
+            position: relative;
+            padding-top: 150px;
+        }
+
+        .highlight-placeholder,
+        .highlight-photos {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+
+        .slick-slide {
+            height: auto;
+        }
+
+        .highlight-placeholder {
+            z-index: 1;
+            opacity: 1;
+            transition: opacity 1s;
+        }
+
+        .highlight-placeholder img,
+        .highlight-photos img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .highlight-photo {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .highlight-photo.current {
+            display: block!important;
+            z-index: 1;
+        }
+
+        .slider-header {
+            display: inline-block;
+            font-size: larger;
+            background-color: rgba(0, 0, 0, .4);
+            padding: 10px;
+            color: #fff;
+        }
+
+        .slider-highlights {
+
+            z-index: 3;
+        }
+
+        .slider-title {
+            display: inline-block;
+            margin: 0;
+            font: inherit;
+            color: inherit;
+            line-height: inherit;
+        }
+
+        .highlight-title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 30px;
+            line-height: 35px;
+            color: inherit;
+        }
+
+        .highlight-title a {
+            color: inherit;
+        }
+
+        .highlight-description {
+            font-size: larger;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+
+        @media (max-width: 600px) {
+            .highlight-photos img {
+                height: 100%;
+                width: auto;
+            }
+        }
+
+        @media (min-width: 800px) {
+            #highlights-slider {
+                padding-top: 240px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            #highlights-slider {
+                padding-top: 376px;
+            }
+            .highlight-title {
+                font-size: 36px;
+                line-height: 44px;
+            }
+        }
+
+        @media (min-width: 1200px) and (max-width: 1331px) {
+            #highlights-slider {
+                padding-top: 308px;
+            }
+        }
+
+        @media (min-width: 1600px){
+            #highlights-slider {
+                padding-top: 500px;
+            }
+        }
+
+        @media print {
+
+            .slick-track {
+                width: auto!important;
+                opacity: 1!important;
+                transform: none!important;
+            }
+
+            .slick-cloned {
+                display: none!important;
+            }
+            #slider-nav,
+            .slider-counter {
+                display: none;
+            }
+            .slick-slider {
+                min-height: auto!important;
+            }
+            #highlights-slider {
+                padding: 0;
+                border-bottom: 0!important;
+                margin: 0;
+                position: static!important;
+                padding-bottom: 0!important;
+            }
+            .slick-slide {
+                width: auto!important;
+                padding: 0!important;
+            }
+        }
     </style>
 </metal:top>
 
+
 <metal:content metal:fill-slot="content">
     <div class="frontpage-content clearfix">
-        <object type="image/svg+xml" data="leaf.svg" class="logo">
-        </object>
+    	<div class="frontpage-image-wrapper">
+        	<object type="image/svg+xml" data="leaf.svg" class="logo">
+        	</object>
+    	</div>
     </div>
 </metal:content>
 </body>

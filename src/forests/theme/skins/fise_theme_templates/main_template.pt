@@ -77,7 +77,7 @@
                             <div tal:replace="structure provider:plone.portaltop"></div>
 
                         <div class="header-image" tal:condition="python: not external_header and 'frontpage' not in request.URL0">
-                            <img src="" tal:attributes="src string:${context/absolute_url}/header-image.png" alt="">
+                            <img src="" tal:attributes="src string:${context/absolute_url}/header-image.jpg" alt="">
                             <h1 tal:content="context/Title" class="header-image-title">Page Title here</h1>
                         </div>
                          <metal:portal_top define-slot="portal_top" />
