@@ -93,10 +93,6 @@ label {
 .label {
   color: #000;
 }
-.navbar-fixed-bottom,
-.navbar-fixed-top {
-  z-index: 100;
-}
 .navbar-fixed-bottom .navbar-collapse,
 .navbar-fixed-top .navbar-collapse {
   max-height: calc(100vh - 95px);
@@ -230,7 +226,7 @@ label {
 .login-container {
   top: calc(100% - 2rem);
   right: calc(100%);
-  margin-right: -47.5px;
+  margin-right: -51px;
 }
 .header-image {
   height: 220px;
@@ -269,8 +265,8 @@ label {
 #portal-searchbox {
   float: none;
   order: 2;
-  margin: -16px 3px 0 auto;
-  box-shadow: -2px 6px 5px 0px #00000078;
+  margin: -16px 0 0 auto;
+  box-shadow: -2px 6px 5px 0 #00000078;
 }
 #portal-searchbox form {
   max-width: 1024px;
@@ -436,6 +432,12 @@ label {
   }
   #portal-personaltools-wrapper {
     display: block;
+  }
+}
+@media (min-width: 768px) {
+  .navbar-fixed-bottom,
+  .navbar-fixed-top {
+    z-index: 89;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -726,7 +728,6 @@ dl.portlet dt {
   background-color: transparent;
   padding: 0.42em 0;
   font-size: 150%;
-  font-family: Roboto;
   margin-bottom: 0.25em;
   font-weight: normal;
 }
@@ -758,7 +759,6 @@ div.managePortletsLink,
 a.managePortletsFallback {
   background-color: white;
   border: 2px solid green;
-  width: 25rem;
 }
 /* footer */
 #portal-footer-wrapper {
