@@ -59,7 +59,7 @@
                         external_header python: 'getHeader' in request.URL0;
                         ajax_load python:False;">
             <div class="navbar-header">
-                <a href="https://demo-forests.eea.europa.eu/" accesskey="1" id="portal-logo-link-header" title="Fise logo">
+                <a tal:attributes="href portal_url" accesskey="1" id="portal-logo-link-header" title="Fise logo">
                     <img tal:attributes="src string:${portal_url}/logo.png" class="nav-logo" />
                 </a>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
