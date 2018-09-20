@@ -660,15 +660,18 @@ div.documentByLine {
   text-align: center;
   background-color: lightgrey;
 }
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
   #portal-breadcrumbs {
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
-}
-@media screen and (max-width: 767px) {
   #portal-columns {
     margin-top: 90px;
+  }
+}
+@media screen and (min-width: 768px) {
+  #portal-breadcrumbs {
+    z-index: 101;
   }
 }
 /* content area styles */
