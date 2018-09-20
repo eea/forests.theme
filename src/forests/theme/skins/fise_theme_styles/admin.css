@@ -2,7 +2,6 @@
 #site-admin {
   background: #44434c;
 }
-
 .page-container {
   margin-left: auto;
   margin-right: auto;
@@ -10,7 +9,6 @@
   padding-right: 1rem;
   max-width: 1200px;
 }
-
 #edit-bar ul {
   margin: 0;
 }
@@ -28,16 +26,17 @@
 #contentActionMenus dl.actionMenu a {
   background: none!important;
 }
-
-#contentActionMenus dl.actionMenu a, #contentActionMenus dl.actionMenu.activated dd {
+#contentActionMenus dl.actionMenu a,
+#contentActionMenus dl.actionMenu.activated dd {
   background-color: black;
   text-decoration: none;
 }
 #contentActionMenus dl.actionMenu.activated dd {
   border-bottom: none;
 }
-#contentActionMenus dl.actionMenu a, #contentActionMenus dl.actionMenu.activated dd {
-  z-index:  1031;
+#contentActionMenus dl.actionMenu a,
+#contentActionMenus dl.actionMenu.activated dd {
+  z-index: 1031;
   right: initial;
 }
 #edit-bar {
@@ -47,33 +46,26 @@
   background: transparent!important;
   margin: 0;
   border: 0!important;
-
   min-height: 32px;
 }
-
 .userrole-authenticated #portal-columns {
   margin-top: 0;
 }
-
 .plonepopup {
   min-height: 650px;
 }
-
-.plonepopup  iframe {
+.plonepopup iframe {
   min-height: 600px;
 }
-
 .mceActionPanel {
   margin-top: 0;
 }
 .panel_wrapper div.current {
   height: auto !important;
 }
-
 div.formControls {
- margin: 0;
+  margin: 0;
 }
-
 @media (max-width: 767px) {
   .contentActions,
   .contentActions::after {
@@ -88,3 +80,4 @@ div.formControls {
     margin-top: 90px;
   }
 }
+/*# sourceMappingURL=admin.css.map */
