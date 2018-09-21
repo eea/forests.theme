@@ -104,7 +104,6 @@ label {
 #portal-logo {
   margin: 0;
   z-index: 10;
-  display: none;
 }
 #portal-logo img {
   background: white;
@@ -377,7 +376,8 @@ label {
     background: white;
     text-align: center;
   }
-  #portal-header {
+  #portal-header,
+  .header-image {
     background: #8dc63f;
   }
   #portal-logo {
