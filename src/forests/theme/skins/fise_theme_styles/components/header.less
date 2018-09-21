@@ -1,8 +1,10 @@
 @import "variables";
-
+.mobile-header {
+  font-family: 'Roboto', sans-serif;
+}
 
 .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
-  max-height: calc(100vh - 95px); overflow: auto;
+  max-height: calc(100vh - 95px);
 }
 #portal-header {
   background: @primary-green;
@@ -308,6 +310,18 @@
   .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
     max-height: calc(100vh - 95px);
     overflow: auto;
+  }
+
+  .navbar-toggle {
+    position: absolute;
+    top: 47px;
+    right: 0;
+    transform: translateY(-50%);
+    margin: 0 1rem 0 0;
+  }
+
+  .nav-logo {
+    max-width: 180px;
   }
   .navbar-header {
     background: white;
