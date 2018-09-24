@@ -95,16 +95,6 @@
   background-color: @light-color;
 }
 
-.login:before {
-  width: 100%;
-  background-color: @light-color;
-  position: absolute;
-  min-width: 2000px;
-  min-height: 73px;
-  top: 0;
-  content: " ";
-  z-index: 0;
-}
 .search > .fa-search, .login .fa {
   color: @mute-gray;
   padding: 0.5em;
@@ -154,7 +144,7 @@
   display: flex;
   align-items: center;
 }
-.header-image img {
+.header-image img, .header-image picture {
   width: 100%;
   height: auto;
 }
@@ -188,7 +178,6 @@
   float: none;
   order: 2;
   margin: -16px 0 0 auto;
-  box-shadow: -2px 6px 5px 0 #00000078;
 }
 #portal-searchbox form {
   max-width: 1024px;
@@ -360,14 +349,17 @@
     display: block;
     position: relative;
     right: initial;
-    width: calc(100% + 60px);
+    width: 100%;
     margin-top: 2rem;
-    margin-right: -30px;
-    margin-left: -30px;
+    margin-right: 0;
+    margin-left: 0;
   }
 
   .login, .header-info, .search {
     background: @primary-green;
+  }
+  .login, .search {
+    margin: 0 -15px;
   }
 
   .login-container {
@@ -378,9 +370,7 @@
     min-width: initial;
     overflow: initial;
     margin: 0;
-    width: calc(100% + 60px);
-    margin-right: -30px;
-    margin-left: -30px;
+    width: 100%;
   }
 
   .search>.fa-search, .login .fa {
@@ -394,6 +384,19 @@
 @media (min-width:768px) {
   .navbar-fixed-bottom, .navbar-fixed-top {
     z-index: 89;
+  }
+  #portal-searchbox {
+    box-shadow: -2px 6px 5px 0 #00000078;
+  }
+  .login:before {
+    width: 100%;
+    background-color: @light-color;
+    position: absolute;
+    min-width: 2000px;
+    min-height: 73px;
+    top: 0;
+    content: " ";
+    z-index: 0;
   }
 }
 

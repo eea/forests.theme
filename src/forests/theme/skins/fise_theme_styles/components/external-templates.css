@@ -86,16 +86,6 @@
 .search {
   background-color: #FFF;
 }
-.login:before {
-  width: 100%;
-  background-color: #FFF;
-  position: absolute;
-  min-width: 2000px;
-  min-height: 73px;
-  top: 0;
-  content: " ";
-  z-index: 0;
-}
 .search > .fa-search,
 .login .fa {
   color: #5f5f5f;
@@ -142,7 +132,8 @@
   display: flex;
   align-items: center;
 }
-.header-image img {
+.header-image img,
+.header-image picture {
   width: 100%;
   height: auto;
 }
@@ -172,7 +163,6 @@
   float: none;
   order: 2;
   margin: -16px 0 0 auto;
-  box-shadow: -2px 6px 5px 0 #00000078;
 }
 #portal-searchbox form {
   max-width: 1024px;
@@ -321,15 +311,19 @@
     display: block;
     position: relative;
     right: initial;
-    width: calc(100% + 60px);
+    width: 100%;
     margin-top: 2rem;
-    margin-right: -30px;
-    margin-left: -30px;
+    margin-right: 0;
+    margin-left: 0;
   }
   .login,
   .header-info,
   .search {
     background: #8dc63f;
+  }
+  .login,
+  .search {
+    margin: 0 -15px;
   }
   .login-container {
     display: block;
@@ -339,9 +333,7 @@
     min-width: initial;
     overflow: initial;
     margin: 0;
-    width: calc(100% + 60px);
-    margin-right: -30px;
-    margin-left: -30px;
+    width: 100%;
   }
   .search > .fa-search,
   .login .fa {
@@ -355,6 +347,19 @@
   .navbar-fixed-bottom,
   .navbar-fixed-top {
     z-index: 89;
+  }
+  #portal-searchbox {
+    box-shadow: -2px 6px 5px 0 #00000078;
+  }
+  .login:before {
+    width: 100%;
+    background-color: #FFF;
+    position: absolute;
+    min-width: 2000px;
+    min-height: 73px;
+    top: 0;
+    content: " ";
+    z-index: 0;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -578,6 +583,9 @@ textarea {
 .mobile-header a {
   text-decoration: none;
 }
+.toggle-down {
+  margin-left: 0;
+}
 .hiddenStructure {
   display: block;
   background: transparent none;
@@ -592,7 +600,6 @@ textarea {
   position: relative;
   min-height: 50px;
   margin-bottom: 20px;
-  border: 1px solid transparent;
 }
 .sr-only {
   position: absolute;
@@ -640,8 +647,7 @@ textarea {
   margin-top: 4px;
 }
 .navbar-collapse {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding: 0;
   overflow-x: visible;
   -webkit-overflow-scrolling: touch;
   border-top: 1px solid transparent;
@@ -678,6 +684,9 @@ textarea {
   #portal-searchbox input {
     font-size: 100%;
   }
+  .navbar {
+    border-bottom: 1px solid #e7e7e7;
+  }
   .navbar-toggle {
     position: absolute;
     top: 47px;
@@ -685,8 +694,19 @@ textarea {
     transform: translateY(-50%);
     margin: 0 1rem 0 0;
   }
-  .main-nav-item > a {
+  .main-nav {
+    padding: 0 15px;
+  }
+  .main-nav-item > a,
+  #portal-siteactions a {
     font-size: 1.9rem;
+  }
+  .sub-sub-menu-item {
+    margin-left: 0;
+  }
+  .sub-sub-menu-link,
+  .sub-menu-link {
+    font-size: 1.5rem;
   }
 }
 @media (min-width: 768px) {

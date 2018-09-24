@@ -183,16 +183,6 @@ label {
 .search {
   background-color: #FFF;
 }
-.login:before {
-  width: 100%;
-  background-color: #FFF;
-  position: absolute;
-  min-width: 2000px;
-  min-height: 73px;
-  top: 0;
-  content: " ";
-  z-index: 0;
-}
 .search > .fa-search,
 .login .fa {
   color: #5f5f5f;
@@ -239,7 +229,8 @@ label {
   display: flex;
   align-items: center;
 }
-.header-image img {
+.header-image img,
+.header-image picture {
   width: 100%;
   height: auto;
 }
@@ -269,7 +260,6 @@ label {
   float: none;
   order: 2;
   margin: -16px 0 0 auto;
-  box-shadow: -2px 6px 5px 0 #00000078;
 }
 #portal-searchbox form {
   max-width: 1024px;
@@ -418,15 +408,19 @@ label {
     display: block;
     position: relative;
     right: initial;
-    width: calc(100% + 60px);
+    width: 100%;
     margin-top: 2rem;
-    margin-right: -30px;
-    margin-left: -30px;
+    margin-right: 0;
+    margin-left: 0;
   }
   .login,
   .header-info,
   .search {
     background: #8dc63f;
+  }
+  .login,
+  .search {
+    margin: 0 -15px;
   }
   .login-container {
     display: block;
@@ -436,9 +430,7 @@ label {
     min-width: initial;
     overflow: initial;
     margin: 0;
-    width: calc(100% + 60px);
-    margin-right: -30px;
-    margin-left: -30px;
+    width: 100%;
   }
   .search > .fa-search,
   .login .fa {
@@ -452,6 +444,19 @@ label {
   .navbar-fixed-bottom,
   .navbar-fixed-top {
     z-index: 89;
+  }
+  #portal-searchbox {
+    box-shadow: -2px 6px 5px 0 #00000078;
+  }
+  .login:before {
+    width: 100%;
+    background-color: #FFF;
+    position: absolute;
+    min-width: 2000px;
+    min-height: 73px;
+    top: 0;
+    content: " ";
+    z-index: 0;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
