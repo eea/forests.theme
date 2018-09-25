@@ -6,15 +6,7 @@ jQuery(function($){
    $("#portal-globalnav").appendTo("#portal-globalnav-wrapper");
    $("#portal-header, #portal-footer, #portal-globalnav-wrapper").addClass('container');
    var $portal_columns = $("#portal-columns");
-   $portal_columns.removeClass('row');
-   var $left_column = $("#portal-column-one");
-   var $body = $("body");
-   if ($left_column.length) {
-      $body.addClass('fise-two-columns');
-   }
-   else {
-       $portal_columns.addClass('container');
-   }
+   $portal_columns.removeClass('row').addClass('container');
 
     $('.login i').on('click', function() {
         $(this).toggleClass('action-selected');

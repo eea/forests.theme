@@ -66,12 +66,6 @@ input[type=submit] {
 .row {
   margin: 0;
 }
-div.width-full {
-  width: 100%;
-}
-div.position-0 {
-  margin-left: -100%;
-}
 @media screen and (max-width: 767px) {
   div.width-full {
     width: 100%;
@@ -94,6 +88,34 @@ label {
 }
 .label {
   color: #000;
+}
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+table > tbody > tr > td,
+table > tfoot > tr > td,
+table > tfoot > tr > th,
+table > thead > tr > td,
+table > thead > tr > th {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+table.plain {
+  border-bottom: 2px solid #000;
+}
+table.plain th {
+  border-width: 0 0 2px 0;
+  border-color: #000;
+}
+table.plain td {
+  border-width: 0 0 1px 0;
+}
+.listing {
+  margin: 0.5em 0;
 }
 .mobile-header {
   font-family: 'Roboto', sans-serif;
@@ -653,12 +675,11 @@ ul {
   background: url("footer-bg.png") no-repeat center 100%;
   padding-bottom: 8em;
 }
-#portal-column-two {
-  background-color: #F7F7F7;
-  border: 1px solid #D6D6D9;
-}
 .documentFirstHeading {
   display: none;
+}
+.portaltype-plone-site .documentFirstHeading {
+  display: block;
 }
 .documentDescription {
   color: #333;
@@ -741,9 +762,14 @@ div.documentByLine {
 /* portlets */
 .portlet {
   padding: 1.5em;
+  background-color: #F7F7F7;
+  border: 1px solid #D6D6D9;
 }
 .portlet a {
   color: #333;
+}
+dl.portlet {
+  font-size: 100%;
 }
 dl.portlet dt {
   background-color: transparent;
