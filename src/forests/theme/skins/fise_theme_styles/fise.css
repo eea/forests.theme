@@ -694,7 +694,7 @@ div.documentByLine {
 }
 @media screen and (min-width: 768px) {
   #portal-breadcrumbs {
-    z-index: 101;
+    z-index: 98;
   }
 }
 /* content area styles */
