@@ -6,7 +6,7 @@
 
         <metal:external metal:use-macro="context/main_template/macros/external-header"></metal:external>
 
-        <meta name="viewport" content="width=device-width, initial-scale=0.6666, maximum-scale=2.0, minimum-scale=0.6666" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.0, minimum-scale=0.6666" />
         <script type="text/javascript" tal:attributes="src string:${context/portal_url}/bs-collapse.js"></script>
     </div>
 </metal:page>

@@ -13,9 +13,6 @@ table.controlpanel-listing td,
 table.controlpanel-listing th {
   font-size: 100%;
 }
-#rules_table_form {
-  margin: 0.5em 0;
-}
 #edit-bar ul {
   margin: 0;
 }
@@ -69,6 +66,12 @@ table.controlpanel-listing th {
 }
 .panel_wrapper div.current {
   height: auto !important;
+}
+#content .field textarea {
+  background-image: none;
+}
+#content .field input[type="text"] {
+  font-size: 1em;
 }
 #content fieldset {
   padding-top: 1em;

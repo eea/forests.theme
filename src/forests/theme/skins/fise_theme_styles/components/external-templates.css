@@ -1,10 +1,6 @@
 .mobile-header {
   font-family: 'Roboto', sans-serif;
 }
-.navbar-fixed-bottom .navbar-collapse,
-.navbar-fixed-top .navbar-collapse {
-  max-height: calc(100vh - 95px);
-}
 #portal-header {
   background: #8dc63f;
 }
@@ -125,7 +121,7 @@
   margin-right: -51px;
 }
 .header-image {
-  height: 220px;
+  height: 180px;
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -207,63 +203,6 @@
     margin: 0;
     padding: 0;
   }
-  .navbar-default {
-    background-color: #fef8f8;
-  }
-  #portal-header {
-    background-color: #ebe8df;
-    margin-top: 0;
-    justify-content: end;
-  }
-  #portal-globalnav {
-    margin: 1em 1em 0 1em;
-  }
-  #portal-globalnav li {
-    display: block;
-  }
-}
-@media screen and (min-width: 768px) {
-  #portal-top {
-    margin-bottom: 2em;
-  }
-  #portal-globalnav {
-    margin-bottom: 0;
-    display: flex;
-  }
-  #portal-header {
-    display: flex;
-    margin: 0 auto 0 auto;
-    height: 73px;
-    padding: 0;
-    z-index: 10;
-    position: relative;
-    box-shadow: 5px 2px 5px #000000ad;
-  }
-  .header {
-    background-color: #8dc63f;
-  }
-  .header-nav {
-    background-color: #eee;
-  }
-  #portal-globalnav-wrapper {
-    margin: 0 auto;
-  }
-  #portal-logo-link-header {
-    display: none;
-  }
-  .navbar-header {
-    float: none;
-  }
-  .navbar-fixed-top {
-    position: relative;
-    background-color: white;
-    border: 0;
-  }
-  #mobile-header-container {
-    padding: 0;
-  }
-}
-@media (max-width: 767px) {
   .navbar-fixed-bottom .navbar-collapse,
   .navbar-fixed-top .navbar-collapse {
     max-height: calc(100vh - 95px);
@@ -283,9 +222,23 @@
     background: white;
     text-align: center;
   }
+  .navbar-default {
+    background-color: #fef8f8;
+  }
+  #portal-header {
+    background-color: #ebe8df;
+    margin-top: 0;
+    justify-content: end;
+  }
   #portal-header,
   .header-image {
     background: #8dc63f;
+  }
+  #portal-globalnav {
+    margin: 1em 1em 0 1em;
+  }
+  #portal-globalnav li {
+    display: block;
   }
   #portal-logo {
     display: none;
@@ -343,10 +296,26 @@
     display: block;
   }
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .navbar-fixed-bottom,
   .navbar-fixed-top {
     z-index: 89;
+  }
+  #portal-top {
+    margin-bottom: 2em;
+  }
+  #portal-globalnav {
+    margin-bottom: 0;
+    display: flex;
+  }
+  #portal-header {
+    display: flex;
+    margin: 0 auto 0 auto;
+    height: 73px;
+    padding: 0;
+    z-index: 10;
+    position: relative;
+    box-shadow: 5px 2px 5px #000000ad;
   }
   #portal-searchbox {
     box-shadow: -2px 6px 5px 0 #00000078;
@@ -361,6 +330,29 @@
     content: " ";
     z-index: 0;
   }
+  .header {
+    background-color: #8dc63f;
+  }
+  .header-nav {
+    background-color: #eee;
+  }
+  #portal-globalnav-wrapper {
+    margin: 0 auto;
+  }
+  #portal-logo-link-header {
+    display: none;
+  }
+  .navbar-header {
+    float: none;
+  }
+  .navbar-fixed-top {
+    position: relative;
+    background-color: white;
+    border: 0;
+  }
+  #mobile-header-container {
+    padding: 0;
+  }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .main-nav-item {
@@ -374,7 +366,7 @@
   #portal-logo {
     position: absolute;
     left: 0;
-    top: 73px;
+    top: 95px;
   }
 }
 ul {
@@ -399,6 +391,7 @@ ul {
   z-index: 10;
   flex: 1;
   margin: 0;
+  padding: 0;
 }
 .main-nav-item {
   flex-grow: 1;
@@ -521,8 +514,9 @@ ul {
   }
 }
 @media (min-width: 763px) and (max-width: 920px) {
-  .main-nav-item > a {
-    font-size: 1.2rem;
+  .main-nav-item > a,
+  #portal-siteactions a {
+    font-size: 10pt;
   }
 }
 /* footer */
@@ -657,9 +651,6 @@ textarea {
 .collapse {
   display: none;
 }
-.navbar-collapse.in {
-  overflow-y: auto;
-}
 .collapse.in {
   display: block;
 }
@@ -676,6 +667,17 @@ textarea {
   -webkit-transition-property: height, visibility;
   -o-transition-property: height, visibility;
   transition-property: height, visibility;
+}
+#portal-header {
+  margin: 0 auto;
+}
+#portal-header:before,
+#portal-header:after {
+  display: table;
+  content: " ";
+}
+#portal-header:after {
+  clear: both;
 }
 @media (max-width: 767px) {
   #portal-top {
@@ -699,7 +701,7 @@ textarea {
   }
   .main-nav-item > a,
   #portal-siteactions a {
-    font-size: 1.9rem;
+    font-size: 1.5rem;
   }
   .sub-sub-menu-item {
     margin-left: 0;
@@ -710,11 +712,33 @@ textarea {
   }
 }
 @media (min-width: 768px) {
+  .navbar {
+    overflow-x: hidden;
+  }
   .navbar-toggle {
     display: none;
   }
   .collapse {
     display: block;
+  }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .header-image img,
+  .header-image picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .header-image-title {
+    font-size: 300%;
+    margin-left: 280px;
+    text-align: left;
+    position: relative;
+  }
+}
+@media (min-width: 1200px) {
+  #portal-header {
+    width: 1270px;
   }
 }
 /*# sourceMappingURL=external-templates.css.map */

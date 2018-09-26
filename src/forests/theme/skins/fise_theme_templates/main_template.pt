@@ -35,7 +35,7 @@
         <metal:styleslot define-slot="style_slot" />
         <metal:javascriptslot define-slot="javascript_head_slot" />
 
-        <meta name="viewport" content="width=device-width, initial-scale=0.6666, maximum-scale=1.0, minimum-scale=0.6666" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=0.6666" />
         <meta name="generator" content="Plone - http://plone.org" />
     </tal:notajax>
 </head>
@@ -76,7 +76,7 @@
                         <div class="header">
                             <div tal:replace="structure provider:plone.portaltop"></div>
 
-                        <div class="header-image" tal:condition="python: not external_header and 'frontpage' not in request.URL0">
+                        <div class="header-image" tal:condition="python:'frontpage' not in request.URL0">
                             <picture>
                                 <source media="(max-width: 767px)"
                                         srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
@@ -86,7 +86,7 @@
                                         tal:attributes="src string:${context/absolute_url}/header-image.jpg" alt="Header forest image" />
                             </picture>
 
-                            <h1 tal:content="context/Title" class="header-image-title">Page Title here</h1>
+                            <h1 tal:define="url_text context/REQUEST/htext|nothing; text python: url_text if url_text else context.Title()" tal:content="text" class="header-image-title">Page Title here</h1>
                         </div>
                          <metal:portal_top define-slot="portal_top" />
 

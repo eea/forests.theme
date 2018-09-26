@@ -91,9 +91,6 @@ button, input, select, textarea {
 .collapse {
     display: none;
 }
-.navbar-collapse.in {
-    overflow-y: auto;
-}
 
 .collapse.in {
     display: block;
@@ -111,6 +108,18 @@ button, input, select, textarea {
     -webkit-transition-property: height, visibility;
     -o-transition-property: height, visibility;
     transition-property: height, visibility;
+}
+
+#portal-header {
+  margin: 0 auto;
+}
+
+#portal-header:before, #portal-header:after {
+    display: table;
+    content: " ";
+}
+#portal-header:after {
+  clear: both;
 }
 @media (max-width: 767px) {
   #portal-top {
@@ -137,7 +146,7 @@ button, input, select, textarea {
   .main-nav-item > a,
   #portal-siteactions a
   {
-    font-size: 1.9rem;
+    font-size: 1.5rem;
   }
   .sub-sub-menu-item {
     margin-left: 0;
@@ -148,6 +157,9 @@ button, input, select, textarea {
   }
 }
 @media (min-width: 768px) {
+  .navbar {
+    overflow-x: hidden;
+  }
   .navbar-toggle {
     display: none;
   }
@@ -155,4 +167,23 @@ button, input, select, textarea {
     display: block;
   }
 
+}
+
+@media (min-width:768px) and (max-width: 1200px) {
+  .header-image img, .header-image picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .header-image-title {
+    font-size: 300%;
+    margin-left: 280px;
+    text-align: left;
+    position: relative;
+  }
+}
+@media (min-width: 1200px) {
+  #portal-header {
+    width: 1270px;
+  }
 }
