@@ -12,7 +12,7 @@ button, input, select, textarea {
     line-height: inherit;
 }
 .mobile-header a {
-    text-decoration: none;
+  text-decoration: none;
 }
 .toggle-down {
   margin-left: 0;
@@ -122,9 +122,9 @@ button, input, select, textarea {
   clear: both;
 }
 @media (max-width: 767px) {
-  #portal-top {
-    font-size: 180%;
-  }
+  //#portal-top {
+  //  font-size: 180%;
+  //}
   #portal-searchbox input {
     font-size: 100%;
   }
@@ -138,22 +138,36 @@ button, input, select, textarea {
     transform: translateY(-50%);
     margin: 0 1rem 0 0;
   }
-
+  .mobile-header a {
+    display: inline-block;
+  }
   .main-nav {
     padding: 0 15px;
   }
-  
+
   .main-nav-item > a,
   #portal-siteactions a
   {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .sub-menu {
+    min-width: inherit;
   }
   .sub-sub-menu-item {
     margin-left: 0;
   }
   .sub-sub-menu-link,
   .sub-menu-link {
-    font-size: 1.5rem;
+    font-size:15px;
+  }
+
+  .login, .search {
+    margin: 0;
+  }
+  .actionMenuContent, .actionMenuContent > ul {
+    margin: 0;
+    padding: 0;
   }
 }
 @media (min-width: 768px) {
@@ -169,7 +183,7 @@ button, input, select, textarea {
 
 }
 
-@media (min-width:768px) and (max-width: 1200px) {
+@media (min-width:768px) and (max-width: 1023px) {
   .header-image img, .header-image picture {
     position: absolute;
     top: 0;

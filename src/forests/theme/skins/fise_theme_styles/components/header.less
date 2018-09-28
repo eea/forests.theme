@@ -150,13 +150,12 @@
   position: absolute;
   margin: auto;
   font-weight: bold;
-  font-size: 325%;
   width: 100%;
   text-shadow: 0 1px 5px black;
 }
 
 #portal-siteactions a {
-  font-size: 1.4rem;
+  font-size: 15px;
   margin-right: 1rem;
   margin-left: 1rem;
   color: @mute-gray;
@@ -238,11 +237,11 @@
     margin: 0 1rem 0 0;
   }
   .nav-logo {
-    max-width: 180px;
+    max-width: 155px;
   }
   .navbar-header {
     background: white;
-    text-align: center;
+    text-align: left;
   }
   .navbar-default {
     background-color: #fef8f8;
@@ -270,6 +269,7 @@
   #portal-siteactions {
     display: block;
     width: 100%;
+    text-align: center;
   }
 
   #portal-siteactions a {
@@ -342,7 +342,6 @@
     display: flex;
     //flex-wrap: wrap;
     margin: 0 auto 0 auto;
-    height: 73px;
     padding: 0;
     z-index: 10;
     position: relative;
@@ -357,7 +356,7 @@
     background-color: @light-color;
     position: absolute;
     min-width: 2000px;
-    min-height: 73px;
+    height: 100%;
     top: 0;
     content: " ";
     z-index: 0;
@@ -395,13 +394,36 @@
   }
   #portal-header {
     width: 100%;
+    height: 55px;
   }
-}
 
-@media screen and (max-width: 1200px) {
   #portal-logo {
     position: absolute;
     left: 0;
-    top: 95px;
+    top: 75px;
+  }
+}
+
+@media (min-width:1024px) {
+  #portal-header {
+    height: 73px;
+  }
+  .header-image-title {
+    font-size: 325%;
+  }
+}
+@media (min-width:1024px) and (max-width: 1200px) {
+  #portal-logo img {
+    max-width: 220px;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  #portal-header {
+    max-width: 1270px;
+  }
+  #portal-siteactions a {
+    font-size: 1.4rem;
   }
 }
