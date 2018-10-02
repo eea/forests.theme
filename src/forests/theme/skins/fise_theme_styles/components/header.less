@@ -246,6 +246,9 @@
   .navbar-default {
     background-color: #fef8f8;
   }
+  #portal-top {
+    font-size: 100%;
+  }
   #portal-header {
     background-color: #ebe8df;
     margin-top: 0;
@@ -262,6 +265,11 @@
     display: block;
   }
 
+  // from external-templates
+  #portal-searchbox input {
+    font-size: 100%;
+  }
+
   #portal-logo {
     display: none;
   }
@@ -274,7 +282,7 @@
 
   #portal-siteactions a {
     color: @light-color;
-    font-size: 3rem;
+    font-size: 18px;
   }
 
   #siteaction-about {
@@ -300,9 +308,6 @@
   .login, .header-info, .search {
     background: @primary-green;
   }
-  .login, .search {
-    margin: 0 -15px;
-  }
 
   .login-container {
     display: block;
@@ -327,7 +332,7 @@
 @media screen and (min-width: 768px) {
 
   .navbar-fixed-bottom, .navbar-fixed-top {
-    z-index: 89;
+    z-index: 88;
   }
   #portal-top {
     margin-bottom: 2em;
@@ -343,27 +348,30 @@
     //flex-wrap: wrap;
     margin: 0 auto 0 auto;
     padding: 0;
-    z-index: 10;
+    z-index: 90;
     position: relative;
-    box-shadow: 5px 2px 5px #000000ad;
+    box-shadow: 0 8px 8px -5px #000000ad;
   }
 
   #portal-searchbox {
     box-shadow: -2px 6px 5px 0 #00000078;
   }
-  .login:before {
-    width: 100%;
-    background-color: @light-color;
-    position: absolute;
-    min-width: 2000px;
-    height: 100%;
-    top: 0;
-    content: " ";
-    z-index: 0;
-  }
   .header {
     background-color: @primary-green;
     //box-shadow: 0 3px 2px rgba(0, 0, 0, 0.40);
+  }
+  .header:after {
+    background-color: @light-color;
+    position: absolute;
+    width: 50%;
+    height: 73px;
+    top: 0;
+    right: 0;
+    content: " ";
+    z-index: 0;
+  }
+  .header-image-title {
+    font-size: 2em;
   }
   .header-nav {
     background-color: #eee;
@@ -392,6 +400,9 @@
   .main-nav-item {
     padding: 0 0.5em;
   }
+  .header:after {
+    height: 55px;
+  }
   #portal-header {
     width: 100%;
     height: 55px;
@@ -405,6 +416,9 @@
 }
 
 @media (min-width:1024px) {
+  .header:after {
+    height: 73px;
+  }
   #portal-header {
     height: 73px;
   }

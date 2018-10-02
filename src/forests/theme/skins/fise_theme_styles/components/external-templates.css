@@ -224,6 +224,9 @@
   .navbar-default {
     background-color: #fef8f8;
   }
+  #portal-top {
+    font-size: 100%;
+  }
   #portal-header {
     background-color: #ebe8df;
     margin-top: 0;
@@ -239,6 +242,9 @@
   #portal-globalnav li {
     display: block;
   }
+  #portal-searchbox input {
+    font-size: 100%;
+  }
   #portal-logo {
     display: none;
   }
@@ -249,7 +255,7 @@
   }
   #portal-siteactions a {
     color: #FFF;
-    font-size: 3rem;
+    font-size: 18px;
   }
   #siteaction-about {
     display: block;
@@ -274,10 +280,6 @@
   .search {
     background: #8dc63f;
   }
-  .login,
-  .search {
-    margin: 0 -15px;
-  }
   .login-container {
     display: block;
     top: initial;
@@ -299,7 +301,7 @@
 @media screen and (min-width: 768px) {
   .navbar-fixed-bottom,
   .navbar-fixed-top {
-    z-index: 89;
+    z-index: 88;
   }
   #portal-top {
     margin-bottom: 2em;
@@ -312,25 +314,28 @@
     display: flex;
     margin: 0 auto 0 auto;
     padding: 0;
-    z-index: 10;
+    z-index: 90;
     position: relative;
-    box-shadow: 5px 2px 5px #000000ad;
+    box-shadow: 0 8px 8px -5px #000000ad;
   }
   #portal-searchbox {
     box-shadow: -2px 6px 5px 0 #00000078;
   }
-  .login:before {
-    width: 100%;
+  .header {
+    background-color: #8dc63f;
+  }
+  .header:after {
     background-color: #FFF;
     position: absolute;
-    min-width: 2000px;
-    height: 100%;
+    width: 50%;
+    height: 73px;
     top: 0;
+    right: 0;
     content: " ";
     z-index: 0;
   }
-  .header {
-    background-color: #8dc63f;
+  .header-image-title {
+    font-size: 2em;
   }
   .header-nav {
     background-color: #eee;
@@ -357,6 +362,9 @@
   .main-nav-item {
     padding: 0 0.5em;
   }
+  .header:after {
+    height: 55px;
+  }
   #portal-header {
     width: 100%;
     height: 55px;
@@ -368,6 +376,9 @@
   }
 }
 @media (min-width: 1024px) {
+  .header:after {
+    height: 73px;
+  }
   #portal-header {
     height: 73px;
   }
@@ -494,7 +505,7 @@ ul {
     flex-direction: column;
   }
   .main-nav-item > a {
-    font-size: 3rem;
+    font-size: 18px;
     width: 100%;
     display: block;
   }
@@ -508,13 +519,14 @@ ul {
     display: none;
   }
   .sub-menu-link {
-    font-size: 2rem;
+    font-size: 15px;
   }
   .sub-menu {
     padding: 1rem;
+    min-width: inherit;
   }
   .sub-sub-menu-link {
-    font-size: 2rem;
+    font-size: 15px;
     margin-bottom: 2rem;
   }
 }
@@ -705,9 +717,6 @@ textarea {
   clear: both;
 }
 @media (max-width: 767px) {
-  #portal-searchbox input {
-    font-size: 100%;
-  }
   .navbar {
     border-bottom: 1px solid #e7e7e7;
   }
@@ -721,26 +730,8 @@ textarea {
   .mobile-header a {
     display: inline-block;
   }
-  .main-nav {
-    padding: 0 15px;
-  }
-  .main-nav-item > a,
-  #portal-siteactions a {
-    font-size: 1.1rem;
-  }
-  .sub-menu {
-    min-width: inherit;
-  }
-  .sub-sub-menu-item {
-    margin-left: 0;
-  }
-  .sub-sub-menu-link,
-  .sub-menu-link {
-    font-size: 15px;
-  }
-  .login,
-  .search {
-    margin: 0;
+  .sub-sub-menu-wrapper {
+    padding: 0;
   }
   .actionMenuContent,
   .actionMenuContent > ul {
@@ -749,14 +740,18 @@ textarea {
   }
 }
 @media (min-width: 768px) {
-  .navbar {
-    overflow-x: hidden;
-  }
   .navbar-toggle {
     display: none;
   }
   .collapse {
     display: block;
+  }
+  .fise-search-header-wrapper #portal-top {
+    display: block;
+    margin: 0;
+  }
+  #navbar-collapse {
+    display: block !important;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -773,9 +768,9 @@ textarea {
     position: relative;
   }
 }
-@media (min-width: 1200px) {
-  #portal-header {
-    width: 1270px;
+@media (min-width: 1280px) {
+  .fise-search-header-wrapper #portal-top {
+    display: block;
   }
 }
 /*# sourceMappingURL=external-templates.css.map */

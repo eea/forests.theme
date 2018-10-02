@@ -122,12 +122,6 @@ button, input, select, textarea {
   clear: both;
 }
 @media (max-width: 767px) {
-  //#portal-top {
-  //  font-size: 180%;
-  //}
-  #portal-searchbox input {
-    font-size: 100%;
-  }
   .navbar {
     border-bottom: 1px solid #e7e7e7;
   }
@@ -141,44 +135,31 @@ button, input, select, textarea {
   .mobile-header a {
     display: inline-block;
   }
-  .main-nav {
-    padding: 0 15px;
+
+
+  .sub-sub-menu-wrapper {
+    padding: 0;
   }
 
-  .main-nav-item > a,
-  #portal-siteactions a
-  {
-    font-size: 1.1rem;
-  }
-
-  .sub-menu {
-    min-width: inherit;
-  }
-  .sub-sub-menu-item {
-    margin-left: 0;
-  }
-  .sub-sub-menu-link,
-  .sub-menu-link {
-    font-size:15px;
-  }
-
-  .login, .search {
-    margin: 0;
-  }
   .actionMenuContent, .actionMenuContent > ul {
     margin: 0;
     padding: 0;
   }
 }
 @media (min-width: 768px) {
-  .navbar {
-    overflow-x: hidden;
-  }
   .navbar-toggle {
     display: none;
   }
   .collapse {
     display: block;
+  }
+  // custom fix to be removed after nfi cleanup
+  .fise-search-header-wrapper #portal-top {
+    display: block;
+    margin: 0;
+  }
+  #navbar-collapse {
+    display: block !important;
   }
 
 }
@@ -196,8 +177,14 @@ button, input, select, textarea {
     position: relative;
   }
 }
-@media (min-width: 1200px) {
-  #portal-header {
-    width: 1270px;
+
+@media (min-width:1280px) {
+  .fise-search-header-wrapper #portal-top {
+    display: block;
   }
 }
+//@media (min-width: 1200px) {
+//  #portal-header {
+//    width: 1270px;
+//  }
+//}

@@ -4,7 +4,7 @@ jQuery(function($){
    }
    $("#edit-bar").appendTo('.page-container');
    $("#portal-globalnav").appendTo("#portal-globalnav-wrapper");
-   $("#portal-header, #portal-footer, #portal-globalnav-wrapper").addClass('container');
+   $("#portal-footer, #portal-globalnav-wrapper").addClass('container');
    var $portal_columns = $("#portal-columns");
    $portal_columns.removeClass('row').addClass('container');
 
