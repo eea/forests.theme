@@ -331,7 +331,7 @@ table.plain td {
     top: 47px;
     right: 0;
     transform: translateY(-50%);
-    margin: 0 1rem 0 0;
+    margin: 0 10px 0 0;
   }
   .nav-logo {
     max-width: 155px;
@@ -611,7 +611,7 @@ ul {
   border: none;
   background-color: transparent;
   padding: 0;
-  margin-left: 1rem;
+  margin-left: 0;
   color: inherit;
 }
 @media (max-width: 767px) {
@@ -660,7 +660,6 @@ ul {
   }
   .main-nav-item:hover > .sub-menu-wrapper {
     display: flex;
-    margin-top: 73px;
     box-shadow: 0 2px 3px #00000047, inset 0 2px 3px #00000047;
   }
 }
@@ -668,6 +667,16 @@ ul {
   .main-nav-item > a,
   #portal-siteactions a {
     font-size: 10pt;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .main-nav-item:hover > .sub-menu-wrapper {
+    margin-top: 55px;
+  }
+}
+@media (min-width: 1024px) {
+  .main-nav-item:hover > .sub-menu-wrapper {
+    margin-top: 73px;
   }
 }
 @media (min-width: 1280px) {
@@ -900,4 +909,3 @@ a.managePortletsFallback {
 .right-aligned {
   margin: 0 0 0 auto;
 }
-/*# sourceMappingURL=fise.css.map */

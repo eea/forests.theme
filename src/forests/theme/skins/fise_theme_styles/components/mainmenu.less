@@ -112,7 +112,7 @@ ul {
   border: none;
   background-color: transparent;
   padding: 0;
-  margin-left: 1rem;
+  margin-left: 0;
   color: inherit;
 }
 
@@ -166,13 +166,24 @@ ul {
   }
   .main-nav-item:hover > .sub-menu-wrapper {
     display: flex;
-    margin-top: 73px;
     box-shadow: 0 2px 3px #00000047, inset 0 2px 3px #00000047;
 }
 }
 @media (min-width: 763px) and (max-width: 920px) {
   .main-nav-item>a, #portal-siteactions a {
     font-size: 10pt;
+  }
+}
+
+@media (min-width: 768px) and (max-width:1023px) {
+  .main-nav-item:hover > .sub-menu-wrapper {
+    margin-top: 55px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-nav-item:hover > .sub-menu-wrapper {
+    margin-top: 73px;
   }
 }
 
