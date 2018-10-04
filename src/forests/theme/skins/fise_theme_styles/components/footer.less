@@ -24,6 +24,7 @@
 .portal-footer-logos {
   align-items: center;
   font-size: 1.2rem;
+  flex-wrap: wrap;
 }
 .footer-hr {
   border-color: @light-color;
@@ -41,4 +42,15 @@
 
 .cc-cookies {
   width: 100%;
+}
+
+@media (max-width: 500px) {
+  .portal-footer-logos .right-aligned {
+    margin: 0;
+  }
+}
+@media (max-width: 767px) {
+  .portal-footer-logos {
+    width: 100%;
+  }
 }
