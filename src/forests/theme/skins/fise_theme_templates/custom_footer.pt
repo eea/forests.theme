@@ -7,7 +7,7 @@
                 </p>
                 <a href="/about-us">More</a>
             </div>
-            <div class="col-md-3 col-md-offset-2">
+            <div class="col-md-3 col-md-offset-2 offset-md-2">
               <h5 class="bold">Links</h5>
                 <ul class="list">
                     <li><a tal:attributes="href string:${portal_url}/legal/">Legal notice</a></li>
