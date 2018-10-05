@@ -114,6 +114,12 @@
   /* because of slider on homepage which has 150 */
   border-top: 7px solid #8dc63f;
   border-radius: 0 0 6px 6px;
+  transition: height 200ms ease-in-out;
+}
+.login-container.is-visible,
+#portal-searchbox.is-visible {
+  display: block;
+  height: auto;
 }
 .login-container {
   top: calc(100% - 2rem);
@@ -757,6 +763,13 @@ textarea {
 #portal-header:after {
   clear: both;
 }
+.login-container,
+#portal-searchbox {
+  height: 0;
+}
+.login-container {
+  margin-top: calc(100% - 1.2em);
+}
 @media (max-width: 767px) {
   .navbar {
     border-bottom: 1px solid #e7e7e7;
@@ -809,4 +822,3 @@ textarea {
     display: block;
   }
 }
-/*# sourceMappingURL=external-templates.css.map */

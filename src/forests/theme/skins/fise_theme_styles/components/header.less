@@ -122,9 +122,14 @@
   overflow: hidden;
   top: calc(100% - 4px);
   z-index: 151; /* because of slider on homepage which has 150 */
-  //margin-top: -14px;
   border-top: 7px solid #8dc63f;
   border-radius: 0 0 6px 6px;
+  transition: height 200ms ease-in-out;
+}
+
+.login-container.is-visible, #portal-searchbox.is-visible {
+  display: block;
+  height: auto;
 }
 
 .login-container {

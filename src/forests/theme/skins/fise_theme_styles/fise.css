@@ -233,6 +233,12 @@ table.plain td {
   /* because of slider on homepage which has 150 */
   border-top: 7px solid #8dc63f;
   border-radius: 0 0 6px 6px;
+  transition: height 200ms ease-in-out;
+}
+.is-visible,
+#portal-searchbox.is-visible {
+  display: block;
+  height: auto;
 }
 .login-container {
   top: calc(100% - 2rem);
@@ -937,4 +943,3 @@ a.managePortletsFallback {
 .right-aligned {
   margin: 0 0 0 auto;
 }
-/*# sourceMappingURL=fise.css.map */
