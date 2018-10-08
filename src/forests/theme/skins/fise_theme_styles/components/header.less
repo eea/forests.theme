@@ -3,6 +3,10 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.navbar-fixed-bottom, .navbar-fixed-top {
+  z-index: 88;
+}
+
 #portal-header {
   background: @primary-green;
 }
@@ -50,6 +54,9 @@
   font-family: 'FontAwesome', serif;
   content: "\f002";
   position: absolute;
+}
+input.searchPage {
+  font-size: 95% !important; // overriding plone important
 }
 .fise-search-icon {
   width: 20px;
@@ -336,13 +343,20 @@
   #portal-personaltools-wrapper {
     display: block;
   }
+
+  fieldset#search-field {
+    text-align: left;
+  }
+  .searchPage {
+    margin-top: 1em;
+  }
+  #searchResultsSort {
+    float: left;
+  }
 }
 
 @media screen and (min-width: 768px) {
 
-  .navbar-fixed-bottom, .navbar-fixed-top {
-    z-index: 88;
-  }
   #portal-top {
     margin-bottom: 2em;
   }
@@ -405,6 +419,7 @@
   #mobile-header-container {
     padding: 0;
   }
+  
 }
 
 @media (min-width:768px) and (max-width:1023px) {
