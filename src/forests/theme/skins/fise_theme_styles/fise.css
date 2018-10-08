@@ -235,7 +235,7 @@ table.plain td {
   border-radius: 0 0 6px 6px;
   transition: height 200ms ease-in-out;
 }
-.is-visible,
+.login-container.is-visible,
 #portal-searchbox.is-visible {
   display: block;
   height: auto;
@@ -400,6 +400,11 @@ table.plain td {
     margin-right: 0;
     margin-left: 0;
   }
+  #portal-searchbox,
+  .login-container {
+    height: auto !important;
+    display: block !important;
+  }
   .login,
   .header-info,
   .search {
@@ -507,6 +512,12 @@ table.plain td {
     margin-left: 280px;
     text-align: left;
     position: relative;
+  }
+  .login-container {
+    margin-top: calc(100% - 3em);
+  }
+  #portal-searchbox {
+    margin-top: -5px;
   }
   .main-nav-item {
     padding: 0 0.5em;
@@ -943,3 +954,4 @@ a.managePortletsFallback {
 .right-aligned {
   margin: 0 0 0 auto;
 }
+/*# sourceMappingURL=fise.css.map */
