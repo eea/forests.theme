@@ -1,14 +1,468 @@
 <?xml version="1.0"?>
-<object name="portal_css">
-  <stylesheet title="" cacheable="True" compression="safe"
-    cookable="True" enabled="1" expression="" id="fise.css"
-    media="" rel="stylesheet" rendering="link" insert-after="++resource++plone.app.widgets.css" />
-  <stylesheet title="" cacheable="True" compression="safe"
-    cookable="True" enabled="1" expression="" id="bootstrap.min.css"
-    media="" rel="stylesheet" rendering="link" insert-before="fise.css" />
+<object name="portal_css" meta_type="Stylesheets Registry" purge="True">
 
-  <stylesheet title="" cacheable="True" compression="safe"
-    cookable="True" enabled="1" expression="" id="admin.css"
-    media="" rel="stylesheet" rendering="link" insert-after="authoring.css" />
+ <!-- Styles to remove since they are not required -->
+ <stylesheet  id="++resource++jquery.css" remove="True" />
+ <stylesheet  id="++resource++jquery.select2uislider.css" remove="True" />
+ <stylesheet  id="RTL.css" remove="True" />
+ <stylesheet  id="deprecated.css" remove="True" />
+ <stylesheet  id="navtree.css" remove="True" />
+ <stylesheet  id="invisibles.css" remove="True" />
+ <stylesheet  id="IEFixes.css" remove="True" />
 
+ <!-- Actual stylesheet bundle -->
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="reset.css" media="screen"
+    rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="base.css"
+    insert-after="reset.css" media="screen" rel="stylesheet"
+    rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="False" expression="" id="public.css"
+    insert-after="base.css" media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="jqueryui" cacheable="True" compression="none"
+    conditionalcomment="" cookable="True" enabled="on" expression=""
+    id="collective.js.jqueryui.custom.min.css" insert-after="public.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="columns.css"
+    insert-after="collective.js.jqueryui.custom.min.css" media="screen"
+    rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="portlets.css"
+    insert-after="columns.css" media="screen" rel="stylesheet"
+    rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="forms.css"
+    insert-after="portlets.css" media="screen" rel="stylesheet"
+    rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="deprecated" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression=""
+    id="++resource++tinymce.stylesheets/tinymce.css"
+    insert-after="forms.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="print.css"
+    insert-after="++resource++tinymce.stylesheets/tinymce.css" media="print"
+    rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="mobile.css"
+    insert-after="print.css"
+    media="handheld, screen and (max-device-width: 480px)" rel="stylesheet"
+    rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression=""
+    id="++resource++plone.app.jquerytools.overlays.css"
+    insert-after="mobile.css" media="screen" rel="stylesheet"
+    rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="deprecated" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression=""
+    id="++resource++plone.app.jquerytools.dateinput.css"
+    insert-after="++resource++plone.app.jquerytools.overlays.css"
+    media="screen" rel="stylesheet" rendering="import"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression=""
+    id="++resource++plone.formwidget.datetime/styles.css"
+    insert-after="++resource++plone.app.jquerytools.dateinput.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="True" authenticated="False"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression=""
+    id="++resource++plone.formwidget.recurrence/jquery.recurrenceinput.css"
+    insert-after="++resource++plone.formwidget.datetime/styles.css"
+    media="all" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="True" authenticated="False"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression=""
+    id="++resource++plone.formwidget.recurrence/integration.css"
+    insert-after="++resource++plone.formwidget.recurrence/jquery.recurrenceinput.css"
+    media="all" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression=""
+    id="++resource++plone.app.event/event.css"
+    insert-after="++resource++plone.formwidget.recurrence/integration.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="deprecated" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression=""
+    id="++resource++plone.formwidget.autocomplete/jquery.autocomplete.css"
+    insert-after="++resource++plone.app.event/event.css" media="screen"
+    rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="deprecated" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression=""
+    id="++resource++plone.formwidget.contenttree/contenttree.css"
+    insert-after="++resource++plone.formwidget.autocomplete/jquery.autocomplete.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="deprecated" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression=""
+    id="++resource++plone.formwidget.querystring.querywidget.css"
+    insert-after="++resource++plone.formwidget.contenttree/contenttree.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="deprecated" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression=""
+    id="++resource++collection.css"
+    insert-after="++resource++plone.formwidget.querystring.querywidget.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression=""
+    id="++resource++collective.cover/css/contentchooser.css"
+    insert-after="++resource++collection.css" media="screen" rel="stylesheet"
+    rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression=""
+    id="++resource++collective.cover/css/cover.css"
+    insert-after="++resource++collective.cover/css/contentchooser.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="True" authenticated="False"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression=""
+    id="++resource++select2/select2.css"
+    insert-after="++resource++collective.cover/css/cover.css" media="screen"
+    rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-view" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') "
+    id="++resource++eea.faceted-navigation.css"
+    insert-after="++resource++select2/select2.css" media="screen"
+    rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-view" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') "
+    id="++resource++eea.facetednavigation.widgets.text.view.css"
+    insert-after="++resource++eea.faceted-navigation.css" media="screen"
+    rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-view" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') "
+    id="++resource++eea.facetednavigation.widgets.tal.view.css"
+    insert-after="++resource++eea.facetednavigation.widgets.text.view.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-view" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') "
+    id="++resource++eea.facetednavigation.widgets.tagscloud.view.css"
+    insert-after="++resource++eea.facetednavigation.widgets.tal.view.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-view" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') "
+    id="++resource++eea.facetednavigation.widgets.sorting.view.css"
+    insert-after="++resource++eea.facetednavigation.widgets.tagscloud.view.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-view" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') "
+    id="++resource++eea.facetednavigation.widgets.select.view.css"
+    insert-after="++resource++eea.facetednavigation.widgets.sorting.view.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-view" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') "
+    id="++resource++eea.facetednavigation.widgets.resultsperpage.view.css"
+    insert-after="++resource++eea.facetednavigation.widgets.select.view.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-view" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') "
+    id="++resource++eea.facetednavigation.widgets.resultsfilter.view.css"
+    insert-after="++resource++eea.facetednavigation.widgets.resultsperpage.view.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-view" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') "
+    id="++resource++eea.facetednavigation.widgets.range.view.css"
+    insert-after="++resource++eea.facetednavigation.widgets.resultsfilter.view.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-view" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') "
+    id="++resource++eea.facetednavigation.widgets.radio.view.css"
+    insert-after="++resource++eea.facetednavigation.widgets.range.view.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-view" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') "
+    id="++resource++eea.facetednavigation.widgets.portlet.view.css"
+    insert-after="++resource++eea.facetednavigation.widgets.radio.view.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-view" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') "
+    id="++resource++eea.facetednavigation.widgets.path.view.css"
+    insert-after="++resource++eea.facetednavigation.widgets.portlet.view.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-view" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') "
+    id="++resource++eea.facetednavigation.widgets.etag.view.css"
+    insert-after="++resource++eea.facetednavigation.widgets.path.view.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-view" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') "
+    id="++resource++eea.facetednavigation.widgets.debug.view.css"
+    insert-after="++resource++eea.facetednavigation.widgets.etag.view.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-view" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') "
+    id="++resource++eea.facetednavigation.widgets.daterange.view.css"
+    insert-after="++resource++eea.facetednavigation.widgets.debug.view.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-view" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') "
+    id="++resource++eea.facetednavigation.widgets.date.view.css"
+    insert-after="++resource++eea.facetednavigation.widgets.daterange.view.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-view" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') "
+    id="++resource++eea.facetednavigation.widgets.criteria.view.css"
+    insert-after="++resource++eea.facetednavigation.widgets.date.view.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-view" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') "
+    id="++resource++eea.facetednavigation.widgets.checkbox.view.css"
+    insert-after="++resource++eea.facetednavigation.widgets.criteria.view.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-view" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') "
+    id="++resource++eea.facetednavigation.widgets.autocomplete.view.css"
+    insert-after="++resource++eea.facetednavigation.widgets.checkbox.view.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-view" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') "
+    id="++resource++eea.facetednavigation.widgets.alphabets.view.css"
+    insert-after="++resource++eea.facetednavigation.widgets.autocomplete.view.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-edit" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on"
+    expression="python:'configure_faceted.html' in request.URL0"
+    id="++resource++eea.faceted-navigation-edit.css"
+    insert-after="++resource++eea.facetednavigation.widgets.alphabets.view.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-edit" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on"
+    expression="python:'configure_faceted.html' in request.URL0"
+    id="++resource++eea.facetednavigation.widgets.text.edit.css"
+    insert-after="++resource++eea.faceted-navigation-edit.css" media="screen"
+    rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-edit" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on"
+    expression="python:'configure_faceted.html' in request.URL0"
+    id="++resource++eea.facetednavigation.widgets.tal.edit.css"
+    insert-after="++resource++eea.facetednavigation.widgets.text.edit.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-edit" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on"
+    expression="python:'configure_faceted.html' in request.URL0"
+    id="++resource++eea.facetednavigation.widgets.tagscloud.edit.css"
+    insert-after="++resource++eea.facetednavigation.widgets.tal.edit.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-edit" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on"
+    expression="python:'configure_faceted.html' in request.URL0"
+    id="++resource++eea.facetednavigation.widgets.sorting.edit.css"
+    insert-after="++resource++eea.facetednavigation.widgets.tagscloud.edit.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-edit" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on"
+    expression="python:'configure_faceted.html' in request.URL0"
+    id="++resource++eea.facetednavigation.widgets.select.edit.css"
+    insert-after="++resource++eea.facetednavigation.widgets.sorting.edit.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-edit" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on"
+    expression="python:'configure_faceted.html' in request.URL0"
+    id="++resource++eea.facetednavigation.widgets.resultsperpage.edit.css"
+    insert-after="++resource++eea.facetednavigation.widgets.select.edit.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-edit" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on"
+    expression="python:'configure_faceted.html' in request.URL0"
+    id="++resource++eea.facetednavigation.widgets.resultsfilter.edit.css"
+    insert-after="++resource++eea.facetednavigation.widgets.resultsperpage.edit.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-edit" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on"
+    expression="python:'configure_faceted.html' in request.URL0"
+    id="++resource++eea.facetednavigation.widgets.range.edit.css"
+    insert-after="++resource++eea.facetednavigation.widgets.resultsfilter.edit.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-edit" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on"
+    expression="python:'configure_faceted.html' in request.URL0"
+    id="++resource++eea.facetednavigation.widgets.radio.edit.css"
+    insert-after="++resource++eea.facetednavigation.widgets.range.edit.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-edit" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on"
+    expression="python:'configure_faceted.html' in request.URL0"
+    id="++resource++eea.facetednavigation.widgets.portlet.edit.css"
+    insert-after="++resource++eea.facetednavigation.widgets.radio.edit.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-edit" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on"
+    expression="python:'configure_faceted.html' in request.URL0"
+    id="++resource++eea.facetednavigation.widgets.path.edit.css"
+    insert-after="++resource++eea.facetednavigation.widgets.portlet.edit.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-edit" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on"
+    expression="python:'configure_faceted.html' in request.URL0"
+    id="++resource++eea.facetednavigation.widgets.etag.edit.css"
+    insert-after="++resource++eea.facetednavigation.widgets.path.edit.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-edit" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on"
+    expression="python:'configure_faceted.html' in request.URL0"
+    id="++resource++eea.facetednavigation.widgets.debug.edit.css"
+    insert-after="++resource++eea.facetednavigation.widgets.etag.edit.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-edit" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on"
+    expression="python:'configure_faceted.html' in request.URL0"
+    id="++resource++eea.facetednavigation.widgets.daterange.edit.css"
+    insert-after="++resource++eea.facetednavigation.widgets.debug.edit.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-edit" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on"
+    expression="python:'configure_faceted.html' in request.URL0"
+    id="++resource++eea.facetednavigation.widgets.date.edit.css"
+    insert-after="++resource++eea.facetednavigation.widgets.daterange.edit.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-edit" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on"
+    expression="python:'configure_faceted.html' in request.URL0"
+    id="++resource++eea.facetednavigation.widgets.criteria.edit.css"
+    insert-after="++resource++eea.facetednavigation.widgets.date.edit.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-edit" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on"
+    expression="python:'configure_faceted.html' in request.URL0"
+    id="++resource++eea.facetednavigation.widgets.checkbox.edit.css"
+    insert-after="++resource++eea.facetednavigation.widgets.criteria.edit.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-edit" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on"
+    expression="python:'configure_faceted.html' in request.URL0"
+    id="++resource++eea.facetednavigation.widgets.autocomplete.edit.css"
+    insert-after="++resource++eea.facetednavigation.widgets.checkbox.edit.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="faceted-edit" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on"
+    expression="python:'configure_faceted.html' in request.URL0"
+    id="++resource++eea.facetednavigation.widgets.alphabets.edit.css"
+    insert-after="++resource++eea.facetednavigation.widgets.autocomplete.edit.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+   cookable="True" enabled="on" expression="" id="authoring.css"
+   insert-after="++resource++eea.facetednavigation.widgets.alphabets.edit.css" media="screen" rel="stylesheet"
+   rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="True"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="member.css"
+    insert-after="authoring.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="True"
+   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+   cookable="True" enabled="on" expression="" id="++resource++plone.app.discussion.stylesheets/discussion.css"
+   insert-after="member.css"
+   media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+   cookable="True" enabled="on" expression="" id="controlpanel.css"
+   insert-after="++resource++plone.app.discussion.stylesheets/discussion.css" media="screen" rel="stylesheet"
+   rendering="link"/>
+ <stylesheet title="" applyPrefix="True" authenticated="True" bundle="default"
+    cacheable="True" compression="none" conditionalcomment="" cookable="True"
+    enabled="on" expression="" id="++resource++plone.app.widgets.css"
+    insert-after="controlpanel.css" media="screen" rel="stylesheet"
+    rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="True"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="admin.css"
+    insert-after="++resource++plone.app.widgets.css" media="" rel="stylesheet"
+    rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="default" cacheable="False" compression="none"
+    conditionalcomment="" cookable="False" enabled="on" expression=""
+    id="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    insert-after="admin.css" media="" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression=""
+    id="++resource++collective.z3cform.datagridfield/datagridfield.css"
+    insert-after="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression=""
+    id="++resource++collective.cookiecuttr/cookiecuttr.css"
+    insert-after="++resource++collective.z3cform.datagridfield/datagridfield.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="slick.css"
+    insert-after="++resource++collective.cookiecuttr/cookiecuttr.css" media=""
+    rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="bootstrap.min.css"
+    insert-after="slick.css" media="" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="fise.css"
+    insert-after="bootstrap.min.css" media="" rel="stylesheet"
+    rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="ploneCustom.css"
+    insert-after="fise.css" media="all" rel="stylesheet" rendering="link"/>
 </object>
+
