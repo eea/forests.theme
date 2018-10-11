@@ -4,11 +4,21 @@
  <!-- Styles to remove since they are not required -->
  <stylesheet  id="++resource++jquery.css" remove="True" />
  <stylesheet  id="++resource++jquery.select2uislider.css" remove="True" />
+ <stylesheet  id="++resource++select2/select2.css" remove="True" />
  <stylesheet  id="RTL.css" remove="True" />
  <stylesheet  id="deprecated.css" remove="True" />
  <stylesheet  id="navtree.css" remove="True" />
+ <stylesheet  id="slick.css" remove="True" />
  <stylesheet  id="invisibles.css" remove="True" />
  <stylesheet  id="IEFixes.css" remove="True" />
+ <stylesheet  id="++resource++plone.app.jquerytools.dateinput.css" remove="True" />
+ <stylesheet  id="++resource++plone.formwidget.recurrence/jquery.recurrenceinput.css" remove="True" />
+ <stylesheet  id="++resource++plone.formwidget.recurrence/integration.css" remove="True" />
+ <stylesheet  id="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" remove="True" />
+ 
+
+
+
 
  <!-- Actual stylesheet bundle -->
  <stylesheet title="" applyPrefix="False" authenticated="False"
@@ -76,26 +86,8 @@
  <stylesheet title="" applyPrefix="False" authenticated="False"
     bundle="default" cacheable="True" compression="safe" conditionalcomment=""
     cookable="True" enabled="on" expression=""
-    id="++resource++plone.formwidget.datetime/styles.css"
-    insert-after="++resource++plone.app.jquerytools.dateinput.css"
-    media="screen" rel="stylesheet" rendering="link"/>
- <stylesheet title="" applyPrefix="True" authenticated="False"
-    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-    cookable="True" enabled="on" expression=""
-    id="++resource++plone.formwidget.recurrence/jquery.recurrenceinput.css"
-    insert-after="++resource++plone.formwidget.datetime/styles.css"
-    media="all" rel="stylesheet" rendering="link"/>
- <stylesheet title="" applyPrefix="True" authenticated="False"
-    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-    cookable="True" enabled="on" expression=""
-    id="++resource++plone.formwidget.recurrence/integration.css"
-    insert-after="++resource++plone.formwidget.recurrence/jquery.recurrenceinput.css"
-    media="all" rel="stylesheet" rendering="link"/>
- <stylesheet title="" applyPrefix="False" authenticated="False"
-    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-    cookable="True" enabled="on" expression=""
     id="++resource++plone.app.event/event.css"
-    insert-after="++resource++plone.formwidget.recurrence/integration.css"
+    insert-after="++resource++plone.app.jquerytools.dateinput.css"
     media="screen" rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
     bundle="deprecated" cacheable="True" compression="safe"
@@ -122,28 +114,10 @@
     insert-after="++resource++plone.formwidget.querystring.querywidget.css"
     media="screen" rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
-    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-    cookable="True" enabled="on" expression=""
-    id="++resource++collective.cover/css/contentchooser.css"
-    insert-after="++resource++collection.css" media="screen" rel="stylesheet"
-    rendering="link"/>
- <stylesheet title="" applyPrefix="False" authenticated="False"
-    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-    cookable="True" enabled="on" expression=""
-    id="++resource++collective.cover/css/cover.css"
-    insert-after="++resource++collective.cover/css/contentchooser.css"
-    media="screen" rel="stylesheet" rendering="link"/>
- <stylesheet title="" applyPrefix="True" authenticated="False"
-    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-    cookable="True" enabled="on" expression=""
-    id="++resource++select2/select2.css"
-    insert-after="++resource++collective.cover/css/cover.css" media="screen"
-    rel="stylesheet" rendering="link"/>
- <stylesheet title="" applyPrefix="False" authenticated="False"
     bundle="faceted-view" cacheable="True" compression="safe"
     conditionalcomment="" cookable="True" enabled="on" expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') "
     id="++resource++eea.faceted-navigation.css"
-    insert-after="++resource++select2/select2.css" media="screen"
+    insert-after="++resource++collection.css" media="screen"
     rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
     bundle="faceted-view" cacheable="True" compression="safe"
@@ -399,7 +373,7 @@
     id="++resource++eea.facetednavigation.widgets.alphabets.edit.css"
     insert-after="++resource++eea.facetednavigation.widgets.autocomplete.edit.css"
     media="screen" rel="stylesheet" rendering="link"/>
- <stylesheet title="" applyPrefix="False" authenticated="False"
+ <stylesheet title="" applyPrefix="False" authenticated="True"
    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
    cookable="True" enabled="on" expression="" id="authoring.css"
    insert-after="++resource++eea.facetednavigation.widgets.alphabets.edit.css" media="screen" rel="stylesheet"
@@ -414,11 +388,32 @@
    cookable="True" enabled="on" expression="" id="++resource++plone.app.discussion.stylesheets/discussion.css"
    insert-after="member.css"
    media="screen" rel="stylesheet" rendering="link"/>
- <stylesheet title="" applyPrefix="False" authenticated="False"
+ <stylesheet title="" applyPrefix="False" authenticated="Tue"
    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
    cookable="True" enabled="on" expression="" id="controlpanel.css"
    insert-after="++resource++plone.app.discussion.stylesheets/discussion.css" media="screen" rel="stylesheet"
    rendering="link"/>
+
+ <stylesheet title="" applyPrefix="False" authenticated="True"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression=""
+    id="++resource++collective.cover/css/contentchooser.css"
+    insert-after="controlpanel.css" media="screen" rel="stylesheet"
+    rendering="link"/>
+
+ <stylesheet title="" applyPrefix="False" authenticated="True"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression=""
+    id="++resource++collective.cover/css/cover.css"
+    insert-after="++resource++collective.cover/css/contentchooser.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+
+ <stylesheet title="" applyPrefix="False" authenticated="True"
+   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+   cookable="True" enabled="on" expression=""
+   id="++resource++plone.formwidget.datetime/styles.css"
+   insert-after="++resource++collective.cover/css/cover.css"
+   media="screen" rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="True" authenticated="True" bundle="default"
     cacheable="True" compression="none" conditionalcomment="" cookable="True"
     enabled="on" expression="" id="++resource++plone.app.widgets.css"
@@ -429,32 +424,27 @@
     cookable="True" enabled="on" expression="" id="admin.css"
     insert-after="++resource++plone.app.widgets.css" media="" rel="stylesheet"
     rendering="link"/>
- <stylesheet title="" applyPrefix="False" authenticated="False"
-    bundle="default" cacheable="False" compression="none"
-    conditionalcomment="" cookable="False" enabled="on" expression=""
-    id="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    insert-after="admin.css" media="" rel="stylesheet" rendering="link"/>
- <stylesheet title="" applyPrefix="False" authenticated="False"
+ <stylesheet title="" applyPrefix="False" authenticated="True"
     bundle="default" cacheable="True" compression="safe" conditionalcomment=""
     cookable="True" enabled="on" expression=""
     id="++resource++collective.z3cform.datagridfield/datagridfield.css"
-    insert-after="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    insert-after="font-awesome.min.css"
     media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="default" cacheable="True" compression="none"
+    conditionalcomment="" cookable="True" enabled="on" expression=""
+    id="font-awesome.min.css"
+    insert-after="++resource++collective.z3cform.datagridfield/datagridfield.css" media="" rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
     bundle="default" cacheable="True" compression="safe" conditionalcomment=""
     cookable="True" enabled="on" expression=""
     id="++resource++collective.cookiecuttr/cookiecuttr.css"
-    insert-after="++resource++collective.z3cform.datagridfield/datagridfield.css"
+    insert-after="font-awesome.min.css"
     media="screen" rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
     bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-    cookable="True" enabled="on" expression="" id="slick.css"
-    insert-after="++resource++collective.cookiecuttr/cookiecuttr.css" media=""
-    rel="stylesheet" rendering="link"/>
- <stylesheet title="" applyPrefix="False" authenticated="False"
-    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
     cookable="True" enabled="on" expression="" id="bootstrap.min.css"
-    insert-after="slick.css" media="" rel="stylesheet" rendering="link"/>
+    insert-after="++resource++collective.cookiecuttr/cookiecuttr.css" media="" rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
     bundle="default" cacheable="True" compression="safe" conditionalcomment=""
     cookable="True" enabled="on" expression="" id="fise.css"
