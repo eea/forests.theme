@@ -5,6 +5,8 @@
  <javascript  id="styleswitcher.js" remove="True" />
  <javascript  id="accessibility.js" remove="True" />
  <javascript  id="jquery.slick.js" remove="True" />
+ <javascript  id="++resource++collective.galleria.js" remove="True" />
+ 
 
  <javascript authenticated="True" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
@@ -206,23 +208,30 @@
     inline="False"
     insert-after="++resource++collective.cover/js/vendor/jquery.endless-scroll.js"/>
 
+ <javascript authenticated="True" bundle="default" cacheable="True"
+    compression="none" conditionalcomment="" cookable="True" enabled="True"
+    expression=""
+    id="++resource++collective.z3cform.datagridfield/datagridfield.js"
+    inline="False"
+    insert-after="++resource++collective.cover/js/layout_edit.js"/>
+
  <javascript authenticated="False" bundle="default" cacheable="True"
    compression="safe" conditionalcomment="" cookable="True" enabled="True"
    expression="python: '@@search' in request.ACTUAL_URL" id="modernizr.js" inline="False"
-   insert-after="++resource++collective.cover/js/layout_edit.js"/>
+   insert-after="++resource++collective.z3cform.datagridfield/datagridfield.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
    compression="safe" conditionalcomment="" cookable="True" enabled="True"
    expression="python: '@@search' in request.ACTUAL_URL" id="++resource++search.js" inline="False"
    insert-after="modernizr.js"/>
 
 
- <javascript authenticated="False" bundle="default" cacheable="True"
+ <javascript authenticated="True" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression=""
     id="++resource++plone.formwidget.recurrence/jquery.tmpl-beta1.js"
     inline="False"
-    insert-after="++resource++collective.cover/js/layout_edit.js"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
+    insert-after="++resource++search.js"/>
+ <javascript authenticated="True" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression=""
     id="++resource++plone.formwidget.recurrence/jquery.recurrenceinput.js"
@@ -266,7 +275,7 @@
     compression="none" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="++resource++collective.js.bootstrap/js/bootstrap.min.js"
     inline="False" insert-after="++resource++collective.galleria.js"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
+ <javascript authenticated="True" bundle="default" cacheable="True"
     compression="none" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="++resource++collective.cover/js/main.js" inline="False"
     insert-after="++resource++collective.js.bootstrap/js/bootstrap.min.js"/>
@@ -276,27 +285,23 @@
     insert-after="++resource++collective.cover/js/main.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++jquery.ajaxfileupload.js" inline="False"
-    insert-after="++resource++jquery.cookie.js"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++jquery.bbq.js" inline="False"
+    expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') " id="++resource++jquery.bbq.js" inline="False"
     insert-after="++resource++jquery.ajaxfileupload.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++jquery.jstree.js" inline="False"
+    expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') " id="++resource++jquery.jstree.js" inline="False"
     insert-after="++resource++jquery.bbq.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++jquery.select2uislider.js" inline="False"
+    expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') " id="++resource++jquery.select2uislider.js" inline="False"
     insert-after="++resource++jquery.jstree.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++jquery.tagcloud.js" inline="False"
+    expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') " id="++resource++jquery.tagcloud.js" inline="False"
     insert-after="++resource++jquery.select2uislider.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="none" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++select2/select2.min.js" inline="False"
+    expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') " id="++resource++select2/select2.min.js" inline="False"
     insert-after="++resource++jquery.tagcloud.js"/>
  <javascript authenticated="False" bundle="faceted-view" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
@@ -422,15 +427,9 @@
     expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') " id="++resource++eea.faceted-navigation-expand.js"
     inline="False"
     insert-after="++resource++eea.faceted-navigation-independent.js"/>
- <javascript authenticated="False" bundle="faceted-edit" cacheable="True"
+ <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="python:'configure_faceted.html' in request.URL0"
-    id="++resource++eea.faceted-navigation-edit.js" inline="False"
-    insert-after="++resource++eea.faceted-navigation-expand.js"/>
- <javascript authenticated="False" bundle="faceted-edit" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="python:'configure_faceted.html' in request.URL0"
-    id="++resource++eea.facetednavigation.widgets.text.edit.js" inline="False"
+    id="++resource++eea.facetednaviation.widgets.text.edit.js" inline="False"
     insert-after="++resource++eea.faceted-navigation-edit.js"/>
  <javascript authenticated="False" bundle="faceted-edit" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
@@ -537,16 +536,10 @@
     inline="False"
     insert-after="++resource++eea.facetednavigation.widgets.autocomplete.edit.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="none" conditionalcomment="" cookable="True" enabled="True"
-    expression=""
-    id="++resource++collective.z3cform.datagridfield/datagridfield.js"
-    inline="False"
-    insert-after="++resource++eea.facetednavigation.widgets.alphabets.edit.js"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="++resource++collective.cookiecuttr/jquery.cookie.js"
     inline="False"
-    insert-after="++resource++collective.z3cform.datagridfield/datagridfield.js"/>
+    insert-after="++resource++eea.facetednavigation.widgets.alphabets.edit.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression=""
