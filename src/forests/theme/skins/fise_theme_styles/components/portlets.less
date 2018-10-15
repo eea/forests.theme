@@ -6,12 +6,9 @@
   border: 1px solid #D6D6D9;
 }
 .portlet a {
-  color: @primary-text-color;
+  color: @link-color;
 }
 
-dl.portlet {
-  font-size: 100%;
-}
 dl.portlet dt {
   background-color: transparent;
   padding: 0.42em 0;
@@ -47,4 +44,21 @@ dl.portlet ul.navTree li a:hover {
 div.managePortletsLink, a.managePortletsFallback  {
   background-color: white;
   border: 2px solid green;
+}
+
+@media (width:768px) {
+  dl.portlet {
+    font-size: 80%;
+    padding: 1em;
+  }
+
+  dl.portlet dt {
+    font-size: 115%;
+  }
+}
+
+@media (min-width:1025px) {
+  dl.portlet {
+    font-size: 100%;
+  }
 }
