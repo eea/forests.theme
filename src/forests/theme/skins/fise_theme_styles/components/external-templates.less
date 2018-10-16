@@ -131,9 +131,10 @@ button, input, select, textarea {
 #portal-header:after {
   clear: both;
 }
-
-
-
+// workaround for nfi which uses fontawesome 4.5 instead of 4.7
+.login .fa-user {
+  font-size: 1.5em;
+}
 
 @media (max-width: 767px) {
   .navbar {
