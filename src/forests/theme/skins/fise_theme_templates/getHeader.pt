@@ -5,9 +5,8 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.0, minimum-scale=0.6666"  tal:condition="not:context/REQUEST/skipviewport|nothing" />
 
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-            tal:condition="context/REQUEST/ufa|nothing"
-        />
+        <link rel="stylesheet" tal:attributes="href string:${context/portal_url}/font-awesome.min.css"
+            tal:condition="context/REQUEST/ufa|nothing" />
 
         <link rel="stylesheet" href="" tal:attributes="href string:${context/portal_url}/components/external-templates.css" />
 

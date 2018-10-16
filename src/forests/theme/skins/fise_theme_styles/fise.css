@@ -922,7 +922,7 @@ a.managePortletsFallback {
 }
 @media (min-width: 1025px) {
   dl.portlet {
-    font-size: 100%;
+    font-size: 95%;
   }
 }
 /* footer */
