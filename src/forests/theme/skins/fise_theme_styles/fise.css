@@ -811,7 +811,7 @@ div.documentByLine {
 @media screen and (width: 768px) {
   #portal-columns {
     margin: 0;
-    width: 752px;
+    width: 768px;
     padding: 0;
   }
 }
@@ -849,6 +849,7 @@ div.documentByLine {
   font-weight: lighter;
   font-size: 1.3em;
   font-style: italic;
+  margin-left: 5px;
 }
 .pullquote:before {
   top: -15px;
@@ -913,7 +914,7 @@ a.managePortletsFallback {
 }
 @media (width: 768px) {
   dl.portlet {
-    font-size: 80%;
+    font-size: 79%;
     padding: 1em;
   }
   dl.portlet dt {
@@ -998,3 +999,4 @@ a.managePortletsFallback {
 .right-aligned {
   margin: 0 0 0 auto;
 }
+/*# sourceMappingURL=fise.css.map */
