@@ -559,6 +559,17 @@ input.searchPage {
     font-size: 17px;
   }
 }
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .header-image {
+    display: block;
+  }
+  .header-image-title {
+    top: 35%;
+  }
+  input.searchPage {
+    font-size: 150% !important;
+  }
+}
 ul {
   list-style: none;
 }
