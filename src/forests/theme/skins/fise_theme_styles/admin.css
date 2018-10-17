@@ -91,6 +91,9 @@ div.formControls {
   width: 23.5%;
 }
 @media (max-width: 767px) {
+  #edit-bar {
+    z-index: 88;
+  }
   .contentActions,
   .contentActions::after {
     clear: both;
