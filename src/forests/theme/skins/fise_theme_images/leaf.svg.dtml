@@ -79,7 +79,7 @@
             <path d="M510.027,168.534c-21,-6 -23.667,-4.667 -38.333,-4.667c-14.667,0 -20.387,-3.745 -20.387,-3.745" style="fill:none;stroke:#666;stroke-width:2px;" />
             <path d="M464.027,226.2c-56,-0.333 -80.867,-24.285 -80.867,-24.285" style="fill:none;stroke:#666;stroke-width:2px;" />
             <path d="M401.027,265.2c0,0 -24.334,0.666 -42.667,-7c-18.333,-7.666 -27.73,-12.068 -27.73,-12.068" style="fill:none;stroke:#666;stroke-width:2px;" />
-            <a href="/indicators" class="option" target="blank">
+            <a href="/tools" class="option" target="blank">
                  <rect x="413.436" y="236.76" width="244.647" height="117" style="fill:transparent;" />
                 <g class="option-bg no-width">
                     <rect x="413.436" y="236.76" width="244.647" height="117" style="fill:#8dc63f;" />
@@ -88,7 +88,7 @@
                 </g>
                 <g class="option-content">
                     <g transform="matrix(1,0,0,1,-98.64,-73.8)">
-                        <text class="option-text" x="604.629px" y="404.024px" style="font-family:'Roboto-Medium', 'Roboto';font-weight:500;font-size:19.5px;fill:#1d1d1d;">INDICATORS</text>
+                        <text class="option-text" x="630px" y="404.024px" style="font-family:'Roboto-Medium', 'Roboto';font-weight:500;font-size:19.5px;fill:#1d1d1d;">TOOLS</text>
                     </g>
                     <path d="M468.11,300.7c0,-11.643 -9.439,-21.084 -21.083,-21.084c-11.643,0 -21.084,9.441 -21.084,21.084c0,11.645 9.441,21.083 21.084,21.083c11.644,0 21.083,-9.438 21.083,-21.083" style="fill:#fff;fill-rule:nonzero;" />
                     <path d="M468.11,300.699c0,-11.636 -9.447,-21.083 -21.083,-21.083c-11.637,0 -21.084,9.447 -21.084,21.083c0,11.637 9.447,21.084 21.084,21.084c11.636,0 21.083,-9.447 21.083,-21.084Z" style="fill:none;stroke:#999;stroke-width:2px;" />
