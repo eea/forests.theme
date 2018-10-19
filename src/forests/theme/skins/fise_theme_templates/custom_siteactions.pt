@@ -1,6 +1,7 @@
 <div class="header-info"
     tal:define="portal_url context/plone_portal_state/portal_url">
     <ul id="portal-siteactions">
-        <li><a href="http://nfi-search.dev.eaudeweb.ro/">NFI search</a></li>
+        <li><a href="http://nfi-search.dev.eaudeweb.ro/">Data Search</a></li>
     </ul>
 </div>
+
