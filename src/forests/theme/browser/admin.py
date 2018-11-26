@@ -6,6 +6,7 @@ from zope import schema
 from z3c.form import button
 from Products.CMFCore.utils import getToolByName
 from zope.interface import (Invalid, invariant)
+from Products.Five import BrowserView
 
 
 class InvalidMenuConfiguration(Invalid):
@@ -60,3 +61,34 @@ class MainNavigationMenuEdit(form.SchemaForm):
         self.ptool._updateProperty('main_navigation_menu', data['menu'])
 
         self.status = u"Saved, please check."
+
+
+class GoPDB(BrowserView):
+    """pdb view
+    """
+
+    def __call__(self):
+        #mtool = getToolByName(self.context, 'portal_membership')
+        #has = mtool.checkPermission("Manage portal", self.context)
+
+        #this code is helpful in debugging inheritance trees
+        #pyflakes complains that it's unused, so we disable it here
+        #enable if you need it
+#       def classtree(cls, indent):
+#           """ method used in conjunction with instantree to display class
+#               tree
+#           """
+#           print '.'*indent, cls.__name__        # print class name here
+#           for supercls in cls.__bases__:        # recur to all superclasses
+#               classtree(supercls, indent+3)     # may visit super > once
+
+#       def instancetree(inst):
+#           """ Helper method to recursively print all superclasses
+#           """
+#           print 'Tree of', inst                 # show instance
+#           classtree(inst.__class__, 3)          # climb to its class
+
+        import pdb
+        pdb.set_trace()
+
+        return "Ok"
