@@ -55,7 +55,8 @@
         for="*"
         name="queryMatrixData"
         class=".matrix.QueryMatrixData"
-        permission="cmf.ManagePortal"
+        allowed_attributes="get_table_data"
+        permission="zope2.View"
         />
 
   <browser:viewlet

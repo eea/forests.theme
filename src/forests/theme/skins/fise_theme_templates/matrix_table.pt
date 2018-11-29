@@ -1,0 +1,29 @@
+<tal:block tal:define="foo python:request.set('disable_plone.leftcolumn', 1);
+        bar python:request.set('disable_plone.rightcolumn', 1);"/>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+         i18n:domain="plone.z3cform"
+         metal:use-macro="context/main_template/macros/master">
+
+<body>
+<metal:content metal:fill-slot="content">
+
+    <div class="matrix-content clearfix"
+        tal:define="tview nocall:context/queryMatrixData; data tview/get_table_data">
+        <table class="table table-responsive table-striped">
+            <tal:rows tal:repeat="rows data">
+                <tr tal:condition="python:repeat['rows'].index == 0">
+                    <th tal:repeat="item rows" tal:content="item">Heading name</th>
+                </tr>
+                <tr tal:condition="python:repeat['rows'].index != 0">
+                    <td tal:repeat="item rows" tal:content="item">Column name</td>
+                </tr>
+            </tal:rows>
+            
+        </table>
+    </div>
+</metal:content>
+</body>
+</html>
