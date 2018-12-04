@@ -8,22 +8,90 @@
          metal:use-macro="context/main_template/macros/master">
 
 <body>
+<metal:css fill-slot="style_slot">
+  <link type="text/css" rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+    <style>
+        #matrix_table th {
+            transform: rotate(270deg);
+            vertical-align: middle;
+            line-height: 2;
+        }
+    </style>
+</metal:css>
+
+<metal:js fill-slot="javascript_head_slot">
+  <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js">
+  </script>
+  <script>
+        $(document).ready( function () {
+            //$('#matrix_table').DataTable();
+            var $matrix_table = $('#matrix_table');
+            $matrix_table.find('td').click(function(ev) {
+              var td = ev.target;
+              var $row = $(ev.target).closest('tr');
+              var $tds = $row.find('td');
+              var num;
+
+              $tds.each(function(idx, el) {
+                if (el === td) {
+                    num = idx;
+                    return true;
+                }
+              });
+              var thead = $matrix_table.find('th').eq(num);
+              var from = thead.text();
+              var to = $tds.eq(0).text();
+                $.getJSON( "queryMatrixData", {
+                    From: from,
+                    To: to
+                }).done(function( data ) {
+                    var headers = data['columnDefs'];
+                    var columns = [];
+                    for(var header in headers) {
+                       columns.push({ title: header});
+                    }
+                    $('#matrix_table').DataTable({
+                        data: data,
+                        columns: columns
+                    });
+                });
+
+            });
+        });
+  </script>
+</metal:js>
+
+<metal:content metal:fill-slot="content-title">
+    <h1 class="documentFirstHeading">Land use reporting</h1>
+</metal:content>
 <metal:content metal:fill-slot="content">
 
     <div class="matrix-content clearfix"
         tal:define="tview nocall:context/queryMatrixData; data tview/get_table_data">
-        <table class="table table-responsive table-striped">
-            <tal:rows tal:repeat="rows data">
-                <tr tal:condition="python:repeat['rows'].index == 0">
-                    <th tal:repeat="item rows" tal:content="item">Heading name</th>
-                </tr>
-                <tr tal:condition="python:repeat['rows'].index != 0">
-                    <td tal:repeat="item rows" tal:content="item">Column name</td>
-                </tr>
-            </tal:rows>
+        <h2>TABLE 4.1 LAND TRANSITION MATRIX</h2>
+        <h3>Areas and changes in areas between the previous and the current inventory year</h3>
+
+        <table class="table table-responsive table-striped" id="matrix_table">
+                <thead>
+                <tal:rows tal:repeat="rows data">
+                    <tr tal:condition="python:repeat['rows'].index == 0">
+                        <th tal:repeat="item rows" tal:content="item">Heading name</th>
+                    </tr>
+                </tal:rows>
+                </thead>
+                    
+                <tbody> 
+                    <tal:rows tal:repeat="rows data">
+                    <tr tal:condition="python:repeat['rows'].index != 0">
+                        <td tal:repeat="item rows" tal:content="item">Column name</td>
+                    </tr>
+                    </tal:rows>
+                </tbody>
             
         </table>
     </div>
+
 </metal:content>
+
 </body>
 </html>
