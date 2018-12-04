@@ -11,10 +11,19 @@
 <metal:css fill-slot="style_slot">
   <link type="text/css" rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
     <style>
-        #matrix_table th {
+        #matrix_main_table th {
             transform: rotate(270deg);
             vertical-align: middle;
             line-height: 2;
+        }
+
+        #matrix_table {
+            display: block;
+            overflow: auto;
+        }
+
+        #matrix_table th:nth-of-type(4), #matrix_table td:nth-of-type(4) {
+            display: none;
         }
     </style>
 </metal:css>
@@ -25,8 +34,10 @@
   <script>
         $(document).ready( function () {
             //$('#matrix_table').DataTable();
-            var $matrix_table = $('#matrix_table');
-            $matrix_table.find('td').click(function(ev) {
+            var $matrix_main_table = $('#matrix_main_table');
+            var $matrix_table = $("#matrix_table");
+            var active_datatable;
+            $matrix_main_table.find('td').click(function(ev) {
               var td = ev.target;
               var $row = $(ev.target).closest('tr');
               var $tds = $row.find('td');
@@ -38,7 +49,7 @@
                     return true;
                 }
               });
-              var thead = $matrix_table.find('th').eq(num);
+              var thead = $matrix_main_table.find('th').eq(num);
               var from = thead.text();
               var to = $tds.eq(0).text();
                 $.getJSON( "queryMatrixData", {
@@ -48,14 +59,21 @@
                     var headers = data['columnDefs'];
                     var columns = [];
                     for(var header in headers) {
-                       columns.push({ title: header});
+                       columns.push({ title: headers[header]});
                     }
-                    $('#matrix_table').DataTable({
-                        data: data,
+                    $matrix_main_table.hide();
+                    active_datatable = $matrix_table.DataTable({
+                        "destroy": true,
+                        data: data['data'],
                         columns: columns
                     });
+                    $("#matrix_table_wrapper").show();
                 });
-
+                $(".main_table_link").click(function(ev) {
+                    ev.preventDefault();
+                    $("#matrix_table_wrapper").hide();
+                    $matrix_main_table.show();
+                });
             });
         });
   </script>
@@ -70,8 +88,9 @@
         tal:define="tview nocall:context/queryMatrixData; data tview/get_table_data">
         <h2>TABLE 4.1 LAND TRANSITION MATRIX</h2>
         <h3>Areas and changes in areas between the previous and the current inventory year</h3>
-
-        <table class="table table-responsive table-striped" id="matrix_table">
+        <a href="#" class="main_table_link">Original table</a>
+        <table id="matrix_table"></table>
+        <table class="table table-responsive table-striped" id="matrix_main_table">
                 <thead>
                 <tal:rows tal:repeat="rows data">
                     <tr tal:condition="python:repeat['rows'].index == 0">
