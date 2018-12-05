@@ -26,10 +26,12 @@ class ImportMatrixData(BrowserView):
                 matrix = anno[sheet_name]
             matrix['header'] = []
             for i in range(sheet.ncols):
-                matrix['header'].append(sheet.cell(0, i).value)
+                # datatable needs it's heading values to be string as such
+                # each header value is converted to string
+                matrix['header'].append(str(sheet.cell(0, i).value))
             for row in range(1, sheet.nrows):
                 fromv = sheet.cell(row, sheet_number).value
-                if not matrix.has_key(fromv):
+                if fromv not in matrix:
                     matrix[fromv] = []
                 matrix_list = matrix[fromv]
                 row_values = []
@@ -38,6 +40,39 @@ class ImportMatrixData(BrowserView):
                 matrix_list.append(row_values)
             sheet_number += 1
         return "Ok"
+
+class ImportMatrixFilters(BrowserView):
+    """ Matrix data filters import
+    """
+
+    def __call__(self):
+        form = self.context.REQUEST.form
+        num_of_rows = form.get('num_of_rows', 3)
+        site = getSite()
+        anno = IAnnotations(site)
+        matrix = anno.get("matrix_1")
+        if not matrix:
+            return "No matrix values have been set"
+        matrix['select_categories'] = OrderedDict()
+        header_values = matrix['header'][0:num_of_rows]
+        for value in header_values:
+            matrix['select_categories'][value] = []
+        matrix_keys = matrix.keys()
+        select_categories_keys = matrix['select_categories'].keys()
+        # remove header key
+        matrix_keys.pop(0)
+        # remove new select_categories key which is last
+        matrix_keys.pop(-1)
+        for key in matrix_keys:
+            rows = matrix[key]
+            for row in rows:
+                for idx, single_row in enumerate(row[0:num_of_rows]):
+                    category_list =  matrix['select_categories'][
+                            select_categories_keys[idx]]
+                    if single_row not in category_list:
+                        category_list.append(single_row)
+
+        return "OK"
 
 
 class QueryMatrixData(BrowserView):
@@ -91,3 +126,10 @@ class QueryMatrixData(BrowserView):
                 results_list.append(value[0])
             i += 1
         return results_list
+
+    @staticmethod
+    def get_table_filters():
+        site = getSite()
+        anno = IAnnotations(site)
+        matrix = anno.get('matrix_1', {})
+        return matrix.get('select_categories', {})
