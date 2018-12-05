@@ -54,13 +54,25 @@ class QueryMatrixData(BrowserView):
             bad_request = True 
         if not bad_request:
             rows = matrix.get(fromv, [])
-            for k, v in form.items():
-                if k != 'From':
-                    for idx, row in enumerate(rows):
-                        if v not in row:
-                            rows.pop(idx)
+            found = []
+            del form['From']
+            criterias = form.items()
+            criterias_len = len(criterias)
+            for idx, row in enumerate(rows):
+                matched_criterias = 0
+                for k, v in criterias:
+                    if isinstance(v, list):
+                        for entry in v:
+                            if entry in row:
+                                matched_criterias += 1
+                                break
+                    else:
+                        if v in row:
+                            matched_criterias += 1
+                    if criterias_len == matched_criterias:
+                        found.append(row)
             results['columnDefs'] = matrix['header']
-            results['data'] = rows
+            results['data'] = found
         self.context.REQUEST.response.setHeader("Content-type",
                                                 "application/json")
         return json.dumps(results)

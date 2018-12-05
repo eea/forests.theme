@@ -33,7 +33,6 @@
   </script>
   <script>
         $(document).ready( function () {
-            //$('#matrix_table').DataTable();
             var $matrix_main_table = $('#matrix_main_table');
             var $matrix_table = $("#matrix_table");
             var active_datatable;
