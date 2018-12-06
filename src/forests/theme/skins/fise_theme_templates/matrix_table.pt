@@ -46,16 +46,35 @@
             var $select_filters = $(".js-filters");
             var $from_select = $select_filters.eq(1);
             var $to_select = $select_filters.eq(2);
-            $select_filters.select2({
-                        placeholder: 'Select an option'
-            });
             var $matrix_table = $("#matrix_table");
             var active_datatable;
 
+            $select_filters.select2({
+                placeholder: 'Select an option'
+            });
+
             $select_filters.on('change', function (e, data) {
+                // avoid change logic when we clear data when clicking the original table link
                 if (data) {
                     return;
                 }
+
+                // get all values from given selectors
+                var $selects = $("select");
+                var jsonFilters = {};
+                $selects.each(function(idx, el) {
+                    var values = $(el).val();
+                    if (values) {
+                        jsonFilters[el.name] = values;
+                    }
+                });
+
+                // ajax query for new data will just populate the datatable rows
+                $.getJSON("queryMatrixData", jsonFilters).done(function(data) {
+                    var values = data['data'] || [];
+                    active_datatable.clear().rows.add(values).draw();
+                });
+
             });
 
             $matrix_main_table.find('td').click(function(ev) {
@@ -70,40 +89,59 @@
                     return true;
                 }
               });
+
+              // find out which row and column value we've clicked on
               var thead = $matrix_main_table.find('th').eq(num);
               var from = $tds.eq(0).text();
               var to = thead.text();
+
+              // change value of hidden selectors to the value we just clicked
               $from_select.val(from).trigger('change', {table_search: true});
               $to_select.val(to).trigger('change', {table_search: true});
-              $.getJSON( "queryMatrixData", {
-                  From: from,
-                  To: to
-              }).done(function( data ) {
-                  var headers = data['columnDefs'];
-                  var columns = [];
-                  for(var header in headers) {
-                     columns.push({ title: headers[header]});
-                  }
+
+              $.getJSON("queryMatrixData", {
+                  From: [from],
+                  To: [to]
+              }).done(function(data) {
+                  var headers, columns;
                   $matrix_main_table.hide();
                   $matrix_filters.removeClass('hidden');
-                  var options = {data: data['data']};
+
                   if (!$matrix_table.hasClass('dataTable')) {
-                      options['columns'] = columns;
-                      active_datatable = $matrix_table.DataTable(options);
+                    // initial datatable creation with columns and rows
+                    headers = data['columnDefs'];
+                    columns = [];
+
+                    for(var header in headers) {
+                        columns.push({ title: headers[header]});
+                    }
+
+                    active_datatable = $matrix_table.DataTable({
+                          'columns':columns,
+                          data: data['data'],
+                          "lengthChange": false,
+                          "searching": false,
+                          "pageLength":22
+                    });
                   }
                   else {
+                      // replace just the rows in case we already created the datatable
                       active_datatable.clear().rows.add(data['data']).draw();
                   }
                   
                   $("#matrix_table_wrapper").show();
               });
-              $(".main_table_link").click(function(ev) {
-                  ev.preventDefault();
-                  $("#matrix_table_wrapper").hide();
-                  $matrix_filters.addClass('hidden');
-                  $matrix_main_table.show();
-                  $select_filters.select2('data', null);
-              });
+
+
+            });
+
+            $(".main_table_link").click(function(ev) {
+                // hide non filter table and empty filtered table
+                ev.preventDefault();
+                $("#matrix_table_wrapper").hide();
+                $matrix_filters.addClass('hidden');
+                $matrix_main_table.show();
+                $select_filters.select2('data', null);
             });
         });
   </script>
@@ -123,7 +161,7 @@
             <h3>Filter by</h3>
             <tal:rows tal:repeat="rows filter_dict">
                 <label tal:attributes="for string:js-${rows}" tal:content="rows">From</label>
-                <select class="js-from" tal:attributes="name string:${rows}[]; class string:js-${rows} js-filters" multiple="multiple">
+                <select class="js-from" tal:attributes="name string:${rows}; class string:js-${rows} js-filters" multiple="multiple">
                 <tal:row tal:repeat="row python:values[repeat['rows'].index]">
                     <option tal:content="row" tal:attributes="value row">Alabama</option>
                 </tal:row>

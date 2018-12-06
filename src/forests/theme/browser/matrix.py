@@ -72,31 +72,37 @@ class QueryMatrixData(BrowserView):
         site = getSite()
         anno = IAnnotations(site)
         form = self.context.REQUEST.form
-        fromv = form.get('From')        
         bad_request = False
         matrix = anno.get('matrix_1')
         results = {}
-        if not matrix or not fromv:
+        if not matrix:
             bad_request = True 
         if not bad_request:
-            rows = matrix.get(fromv, [])
+            fromv = form.get('From[]', matrix.keys()[1:-2])
+            cleaned_form = {}
+            for k,v in form.items():
+                cleaned_form[k.split('[]')[0]] = v
             found = []
-            del form['From']
-            criterias = form.items()
+            select_criterias_keys = matrix['select_categories'].keys()
+            fromv = [fromv] if not isinstance(fromv, list) else fromv
+            criterias = cleaned_form.items()
             criterias_len = len(criterias)
-            for idx, row in enumerate(rows):
-                matched_criterias = 0
-                for k, v in criterias:
-                    if isinstance(v, list):
-                        for entry in v:
-                            if entry in row:
+            for value in fromv:
+                rows = matrix.get(value, [])
+                for row in rows:
+                    matched_criterias = 0
+                    for k, v in criterias:
+                        index = select_criterias_keys.index(k)
+                        if isinstance(v, list):
+                            for entry in v:
+                                if row[index] == entry:
+                                    matched_criterias += 1
+                                    break
+                        else:
+                            if row[index] == v:
                                 matched_criterias += 1
-                                break
-                    else:
-                        if v in row:
-                            matched_criterias += 1
-                    if criterias_len == matched_criterias:
-                        found.append(row)
+                        if criterias_len == matched_criterias:
+                            found.append(row)
             results['columnDefs'] = matrix['header']
             results['data'] = found
         self.context.REQUEST.response.setHeader("Content-type",
