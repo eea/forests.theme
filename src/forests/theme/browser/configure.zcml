@@ -51,13 +51,6 @@
         permission="cmf.ManagePortal"
         />
 
-  <browser:page
-    for="*"
-    name="importMatrixFilters"
-    class=".matrix.ImportMatrixFilters"
-    permission="cmf.ManagePortal"
-  />
-
  <browser:page
         for="*"
         name="queryMatrixData"

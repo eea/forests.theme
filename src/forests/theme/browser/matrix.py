@@ -43,40 +43,27 @@ class ImportMatrixData(BrowserView):
                     row_values.append(sheet.cell(row, col).value)
                 matrix_list.append(row_values)
             sheet_number += 1
-        return "Ok"
 
-class ImportMatrixFilters(BrowserView):
-    """ Matrix data filters import
-    """
-
-    def __call__(self):
+        # select categories import, if it runs within a different browserview
+        # then the data saved from this logic isn't persisted
         form = self.context.REQUEST.form
         num_of_rows = form.get('num_of_rows', 3)
-        site = getSite()
-        anno = IAnnotations(site)
-        matrix = anno.get("matrix_1")
-        if not matrix:
-            return "No matrix values have been set"
-        matrix['select_categories'] = OrderedDict()
+        matrix = anno["matrix_1"]
+        anno["matrix_1"]['select_categories'] = OrderedDict()
         header_values = matrix['header'][0:num_of_rows]
         for value in header_values:
             matrix['select_categories'][value] = []
         matrix_keys = matrix.keys()
         select_categories_keys = matrix['select_categories'].keys()
-        # remove header key
-        matrix_keys.pop(0)
-        # remove new select_categories key which is last
-        matrix_keys.pop(-1)
-        for key in matrix_keys:
+        for key in matrix_keys[1:-2]:
             rows = matrix[key]
             for row in rows:
                 for idx, single_row in enumerate(row[0:num_of_rows]):
-                    category_list = matrix['select_categories'][
+                    category_list = anno["matrix_1"]['select_categories'][
                             select_categories_keys[idx]]
                     if single_row not in category_list:
                         category_list.append(single_row)
-
-        return "OK"
+        return "Ok"
 
 
 class QueryMatrixData(BrowserView):
