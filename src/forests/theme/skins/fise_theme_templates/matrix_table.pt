@@ -28,6 +28,11 @@
         #matrix_table th {
             min-width: 95px;
         }
+
+        .js-filters {
+            max-width: 300px;
+            min-width: 250px;
+        }
     </style>
 </metal:css>
 
@@ -38,9 +43,21 @@
         $(document).ready( function () {
             var $matrix_main_table = $('#matrix_main_table');
             var $matrix_filters = $("#matrix_filters");
-            //$matrix_filters.select2();
+            var $select_filters = $(".js-filters");
+            var $from_select = $select_filters.eq(1);
+            var $to_select = $select_filters.eq(2);
+            $select_filters.select2({
+                        placeholder: 'Select an option'
+            });
             var $matrix_table = $("#matrix_table");
             var active_datatable;
+
+            $select_filters.on('change', function (e, data) {
+                if (data) {
+                    return;
+                }
+            });
+
             $matrix_main_table.find('td').click(function(ev) {
               var td = ev.target;
               var $row = $(ev.target).closest('tr');
@@ -54,32 +71,39 @@
                 }
               });
               var thead = $matrix_main_table.find('th').eq(num);
-              var from = thead.text();
-              var to = $tds.eq(0).text();
-                $.getJSON( "queryMatrixData", {
-                    From: from,
-                    To: to
-                }).done(function( data ) {
-                    var headers = data['columnDefs'];
-                    var columns = [];
-                    for(var header in headers) {
-                       columns.push({ title: headers[header]});
-                    }
-                    $matrix_main_table.hide();
-                    $matrix_filters.removeClass('hidden');
-                    active_datatable = $matrix_table.DataTable({
-                        "destroy": true,
-                        data: data['data'],
-                        columns: columns
-                    });
-                    $("#matrix_table_wrapper").show();
-                });
-                $(".main_table_link").click(function(ev) {
-                    ev.preventDefault();
-                    $("#matrix_table_wrapper").hide();
-                    $matrix_filters.addClass('hidden');
-                    $matrix_main_table.show();
-                });
+              var from = $tds.eq(0).text();
+              var to = thead.text();
+              $from_select.val(from).trigger('change', {table_search: true});
+              $to_select.val(to).trigger('change', {table_search: true});
+              $.getJSON( "queryMatrixData", {
+                  From: from,
+                  To: to
+              }).done(function( data ) {
+                  var headers = data['columnDefs'];
+                  var columns = [];
+                  for(var header in headers) {
+                     columns.push({ title: headers[header]});
+                  }
+                  $matrix_main_table.hide();
+                  $matrix_filters.removeClass('hidden');
+                  var options = {data: data['data']};
+                  if (!$matrix_table.hasClass('dataTable')) {
+                      options['columns'] = columns;
+                      active_datatable = $matrix_table.DataTable(options);
+                  }
+                  else {
+                      active_datatable.clear().rows.add(data['data']).draw();
+                  }
+                  
+                  $("#matrix_table_wrapper").show();
+              });
+              $(".main_table_link").click(function(ev) {
+                  ev.preventDefault();
+                  $("#matrix_table_wrapper").hide();
+                  $matrix_filters.addClass('hidden');
+                  $matrix_main_table.show();
+                  $select_filters.select2('data', null);
+              });
             });
         });
   </script>
@@ -98,8 +122,8 @@
         <div id="matrix_filters" class="hidden" tal:define="filter_dict tview/get_table_filters; keys filter_dict/keys; values filter_dict/values">
             <h3>Filter by</h3>
             <tal:rows tal:repeat="rows filter_dict">
-                <label tal:attributes="class string:js-${rows}" tal:content="rows">From</label>
-                <select class="js-from" tal:attributes="name string:${rows}[]; class string:js-${rows}" multiple="multiple">
+                <label tal:attributes="for string:js-${rows}" tal:content="rows">From</label>
+                <select class="js-from" tal:attributes="name string:${rows}[]; class string:js-${rows} js-filters" multiple="multiple">
                 <tal:row tal:repeat="row python:values[repeat['rows'].index]">
                     <option tal:content="row" tal:attributes="value row">Alabama</option>
                 </tal:row>

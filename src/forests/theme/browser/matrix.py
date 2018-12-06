@@ -21,7 +21,11 @@ class ImportMatrixData(BrowserView):
         for sheet in fcontents.sheets():
             sheet_name = 'matrix_%s' % sheet_number
             matrix = anno.get(sheet_name)
-            if not matrix:
+            if matrix:
+                anno.pop(sheet_name)
+                anno[sheet_name] = OrderedDict()
+                matrix = anno[sheet_name]
+            else:
                 anno[sheet_name] = OrderedDict()
                 matrix = anno[sheet_name]
             matrix['header'] = []
@@ -67,7 +71,7 @@ class ImportMatrixFilters(BrowserView):
             rows = matrix[key]
             for row in rows:
                 for idx, single_row in enumerate(row[0:num_of_rows]):
-                    category_list =  matrix['select_categories'][
+                    category_list = matrix['select_categories'][
                             select_categories_keys[idx]]
                     if single_row not in category_list:
                         category_list.append(single_row)
