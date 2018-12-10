@@ -55,7 +55,7 @@ class ImportMatrixData(BrowserView):
             matrix['select_categories'][value] = []
         matrix_keys = matrix.keys()
         select_categories_keys = matrix['select_categories'].keys()
-        for key in matrix_keys[1:-2]:
+        for key in matrix_keys[1:-1]:
             rows = matrix[key]
             for row in rows:
                 for idx, single_row in enumerate(row[0:num_of_rows]):
