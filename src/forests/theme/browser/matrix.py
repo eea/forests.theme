@@ -6,6 +6,14 @@ from zope.component.hooks import getSite
 from collections import OrderedDict
 
 
+def truncate(f, n):
+    '''Truncates/pads a float f to n decimal places without rounding'''
+    s = '{}'.format(f)
+    if 'e' in s or 'E' in s:
+        return '{0:.{1}f}'.format(f, n)
+    i, p, d = s.partition('.')
+    return '.'.join([i, (d+'0'*n)[:n]])
+
 class ImportMatrixData(BrowserView):
     """ Matrix data import
     """
@@ -40,7 +48,10 @@ class ImportMatrixData(BrowserView):
                 matrix_list = matrix[fromv]
                 row_values = []
                 for col in range(sheet.ncols):
-                    row_values.append(sheet.cell(row, col).value)
+                    cell_value = sheet.cell(row, col).value
+                    if type(cell_value) == float:
+                        cell_value = truncate(cell_value, 4)
+                    row_values.append(cell_value)
                 matrix_list.append(row_values)
             sheet_number += 1
 
@@ -103,7 +114,8 @@ class QueryMatrixData(BrowserView):
                                 matched_criterias += 1
                         if criterias_len == matched_criterias:
                             found.append(row)
-            results['columnDefs'] = matrix['header']
+            cdefs = matrix['header']
+            results['columnDefs'] = cdefs
             results['data'] = found
         self.context.REQUEST.response.setHeader("Content-type",
                                                 "application/json")
