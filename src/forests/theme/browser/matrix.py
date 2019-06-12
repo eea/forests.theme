@@ -49,8 +49,11 @@ class ImportMatrixData(BrowserView):
                 row_values = []
                 for col in range(sheet.ncols):
                     cell_value = sheet.cell(row, col).value
-                    if type(cell_value) == float:
+                    cell_type = type(cell_value)
+                    if cell_type == float:
                         cell_value = truncate(cell_value, 4)
+                    elif cell_type == unicode:
+                        cell_value = cell_value.strip()
                     row_values.append(cell_value)
                 matrix_list.append(row_values)
             sheet_number += 1
