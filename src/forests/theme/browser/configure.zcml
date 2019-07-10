@@ -59,13 +59,13 @@
         permission="zope2.View"
         />
 
-  <browser:viewlet
-    name="forests.sections"
-    manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
-    layer="forests.theme.interfaces.IForestsThemeLayer"
-    permission="zope2.View"
-    template="pt/sections-viewlet.pt"
-  />
+  <!-- <browser:viewlet -->
+  <!--   name="forests.sections" -->
+  <!--   manager="plone.app.layout.viewlets.interfaces.IPortalHeader" -->
+  <!--   layer="forests.theme.interfaces.IForestsThemeLayer" -->
+  <!--   permission="zope2.View" -->
+  <!--   template="pt/sections&#45;viewlet.pt" -->
+  <!-- /> -->
 
   <include package="z3c.jbot" file="meta.zcml" />
 
