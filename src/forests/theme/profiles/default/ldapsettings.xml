@@ -22,7 +22,7 @@
  <element key="server.anonymous" type="bool">False</element>
  <element key="server.ignore_cert" type="bool">True</element>
  <element key="server.page_size" type="int">900</element>
- <element key="server.password" type="string"></element>
+ <element key="server.password" type="string">you're joking, right?</element>
  <element key="server.uri"
     type="string">ldaps://ldap.eionet.europa.eu:636/</element>
  <element key="server.user"
