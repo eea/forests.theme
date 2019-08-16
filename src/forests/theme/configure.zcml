@@ -8,6 +8,7 @@
     i18n_domain="forests.theme">
 
   <five:registerPackage package="." initialize=".initialize" />
+  <includeDependencies package="." />
 
   <include package=".browser" />
 
@@ -18,7 +19,20 @@
       description="Installs the forests.theme package"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
-  <!-- -*- extra stuff goes here -*- -->
+
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="forests.theme: uninstall"
+      directory="profiles/uninstall"
+      description="Uninstalls the forests.theme add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.uninstall"
+      />
+
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="forests.theme-hiddenprofiles" />
 
   <cmf:registerDirectory name="skins" directory="skins" recursive="True" />
 
