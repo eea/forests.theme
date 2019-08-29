@@ -50,8 +50,43 @@ def add_catalog_indexes(context, wanted=None):
 def create_default_homepage():
     portal = api.portal.get()
 
-    tiles = {}
-    tiles_layout = []
+    tiles = {
+        "0358abe2-b4f1-463d-a279-a63ea80daf19": {
+            "@type": "description"
+        },
+        "07c273fc-8bfc-4e7d-a327-d513e5a945bb": {
+            "@type": "title"
+        },
+        "2dfe8e4c-5bf6-43f1-93e1-6c320ede7226": {
+            "@type": "text",
+            "text": {
+                "blocks": [
+                    {
+                        "data": {},
+                        "depth": 0,
+                        "entityRanges": [],
+                        "inlineStyleRanges": [
+                            {
+                                "length": 10,
+                                "offset": 0,
+                                "style": "BOLD"
+                            }
+                        ],
+                        "key": "6470b",
+                        "text": "Fill in text here",
+                        "type": "unstyled"
+                    }
+                ],
+                "entityMap": {}
+            }
+        },
+    }
+
+    tiles_layout = [
+        "0358abe2-b4f1-463d-a279-a63ea80daf19",
+        "07c273fc-8bfc-4e7d-a327-d513e5a945bb",
+        "2dfe8e4c-5bf6-43f1-93e1-6c320ede7226"
+    ]
 
     if not getattr(portal, 'tiles', False):
         portal.manage_addProperty('tiles', json.dumps(tiles), 'string')
@@ -60,5 +95,5 @@ def create_default_homepage():
         portal.manage_addProperty('tiles_layout', json.dumps(tiles_layout),
                                   'string')  # noqa
 
-    portal.setTitle('Welcome to Forsts!')
+    portal.setTitle('Welcome to Forests!')
     portal.setDescription('The Forests Information System for Europe')
