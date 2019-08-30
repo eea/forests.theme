@@ -15,19 +15,20 @@ class HiddenProfiles(object):
         """Hide uninstall profile from site-creation and quickinstaller"""
 
         return [
-            'kitconcept.voltodemo:uninstall',
+            'forests.theme:uninstall',
+            'forests.theme:content',
         ]
 
 
 def post_install(context):
     """Post install script"""
-    # portal = api.portal.get()
 
-    # create_default_homepage()
+    create_default_homepage()
 
 
 def uninstall(context):
     """Uninstall script"""
+
     # Do something at the end of the uninstallation of this package.
 
 

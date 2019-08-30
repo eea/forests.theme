@@ -2,6 +2,7 @@
 <metadata>
   <version>1000</version>
   <dependencies>
+    <!-- <dependency>profile&#45;forests.theme:content</dependency> -->
     <dependency>profile-pas.plugins.ldap.plonecontrolpanel:default</dependency>
     <dependency>profile-collective.folderishtypes.dx:default</dependency>
     <dependency>profile-plone.restapi:default</dependency>

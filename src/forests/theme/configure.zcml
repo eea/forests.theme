@@ -13,6 +13,14 @@
   <!-- <include package=".browser" /> -->
 
   <genericsetup:registerProfile
+      name="content"
+      title="forests.theme"
+      directory="profiles/content"
+      description="Installs the forests.theme content"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:registerProfile
       name="default"
       title="forests.theme"
       directory="profiles/default"
