@@ -2,9 +2,9 @@
 <metadata>
   <version>1000</version>
   <dependencies>
+    <dependency>profile-pas.plugins.ldap.plonecontrolpanel:default</dependency>
     <dependency>profile-collective.folderishtypes.dx:default</dependency>
     <dependency>profile-plone.restapi:default</dependency>
     <dependency>profile-plone.restapi:tiles</dependency>
-    <dependency>profile-pas.plugins.ldap:default</dependency>
   </dependencies>
 </metadata>
