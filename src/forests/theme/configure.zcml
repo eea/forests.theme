@@ -22,7 +22,7 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="forests.theme: initial content"
+      title="forests.theme policy"
       directory="profiles/default"
       description="Installs the forests.theme package"
       provides="Products.GenericSetup.interfaces.EXTENSION"
