@@ -1,47 +1,66 @@
 <configure
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:five="http://namespaces.zope.org/five"
-    xmlns:i18n="http://namespaces.zope.org/i18n"
-    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    xmlns:plone="http://namespaces.plone.org/plone"
-    xmlns:cmf="http://namespaces.zope.org/cmf"
-    i18n_domain="forests.theme">
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:five="http://namespaces.zope.org/five"
+  xmlns:i18n="http://namespaces.zope.org/i18n"
+  xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+  xmlns:plone="http://namespaces.plone.org/plone"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:cmf="http://namespaces.zope.org/cmf"
+  i18n_domain="forests.theme">
 
   <five:registerPackage package="." initialize=".initialize" />
   <includeDependencies package="." />
 
   <!-- <include package=".browser" /> -->
+  <!-- <include package="z3c.jbot" file="meta.zcml" /> -->
+  <!-- <browser:jbot directory="overrides" /> -->
 
   <genericsetup:registerProfile
-      name="content"
-      title="forests.theme"
-      directory="profiles/content"
-      description="Installs the forests.theme content"
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      />
+    name="content"
+    title="forests.theme"
+    directory="profiles/content"
+    description="Installs the forests.theme content"
+    provides="Products.GenericSetup.interfaces.EXTENSION"
+    />
 
   <genericsetup:registerProfile
-      name="default"
-      title="forests.theme policy"
-      directory="profiles/default"
-      description="Installs the forests.theme package"
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      />
+    name="default"
+    title="forests.theme policy"
+    directory="profiles/default"
+    description="Installs the forests.theme package"
+    provides="Products.GenericSetup.interfaces.EXTENSION"
+    />
 
 
   <genericsetup:registerProfile
-      name="uninstall"
-      title="forests.theme: uninstall"
-      directory="profiles/uninstall"
-      description="Uninstalls the forests.theme add-on."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      post_handler=".setuphandlers.uninstall"
-      />
+    name="uninstall"
+    title="forests.theme: uninstall"
+    directory="profiles/uninstall"
+    description="Uninstalls the forests.theme add-on."
+    provides="Products.GenericSetup.interfaces.EXTENSION"
+    post_handler=".setuphandlers.uninstall"
+    />
 
   <utility
-      factory=".setuphandlers.HiddenProfiles"
-      name="forests.theme-hiddenprofiles" />
+    factory=".setuphandlers.HiddenProfiles"
+    name="forests.theme-hiddenprofiles" />
 
   <!-- <cmf:registerDirectory name="skins" directory="skins" recursive="True" /> -->
+
+  <browser:page
+    name="mosaic-settings"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    permission="cmf.ManagePortal"
+    class=".controlpanel.MosaicSettingsView"
+    />
+
+  <plone:service
+    method="GET"
+    accept="application/json"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    factory=".restapi.MosaicSettingsGet"
+    name="@mosaic-settings"
+    permission="zope2.View"
+    />
 
 </configure>

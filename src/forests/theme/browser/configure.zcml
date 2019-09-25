@@ -11,7 +11,7 @@
     for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
     name="edit-navigation-menu"
     permission="cmf.ManagePortal"
-  />
+    />
 
   <browser:page
     name="site_navbar"
@@ -19,7 +19,7 @@
     for="*"
     permission="zope.Public"
     template="pt/navbar.pt"
-  />
+    />
 
   <browser:page
     name="external_styles_view"
@@ -27,7 +27,7 @@
     for="*"
     permission="zope.Public"
     template="pt/styles.pt"
-  />
+    />
 
   <browser:page
     name="external_javascripts_view"
@@ -35,41 +35,36 @@
     for="*"
     permission="zope.Public"
     template="pt/scripts.pt"
-  />
+    />
 
- <browser:page
-        for="*"
-        name="gopdb"
-        class=".admin.GoPDB"
-        permission="cmf.ManagePortal"
-        />
+  <browser:page
+    for="*"
+    name="gopdb"
+    class=".admin.GoPDB"
+    permission="cmf.ManagePortal"
+    />
 
- <browser:page
-        for="*"
-        name="importMatrixData"
-        class=".matrix.ImportMatrixData"
-        permission="cmf.ManagePortal"
-        />
+  <browser:page
+    for="*"
+    name="importMatrixData"
+    class=".matrix.ImportMatrixData"
+    permission="cmf.ManagePortal"
+    />
 
- <browser:page
-        for="*"
-        name="queryMatrixData"
-        class=".matrix.QueryMatrixData"
-        allowed_attributes="get_table_data"
-        permission="zope2.View"
-        />
+  <browser:page
+    for="*"
+    name="queryMatrixData"
+    class=".matrix.QueryMatrixData"
+    allowed_attributes="get_table_data"
+    permission="zope2.View"
+    />
 
   <!-- <browser:viewlet -->
-  <!--   name="forests.sections" -->
-  <!--   manager="plone.app.layout.viewlets.interfaces.IPortalHeader" -->
-  <!--   layer="forests.theme.interfaces.IForestsThemeLayer" -->
-  <!--   permission="zope2.View" -->
-  <!--   template="pt/sections&#45;viewlet.pt" -->
-  <!-- /> -->
-
-  <include package="z3c.jbot" file="meta.zcml" />
-
-  <browser:jbot
-    directory="overrides" />
+    <!--   name="forests.sections" -->
+    <!--   manager="plone.app.layout.viewlets.interfaces.IPortalHeader" -->
+    <!--   layer="forests.theme.interfaces.IForestsThemeLayer" -->
+    <!--   permission="zope2.View" -->
+    <!--   template="pt/sections&#45;viewlet.pt" -->
+    <!-- /> -->
 
 </configure>
