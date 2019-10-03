@@ -20,10 +20,10 @@ DATA_SOURCES = [
 
 NUTS_LEVELS = [
     ('nuts_level0', 'Level 0'),
-    ('nuts_level0', 'Level 1'),
-    ('nuts_level0', 'Level 2'),
-    ('nuts_level0', 'Level 3'),
-    ('nuts_level0', 'Level 4'),
+    ('nuts_level1', 'Level 1'),
+    ('nuts_level2', 'Level 2'),
+    ('nuts_level3', 'Level 3'),
+    ('nuts_level4', 'Level 4'),
 ]
 
 DATASETS = ['NFI', 'FAO', 'FRA', 'GFW', 'Alpine Convention', 'SoEF']
