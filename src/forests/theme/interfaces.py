@@ -76,8 +76,9 @@ class IMetadata(model.Schema):
 
     external_url = schema.TextLine(title=u"Link to resource")
 
-    geo_coverage = schema.Set(title=u"Geographical coverage",
-                              value_type=schema.Choice(vocabulary=""))
+    geo_coverage = schema.Set(
+        title=u"Geographical coverage",
+        value_type=schema.Choice(vocabulary="fise.geocoverage_vocabulary"))
 
     publishing_year = schema.Int(title=u"Publishing year")
 
