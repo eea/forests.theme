@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 """Installer for the forests.content package."""
 
-from setuptools import find_packages
-from setuptools import setup
-
+from setuptools import find_packages, setup
 
 long_description = '\n\n'.join([
     open('README.rst').read(),
@@ -41,7 +39,8 @@ setup(
     install_requires=[
         'plone.api',
         'plone.app.contenttypes',
-        'z3c.jbot'
+        'z3c.jbot',
+        'z3c.formwidget.optgroup',
     ],
     extras_require={
         'test': [
