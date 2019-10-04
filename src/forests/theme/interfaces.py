@@ -53,7 +53,8 @@ class IMetadata(model.Schema):
         'accessibility_level',
     ])
 
-    resource_type = schema.Choice(vocabulary="fise.resource_types")
+    resource_type = schema.Choice(
+        title=u'Resource type', vocabulary="fise.resource_types")
 
     data_source = schema.Choice(
         title=u"Data Source",
@@ -76,21 +77,21 @@ class IMetadata(model.Schema):
 
     external_url = schema.TextLine(title=u"Link to resource")
 
-    geo_coverage = schema.Set(
+    geo_coverage = schema.Tuple(
         title=u"Geographical coverage",
-        value_type=schema.Choice(vocabulary="fise.geocoverage_vocabulary"))
+        value_type=schema.Choice(vocabulary="fise.geocoverage"))
 
     publishing_year = schema.Int(title=u"Publishing year")
 
     # interval between 2 years
-    collection_year_start = schema.Text(title=u"Collection start year")
-    collection_year_end = schema.Text(title=u"Collection end year")
+    collection_year_start = schema.TextLine(title=u"Collection start year")
+    collection_year_end = schema.TextLine(title=u"Collection end year")
 
-    topics = schema.Set(
+    topics = schema.Tuple(
         title=u"Topics",
         value_type=schema.TextLine(),
         required=False,
-        missing_value=set(),
+        missing_value=(),
     )
     form.widget(
         'topics',
@@ -98,11 +99,11 @@ class IMetadata(model.Schema):
         vocabulary='fise.topics'
     )
 
-    keywords = schema.Set(
+    keywords = schema.Tuple(
         title=u"Keywords",
         value_type=schema.TextLine(),
         required=False,
-        missing_value=set(),
+        missing_value=(),
     )
     form.widget(
         'keywords',
@@ -121,11 +122,14 @@ class IOptionalMetadata(model.Schema):
     """ Generic optional metadata for forests data types
     """
 
-    nuts_level = schema.Set(
+    nuts_level = schema.Tuple(
         title=u"NUTS Levels",
         value_type=schema.Choice(
             vocabulary="fise.nuts_levels")
     )
+    directives.fieldset('fise-metadata', label="Forests Metadata", fields=[
+        'nuts_level',
+    ])
 
 
 class IComputedMetadata(Interface):
