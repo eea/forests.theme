@@ -53,12 +53,16 @@ class IMetadata(model.Schema):
         'accessibility_level',
     ])
 
-    resource_type = schema.Choice(
-        title=u'Resource type', vocabulary="fise.resource_types")
+    resource_type = schema.Choice(title=u'Resource type',
+                                  vocabulary="fise.resource_types",
+                                  required=False,
+                                  )
 
     data_source = schema.Choice(
         title=u"Data Source",
-        vocabulary="fise.data_sources"
+        vocabulary="fise.data_sources",
+        required=False,
+
     )
     form.widget(
         'data_source',
@@ -66,32 +70,43 @@ class IMetadata(model.Schema):
         vocabulary='fise.data_sources'
     )
 
-    dataset = schema.Choice(title=u"Dataset", vocabulary="fise.datasets")
+    dataset = schema.Choice(title=u"Dataset", vocabulary="fise.datasets",
+                            required=False)
 
-    publisher = schema.TextLine(title=u"Publisher")  # text with autocomplete
-    form.widget(
+    publisher = schema.TextLine(
+        title=u"Publisher",
+        required=False,
+    )
+    form.widget(        # text with autocomplete
         'publisher',
         AjaxSelectFieldWidget,
         vocabulary='fise.publishers'
     )
 
-    external_url = schema.TextLine(title=u"Link to resource")
+    external_url = schema.TextLine(title=u"Link to resource", required=False)
 
     geo_coverage = schema.Tuple(
         title=u"Geographical coverage",
-        value_type=schema.Choice(vocabulary="fise.geocoverage"))
+        value_type=schema.Choice(vocabulary="fise.geocoverage"),
+        required=False,
+        missing_value=(),
+        default=(),
+    )
 
-    publishing_year = schema.Int(title=u"Publishing year")
+    publishing_year = schema.Int(title=u"Publishing year", required=False,)
 
     # interval between 2 years
-    collection_year_start = schema.TextLine(title=u"Collection start year")
-    collection_year_end = schema.TextLine(title=u"Collection end year")
+    collection_year_start = schema.TextLine(title=u"Collection start year",
+                                            required=False,)
+    collection_year_end = schema.TextLine(title=u"Collection end year",
+                                          required=False,)
 
     topics = schema.Tuple(
         title=u"Topics",
         value_type=schema.TextLine(),
         required=False,
         missing_value=(),
+        default=(),
     )
     form.widget(
         'topics',
@@ -104,6 +119,7 @@ class IMetadata(model.Schema):
         value_type=schema.TextLine(),
         required=False,
         missing_value=(),
+        default=()
     )
     form.widget(
         'keywords',
@@ -112,10 +128,12 @@ class IMetadata(model.Schema):
     )
 
     info_level = schema.Choice(title=u"Info level",
-                               values=('A', 'B', 'C', 'D', 'E'))
+                               values=('A', 'B', 'C', 'D', 'E'),
+                               required=False,)
 
     accessibility_level = schema.Choice(title=u'Accesibility levels',
-                                        vocabulary='fise.accessibility_levels')
+                                        vocabulary='fise.accessibility_levels',
+                                        required=False,)
 
 
 class IOptionalMetadata(model.Schema):
@@ -124,8 +142,10 @@ class IOptionalMetadata(model.Schema):
 
     nuts_level = schema.Tuple(
         title=u"NUTS Levels",
-        value_type=schema.Choice(
-            vocabulary="fise.nuts_levels")
+        value_type=schema.Choice(vocabulary="fise.nuts_levels"),
+        required=False,
+        missing_value=(),
+        default=(),
     )
     directives.fieldset('fise-metadata', label="Forests Metadata", fields=[
         'nuts_level',
