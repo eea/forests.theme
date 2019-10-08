@@ -31,7 +31,7 @@ class IMosaicSettings(model.Schema):
         default=set([
             "default|default-tile",
             "border|border-tile",
-            "filled|filled-tile"
+            "filled|filled-tile",
             "dropshadow|drop-shadow-tile",
         ]),
         value_type=schema.ASCIILine(title=_(u'CSS Classes')),
