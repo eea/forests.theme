@@ -28,7 +28,12 @@ class IMosaicSettings(model.Schema):
             u'Enter a list of styles to appear in the style pulldown. '
             u'Format is title|className, one per line.'),
         required=False,
-        default=set(["default|default-tile", "dropshadow|drop-shadow-tile",]),
+        default=set([
+            "default|default-tile",
+            "border|border-tile",
+            "filled|filled-tile"
+            "dropshadow|drop-shadow-tile",
+        ]),
         value_type=schema.ASCIILine(title=_(u'CSS Classes')),
     )
 
