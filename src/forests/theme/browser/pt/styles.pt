@@ -1,10 +1,10 @@
 <tal:styles define="view nocall:context/@@external_styles_view">
-    <tal:styl repeat="style view/styles">
-        <link rel="style"
-              type="text/css"
-                 tal:attributes="href style/src;
-                        media style/media;
-                        rel style/rel;
-                        title style/title" />
-    </tal:styl>
+  <tal:styl repeat="style view/styles">
+    <link rel="style"
+      type="text/css"
+      tal:attributes="href style/src;
+      media style/media;
+      rel style/rel;
+      title style/title" />
+  </tal:styl>
 </tal:styles>

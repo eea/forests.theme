@@ -4,60 +4,30 @@
   xmlns:plone="http://namespaces.plone.org/plone"
   i18n_domain="forests.theme">
 
-  <include file="overrides.zcml" />
-
   <browser:page
-    class=".admin.MainNavigationMenuEdit"
-    for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
-    name="edit-navigation-menu"
-    permission="cmf.ManagePortal"
-    />
-
-  <browser:page
-    name="site_navbar"
-    class=".site.Navbar"
+    name="mosaic_tiles_view"
     for="*"
-    permission="zope.Public"
-    template="pt/navbar.pt"
-    />
-
-  <browser:page
-    name="external_styles_view"
-    class=".site.ExternalResourcesView"
-    for="*"
-    permission="zope.Public"
-    template="pt/styles.pt"
-    />
-
-  <browser:page
-    name="external_javascripts_view"
-    class=".site.ExternalResourcesView"
-    for="*"
-    permission="zope.Public"
-    template="pt/scripts.pt"
-    />
-
-  <browser:page
-    for="*"
-    name="gopdb"
-    class=".admin.GoPDB"
-    permission="cmf.ManagePortal"
-    />
-
-  <browser:page
-    for="*"
-    name="importMatrixData"
-    class=".matrix.ImportMatrixData"
-    permission="cmf.ManagePortal"
-    />
-
-  <browser:page
-    for="*"
-    name="queryMatrixData"
-    class=".matrix.QueryMatrixData"
-    allowed_attributes="get_table_data"
+    template="pt/mosaic_tiles_view.pt"
     permission="zope2.View"
+    class=".views.MosaicTilesView"
     />
+
+  <!-- <include file="overrides.zcml" /> -->
+
+  <!-- <browser:page -->
+  <!--   for="*" -->
+  <!--   name="importMatrixData" -->
+  <!--   class=".matrix.ImportMatrixData" -->
+  <!--   permission="cmf.ManagePortal" -->
+  <!--   /> -->
+  <!--  -->
+  <!-- <browser:page -->
+  <!--   for="*" -->
+  <!--   name="queryMatrixData" -->
+  <!--   class=".matrix.QueryMatrixData" -->
+  <!--   allowed_attributes="get_table_data" -->
+  <!--   permission="zope2.View" -->
+  <!--   /> -->
 
   <!-- <browser:viewlet -->
     <!--   name="forests.sections" -->
@@ -66,5 +36,43 @@
     <!--   permission="zope2.View" -->
     <!--   template="pt/sections&#45;viewlet.pt" -->
     <!-- /> -->
+
+  <!-- <browser:page -->
+  <!--   class=".admin.MainNavigationMenuEdit" -->
+  <!--   for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot" -->
+  <!--   name="edit&#45;navigation&#45;menu" -->
+  <!--   permission="cmf.ManagePortal" -->
+  <!--   /> -->
+  <!--  -->
+  <!-- <browser:page -->
+  <!--   name="site_navbar" -->
+  <!--   class=".site.Navbar" -->
+  <!--   for="*" -->
+  <!--   permission="zope.Public" -->
+  <!--   template="pt/navbar.pt" -->
+  <!--   /> -->
+  <!--  -->
+  <!-- <browser:page -->
+  <!--   name="external_styles_view" -->
+  <!--   class=".site.ExternalResourcesView" -->
+  <!--   for="*" -->
+  <!--   permission="zope.Public" -->
+  <!--   template="pt/styles.pt" -->
+  <!--   /> -->
+  <!--  -->
+  <!-- <browser:page -->
+  <!--   name="external_javascripts_view" -->
+  <!--   class=".site.ExternalResourcesView" -->
+  <!--   for="*" -->
+  <!--   permission="zope.Public" -->
+  <!--   template="pt/scripts.pt" -->
+  <!--   /> -->
+  <!--  -->
+  <!-- <browser:page -->
+  <!--   for="*" -->
+  <!--   name="gopdb" -->
+  <!--   class=".admin.GoPDB" -->
+  <!--   permission="cmf.ManagePortal" -->
+  <!--   /> -->
 
 </configure>
