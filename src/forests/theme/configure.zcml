@@ -11,9 +11,11 @@
   <five:registerPackage package="." initialize=".initialize" />
   <includeDependencies package="." />
 
+  <include package=".browser" />
+
   <include file="vocabulary.zcml" />
 
-  <include package=".browser" />
+  <!-- <cmf:registerDirectory name="skins" directory="skins" recursive="True" /> -->
   <!-- <include package="z3c.jbot" file="meta.zcml" /> -->
   <!-- <browser:jbot directory="overrides" /> -->
 
@@ -47,8 +49,6 @@
     factory=".setuphandlers.HiddenProfiles"
     name="forests.theme-hiddenprofiles" />
 
-  <!-- <cmf:registerDirectory name="skins" directory="skins" recursive="True" /> -->
-
   <browser:page
     name="mosaic-settings"
     for="Products.CMFPlone.interfaces.IPloneSiteRoot"
@@ -64,23 +64,5 @@
     name="@mosaic-settings"
     permission="zope2.View"
     />
-
-  <!-- <plone:behavior -->
-  <!--   name="forests.metadata" -->
-  <!--   title="Forests standard metadata" -->
-  <!--   description="Adds Forests specific metadata fields." -->
-  <!--   provides=".interfaces.IMetadata" -->
-  <!--   factory=".behavior.Metadata" -->
-  <!--   for="plone.dexterity.interfaces.IDexterityContent" -->
-  <!--   /> -->
-  <!--  -->
-  <!-- <plone:behavior -->
-  <!--   name="forests.optionalmetadata" -->
-  <!--   title="Forests optional metadata" -->
-  <!--   description="Adds Forests specific optional metadata fields." -->
-  <!--   provides=".interfaces.IOptionalMetadata" -->
-  <!--   factory=".behavior.OptionalMetadata" -->
-  <!--   for="plone.dexterity.interfaces.IDexterityContent" -->
-  <!--   /> -->
 
 </configure>
