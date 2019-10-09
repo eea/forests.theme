@@ -65,22 +65,22 @@
     permission="zope2.View"
     />
 
-  <plone:behavior
-    name="forests.metadata"
-    title="Forests standard metadata"
-    description="Adds Forests specific metadata fields."
-    provides=".interfaces.IMetadata"
-    factory=".behavior.Metadata"
-    for="plone.dexterity.interfaces.IDexterityContent"
-    />
-
-  <plone:behavior
-    name="forests.optionalmetadata"
-    title="Forests optional metadata"
-    description="Adds Forests specific optional metadata fields."
-    provides=".interfaces.IOptionalMetadata"
-    factory=".behavior.OptionalMetadata"
-    for="plone.dexterity.interfaces.IDexterityContent"
-    />
+  <!-- <plone:behavior -->
+  <!--   name="forests.metadata" -->
+  <!--   title="Forests standard metadata" -->
+  <!--   description="Adds Forests specific metadata fields." -->
+  <!--   provides=".interfaces.IMetadata" -->
+  <!--   factory=".behavior.Metadata" -->
+  <!--   for="plone.dexterity.interfaces.IDexterityContent" -->
+  <!--   /> -->
+  <!--  -->
+  <!-- <plone:behavior -->
+  <!--   name="forests.optionalmetadata" -->
+  <!--   title="Forests optional metadata" -->
+  <!--   description="Adds Forests specific optional metadata fields." -->
+  <!--   provides=".interfaces.IOptionalMetadata" -->
+  <!--   factory=".behavior.OptionalMetadata" -->
+  <!--   for="plone.dexterity.interfaces.IDexterityContent" -->
+  <!--   /> -->
 
 </configure>
