@@ -12,6 +12,7 @@
   <includeDependencies package="." />
 
   <include package=".browser" />
+  <include package=".restapi" />
 
   <include file="vocabulary.zcml" />
 
@@ -54,15 +55,6 @@
     for="Products.CMFPlone.interfaces.IPloneSiteRoot"
     permission="cmf.ManagePortal"
     class=".controlpanel.MosaicSettingsView"
-    />
-
-  <plone:service
-    method="GET"
-    accept="application/json"
-    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-    factory=".restapi.MosaicSettingsGet"
-    name="@mosaic-settings"
-    permission="zope2.View"
     />
 
 </configure>

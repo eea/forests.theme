@@ -1,3 +1,5 @@
+import json
+
 from Products.Five.browser import BrowserView
 
 
@@ -6,4 +8,4 @@ class MosaicTilesView(BrowserView):
     """
 
     def tiles(self):
-        return getattr(self.context, 'tiles', {})
+        return json.loads(getattr(self.context, 'tiles', {}))
