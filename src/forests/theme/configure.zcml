@@ -14,8 +14,6 @@
   <include package=".browser" />
   <include package=".restapi" />
 
-  <include file="vocabulary.zcml" />
-
   <!-- <cmf:registerDirectory name="skins" directory="skins" recursive="True" /> -->
   <!-- <include package="z3c.jbot" file="meta.zcml" /> -->
   <!-- <browser:jbot directory="overrides" /> -->

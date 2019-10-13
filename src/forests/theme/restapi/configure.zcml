@@ -28,11 +28,11 @@
     />
 
   <browser:page
-      for="*"
-      name="localtabs_view"
-      class=".localnavigation.CatalogNavigationTabs"
-      permission="zope.Public"
-      allowed_attributes="topLevelTabs"
-      />
+    for="*"
+    name="localtabs_view"
+    class=".localnavigation.CatalogNavigationTabs"
+    permission="zope.Public"
+    allowed_attributes="topLevelTabs"
+    />
 
 </configure>
