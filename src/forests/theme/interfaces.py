@@ -27,6 +27,7 @@ class IMosaicSettings(model.Schema):
         default=set([
             "default|default-tile",
             "Border|border-tile",
+            "Green border|green-border-tile",
             "Filled|filled-tile",
             "Drop Shadow|drop-shadow-tile",
         ]),
