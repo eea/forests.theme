@@ -3,10 +3,9 @@ from zope.component import adapter, getMultiAdapter, getUtility
 from zope.component.hooks import getSite
 from zope.interface import Interface, implementer
 
-from Acquisition import aq_base, aq_inner
-# from plone.app.layout.navigation.interfaces import INavtreeStrategy
+from Acquisition import aq_base, aq_inner, aq_parent
+from OFS.interfaces import IApplication
 from plone.app.layout.navigation.navtree import buildFolderTree
-# from plone.app.layout.navigation.root import getNavigationRoot
 from plone.registry.interfaces import IRegistry
 from plone.restapi.interfaces import IExpandableElement
 from plone.restapi.services import Service
@@ -17,6 +16,11 @@ from Products.CMFPlone.browser.navtree import (NavtreeQueryBuilder,
                                                SitemapNavtreeStrategy)
 from Products.CMFPlone.interfaces import INavigationSchema
 from Products.Five import BrowserView
+
+from ..interfaces import ILocalSectionMarker
+
+# from plone.app.layout.navigation.interfaces import INavtreeStrategy
+# from plone.app.layout.navigation.root import getNavigationRoot
 
 
 class NavigationTreeQueryBuilder(NavtreeQueryBuilder):
@@ -88,6 +92,16 @@ class LocalNavigation(object):
         self.request = request
         self.portal = getSite()
 
+    def get_section_root(self, context):
+        original = context
+
+        while not IApplication.providedBy(context):
+            if ILocalSectionMarker.providedBy(context):
+                return context
+            context = aq_parent(context)
+
+        return original
+
     def __call__(self, expand=False):
         if self.request.form.get("expand.navigation.depth", False):
             self.depth = int(self.request.form["expand.navigation.depth"])
@@ -102,7 +116,8 @@ class LocalNavigation(object):
         if not expand:
             return result
 
-        tabs = getMultiAdapter((self.context, self.request),
+        context = self.get_section_root(self.context)
+        tabs = getMultiAdapter((context, self.request),
                                name="localtabs_view")
         items = []
 

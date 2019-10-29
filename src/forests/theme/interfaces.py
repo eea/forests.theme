@@ -2,6 +2,7 @@
 """Module where all interfaces, events and exceptions live."""
 
 from zope import schema
+from zope.interface import Interface
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
 from forests.theme import _
@@ -32,3 +33,8 @@ class IMosaicSettings(model.Schema):
         ]),
         value_type=schema.ASCIILine(title=_(u'CSS Classes')),
     )
+
+
+class ILocalSectionMarker(Interface):
+    """ A local section marker. To be used with @localnavigation.
+    """
