@@ -55,4 +55,6 @@
     class=".controlpanel.MosaicSettingsView"
     />
 
+  <interface interface=".interfaces.ILocalSectionMarker" />
+
 </configure>
