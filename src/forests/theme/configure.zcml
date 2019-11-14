@@ -12,7 +12,6 @@
   <includeDependencies package="." />
 
   <include package=".browser" />
-  <include package=".restapi" />
 
   <!-- <cmf:registerDirectory name="skins" directory="skins" recursive="True" /> -->
   <!-- <include package="z3c.jbot" file="meta.zcml" /> -->
@@ -34,7 +33,6 @@
     provides="Products.GenericSetup.interfaces.EXTENSION"
     />
 
-
   <genericsetup:registerProfile
     name="uninstall"
     title="forests.theme: uninstall"
@@ -47,14 +45,5 @@
   <utility
     factory=".setuphandlers.HiddenProfiles"
     name="forests.theme-hiddenprofiles" />
-
-  <browser:page
-    name="mosaic-settings"
-    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-    permission="cmf.ManagePortal"
-    class=".controlpanel.MosaicSettingsView"
-    />
-
-  <interface interface=".interfaces.ILocalSectionMarker" />
 
 </configure>
