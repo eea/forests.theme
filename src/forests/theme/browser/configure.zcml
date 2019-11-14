@@ -4,14 +4,6 @@
   xmlns:plone="http://namespaces.plone.org/plone"
   i18n_domain="forests.theme">
 
-  <browser:page
-    name="mosaic_tiles_view"
-    for="*"
-    template="pt/mosaic_tiles_view.pt"
-    permission="zope2.View"
-    class=".views.MosaicTilesView"
-    />
-
   <!-- <include file="overrides.zcml" /> -->
 
   <!-- <browser:page -->
