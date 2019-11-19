@@ -12,6 +12,7 @@
   <includeDependencies package="." />
 
   <include package=".browser" />
+  <include file="development.zcml" />
 
   <!-- <cmf:registerDirectory name="skins" directory="skins" recursive="True" /> -->
   <!-- <include package="z3c.jbot" file="meta.zcml" /> -->
