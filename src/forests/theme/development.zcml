@@ -2,7 +2,7 @@
   xmlns:plone="http://namespaces.plone.org/plone">
 
   <plone:CORSPolicy
-    allow_origin="https://demo-forests-p5.eea.europa.eu,http://localhost:5000,http://127.0.0.1:5000,http://localhost:5001,http://127.0.0.1:5001"
+    allow_origin="https://forest.eea.europa.eu,https://forests.eea.europa.eu,https://demo-forests-p5.eea.europa.eu,http://localhost:5000,http://127.0.0.1:5000,http://localhost:5001,http://127.0.0.1:5001"
     allow_methods="DELETE,GET,OPTIONS,PATCH,POST,PUT"
     allow_credentials="true"
     expose_headers="Content-Length,X-My-Header"
