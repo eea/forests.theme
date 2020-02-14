@@ -223,7 +223,7 @@ class ExternalResourcesView(BrowserView):
         bundle_id = bundle or 'external_templates'
         tool = self.registry(name=resource_type)
         results = []
-        concatenatedResources = {}
+        # concatenatedResources = {}
         resources = [r.copy() for r in tool.getResources() if r.getEnabled() and
                      r.getBundle() in [bundle_id]]
         for resource in resources:
@@ -257,7 +257,7 @@ class ExternalResourcesView(BrowserView):
     def scripts(self):
         registry = self.registry(name='javascripts')
         registry_url = registry.absolute_url()
-        context = aq_inner(self.context)
+        #context = aq_inner(self.context)
 
         #scripts = registry.getEvaluatedResources(context)
         scripts = self.cook_resources(resource_type='javascripts')
