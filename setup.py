@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
-"""Installer for the forests.content package."""
-
-
+""" Installer for the forests.content package.
+"""
 from os.path import join
 from setuptools import find_packages
 from setuptools import setup
