@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
-"""Installer for the forests.content package."""
-
-
+""" Installer for the forests.content package.
+"""
 from os.path import join
 from setuptools import find_packages
 from setuptools import setup
@@ -10,7 +9,7 @@ from setuptools import setup
 long_description = '\n\n'.join([
     open('README.rst').read(),
     open('CONTRIBUTORS.rst').read(),
-    open('CHANGES.rst').read(),
+    open(join("docs", "HISTORY.txt")).read(),
 ])
 
 NAME = 'forests.theme'
