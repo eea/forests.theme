@@ -1,6 +1,16 @@
 ========================
 FORESTS Theme
 ========================
+ 
+.. image:: https://ci.eionet.europa.eu/buildStatus/icon?job=Eionet/forests.theme/develop&subject=develop
+  :target: https://ci.eionet.europa.eu/job/Eionet/job/forests.theme/job/develop/display/redirect
+  :alt: Develop
+.. image:: https://ci.eionet.europa.eu/buildStatus/icon?job=Eionet/forests.theme/master&subject=master
+  :target: https://ci.eionet.europa.eu/job/Eionet/job/forests.theme/job/master/display/redirect
+  :alt: Master
+.. image:: https://img.shields.io/github/v/release/eea/forests.theme
+  :target: https://eggrepo.eea.europa.eu/d/forests.theme/
+  :alt: Release
 
 Installation
 ------------
