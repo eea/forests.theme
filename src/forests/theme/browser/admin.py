@@ -20,7 +20,7 @@ class IMainNavigationMenu(form.Schema):
     def check_menu(data):
         try:
             _extract_menu(data.menu)
-        except Exception, e:
+        except Exception as e:
             raise InvalidMenuConfiguration(e)
 
 

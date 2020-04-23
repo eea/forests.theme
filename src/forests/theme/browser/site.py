@@ -183,7 +183,7 @@ class Navbar(BrowserView):
 
             return _extract_menu(ptool.getProperty('main_navigation_menu'),
                                  site_url)
-        except Exception, e:
+        except Exception as e:
             logger.exception("Error while rendering navigation menu: %s", e)
             return _extract_menu(DEFAULT_MENU, site_url)
 
