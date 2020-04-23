@@ -47,7 +47,7 @@ setup(
         'plone.app.contenttypes',
         'pas.plugins.ldap',
         'z3c.jbot',
-        'z3c.formwidget.optgroup',
+        'z3c.formwidget.optgroup >= 1.3rc1',
     ],
     extras_require={
         'test': [
