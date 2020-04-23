@@ -45,6 +45,7 @@ setup(
     install_requires=[
         'plone.api',
         'plone.app.contenttypes',
+        'pas.plugins.ldap',
         'z3c.jbot',
         'z3c.formwidget.optgroup',
     ],
