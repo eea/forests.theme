@@ -62,10 +62,10 @@ class MenuParser:
             label = match.group('label').replace('[', '').replace(']', '')
 
         item.update({
-                'icon': icon.strip(),
-                'label': label.strip(),
-                'link': self.site_url + '/' + link.strip(),
-            })
+            'icon': icon.strip(),
+            'label': label.strip(),
+            'link': self.site_url + '/' + link.strip(),
+        })
 
         return item
 
@@ -224,8 +224,8 @@ class ExternalResourcesView(BrowserView):
         tool = self.registry(name=resource_type)
         results = []
         # concatenatedResources = {}
-        resources = [r.copy() for r in tool.getResources() if r.getEnabled() and
-                     r.getBundle() in [bundle_id]]
+        resources = [r.copy() for r in tool.getResources() if
+                     r.getEnabled() and r.getBundle() in [bundle_id]]
         for resource in resources:
             if resource.getCookable() or resource.getCacheable():
                 # magic_id = self.generateId(resource)
@@ -249,7 +249,7 @@ class ExternalResourcesView(BrowserView):
                     'media': style.getMedia(),
                     'rel': style.getRel(),
                     'title': style.getTitle(),
-                    'conditionalcomment' : style.getConditionalcomment(),
+                    'conditionalcomment': style.getConditionalcomment(),
                     'src': src}
             result.append(data)
         return result
@@ -257,16 +257,16 @@ class ExternalResourcesView(BrowserView):
     def scripts(self):
         registry = self.registry(name='javascripts')
         registry_url = registry.absolute_url()
-        #context = aq_inner(self.context)
+        # context = aq_inner(self.context)
 
-        #scripts = registry.getEvaluatedResources(context)
+        # scripts = registry.getEvaluatedResources(context)
         scripts = self.cook_resources(resource_type='javascripts')
         skinname = url_quote(self.skinname())
         result = []
         for script in scripts:
             src = "%s/%s/%s" % (registry_url, skinname, script.getId())
             data = {'inline': False,
-                    'conditionalcomment' : script.getConditionalcomment(),
+                    'conditionalcomment': script.getConditionalcomment(),
                     'src': src}
             result.append(data)
         return result

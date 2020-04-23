@@ -1,15 +1,12 @@
 import unittest
 
-#from zope.testing import doctestunit
-#from zope.component import testing
 from Testing import ZopeTestCase as ztc
 
+import forests.theme
 from Products.Five import fiveconfigure
 from Products.PloneTestCase import PloneTestCase as ptc
 from Products.PloneTestCase.layer import PloneSite
 ptc.setupPloneSite()
-
-import forests.theme
 
 
 class TestCase(ptc.PloneTestCase):
@@ -31,25 +28,26 @@ def test_suite():
     return unittest.TestSuite([
 
         # Unit tests
-        #doctestunit.DocFileSuite(
+        # doctestunit.DocFileSuite(
         #    'README.txt', package='forests.theme',
         #    setUp=testing.setUp, tearDown=testing.tearDown),
 
-        #doctestunit.DocTestSuite(
+        # doctestunit.DocTestSuite(
         #    module='forests.theme.mymodule',
         #    setUp=testing.setUp, tearDown=testing.tearDown),
 
 
         # Integration tests that use PloneTestCase
-        #ztc.ZopeDocFileSuite(
+        # ztc.ZopeDocFileSuite(
         #    'README.txt', package='forests.theme',
         #    test_class=TestCase),
 
-        #ztc.FunctionalDocFileSuite(
+        # ztc.FunctionalDocFileSuite(
         #    'browser.txt', package='forests.theme',
         #    test_class=TestCase),
 
-        ])
+    ])
+
 
 if __name__ == '__main__':
     unittest.main(defaultTest='test_suite')
