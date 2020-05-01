@@ -56,6 +56,10 @@ class MenuParser:
         self.site_url = site_url
 
     def _get_list_item(self, line):
+        """_get_list_item.
+
+        :param line:
+        """
         item = self._make_section()
         icon = ''
         label, link = line.split('/', 1)
@@ -74,6 +78,7 @@ class MenuParser:
         return item
 
     def _make_section(self,):
+        """_make_section."""
         return {
             'label': '',
             'link': '',
