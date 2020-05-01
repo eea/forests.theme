@@ -208,7 +208,7 @@ class ExternalResourcesView(BrowserView):
             key = md5(other_id)
             key.update(res_id)
             base = res_id.rsplit('-')[0]
-            key = "%s-" % (base, key.hexdigest())
+            key = "%s-cachekey-%s" % (base, key.hexdigest())
             ext = "." + res_id.rsplit('.', 1)[1]
         else:
             base = res_id.replace('++', '').replace('/', '').rsplit('.', 1)[0]

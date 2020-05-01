@@ -17,7 +17,11 @@ class IMainNavigationMenu(form.Schema):
     menu = schema.Text(title=u"Menu structure text", required=True)
 
     @invariant
-    def check_menu(data):
+    def check_menu(self, data):
+        """check_menu.
+
+        :param data:
+        """
         try:
             _extract_menu(data.menu)
         except Exception as e:
