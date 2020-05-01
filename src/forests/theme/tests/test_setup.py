@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 """Setup tests for this package."""
+import unittest
 from plone import api
 from forests.theme.testing import FORESTS_THEME_INTEGRATION_TESTING  # noqa
-
-import unittest
 
 
 try:
@@ -39,6 +38,7 @@ class TestSetup(unittest.TestCase):
 
 
 class TestUninstall(unittest.TestCase):
+    """TestUninstall."""
 
     layer = FORESTS_THEME_INTEGRATION_TESTING
 

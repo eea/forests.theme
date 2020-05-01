@@ -5,15 +5,16 @@ import logging
 import re
 
 from hashlib import md5
+from time import time
 from Acquisition import aq_inner
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 from Products.PythonScripts.standard import url_quote
-from time import time
 from zope.component.hooks import getSite
 
 
-LINKER = re.compile('(?P<icon>\[.+?\])(?P<label>.+)')
+# pylint: disable=anomalous-backslash-in-string
+LINKER = re.compile('(?P<icon>\[.+?\])(?P<label>.+)')  # noqa W605
 
 logger = logging.getLogger('forests.theme')
 
@@ -41,7 +42,10 @@ Countries and regions /countries-and-regions
 Tools /tools    """
 
 
+# pylint: disable=old-style-class
 class MenuParser:
+    """MenuParser."""
+
     EMPTY_LINE = 'EMPTY_LINE'
     SECTION_SEPARATOR = 'SECTION_SEPARATOR'
     ITEM = 'ITEM'
@@ -78,6 +82,10 @@ class MenuParser:
         }
 
     def parse(self, text):
+        """parse.
+
+        :param text:
+        """
         value = text.strip()
         lines = value.split('\n')
         lines = [l.strip() for l in lines]
@@ -94,11 +102,19 @@ class MenuParser:
         return self.out
 
     def process(self, line):
+        """process.
+
+        :param line:
+        """
         token, payload = self.tokenize(line)
         handler = getattr(self, 'handle_' + token)
         handler(payload)
 
     def tokenize(self, line):
+        """tokenize.
+
+        :param line:
+        """
         line = line.strip()
 
         if not line:
@@ -118,13 +134,17 @@ class MenuParser:
         return (token, item)
 
     def handle_EMPTY_LINE(self, payload):
-        # on empty lines, add the section and reset the state machine
+        ''' on empty lines, add the section and reset the state machine '''
 
         self.out.append(self.c_column)
         self.c_column = None
         self.reset()
 
     def handle_ITEM(self, item):
+        """handle_ITEM.
+
+        :param item:
+        """
         if not self.c_column:           # this is a main section
             item['children'] = [[]]     # prepare the columns
             self.c_column = item
@@ -133,12 +153,21 @@ class MenuParser:
             self.c_column['children'][-1].append(self.c_group)
 
     def handle_SUBITEM(self, item):
+        """handle_SUBITEM.
+
+        :param item:
+        """
         self.c_group['children'].append(item)
 
     def handle_SECTION_SEPARATOR(self, payload):
+        """handle_SECTION_SEPARATOR.
+
+        :param payload:
+        """
         self.c_column['children'].append([])
 
     def reset(self):
+        """reset."""
         self.c_column = None
 
 
@@ -171,11 +200,16 @@ class Navbar(BrowserView):
     """
 
     def pp(self, v):
+        """pp.
+
+        :param v:
+        """
         import pprint
 
         return pprint.pprint(v)
 
     def menu(self):
+        """menu."""
         site_url = self.context.portal_url()
         try:
             ptool = getToolByName(self.context,
@@ -192,10 +226,15 @@ class ExternalResourcesView(BrowserView):
     """ The global site navbar
     """
     def registry(self, name=None):
+        """registry.
+
+        :param name:
+        """
         name = name or 'css'
         return getToolByName(aq_inner(self.context), 'portal_' + name)
 
     def skinname(self):
+        """skinname."""
         return aq_inner(self.context).getCurrentSkinName()
 
     def generateId(self, resource, other=None):
@@ -220,6 +259,11 @@ class ExternalResourcesView(BrowserView):
         return key + ext
 
     def cook_resources(self, resource_type=None, bundle=None):
+        """cook_resources.
+
+        :param resource_type:
+        :param bundle:
+        """
         bundle_id = bundle or 'external_templates'
         tool = self.registry(name=resource_type)
         results = []
@@ -236,7 +280,7 @@ class ExternalResourcesView(BrowserView):
         return tuple(results)
 
     def styles(self):
-        # import pdb; pdb.set_trace()
+        """styles."""
         styles = self.cook_resources(resource_type='css')
         registry = self.registry()
         registry_url = registry.absolute_url()
@@ -255,6 +299,7 @@ class ExternalResourcesView(BrowserView):
         return result
 
     def scripts(self):
+        """scripts."""
         registry = self.registry(name='javascripts')
         registry_url = registry.absolute_url()
         # context = aq_inner(self.context)

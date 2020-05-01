@@ -1,19 +1,24 @@
+''' admin module '''
 
 from forests.theme.browser.site import _extract_menu
 from plone.directives import form
 from plone.memoize import view
 from zope import schema
+from zope.interface import (Invalid, invariant)
 from z3c.form import button
 from Products.CMFCore.utils import getToolByName
-from zope.interface import (Invalid, invariant)
 from Products.Five import BrowserView
 
 
 class InvalidMenuConfiguration(Invalid):
+    """InvalidMenuConfiguration."""
+
     __doc__ = u"The menu format is invalid"
 
 
 class IMainNavigationMenu(form.Schema):
+    """IMainNavigationMenu."""
+
     menu = schema.Text(title=u"Menu structure text", required=True)
 
     @invariant
@@ -44,17 +49,23 @@ class MainNavigationMenuEdit(form.SchemaForm):
 
     @property
     def ptool(self):
+        """ptool."""
         return getToolByName(self.context,
                              'portal_properties')['site_properties']
 
     @view.memoize
     def getContent(self):
+        """getContent."""
         content = {'menu': self.ptool.getProperty('main_navigation_menu')}
 
         return content
 
     @button.buttonAndHandler(u"Save")
     def handleApply(self, action):
+        """handleApply.
+
+        :param action:
+        """
         data, errors = self.extractData()
 
         if errors:

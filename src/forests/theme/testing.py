@@ -1,3 +1,4 @@
+''' create test layers '''
 # -*- coding: utf-8 -*-
 from plone.app.testing import applyProfile
 from plone.app.testing import IntegrationTesting
@@ -10,18 +11,23 @@ import forests.theme
 
 
 class ForestsThemeLayer(PloneSandboxLayer):
+    """ForestsThemeLayer."""
 
     defaultBases = (PLONE_FIXTURE,)
 
     def setUpZope(self, app, configurationContext):
-        # Load any other ZCML that is required for your tests.
-        # The z3c.autoinclude feature is disabled in the Plone fixture base
-        # layer.
+        ''' Load any other ZCML that is required for your tests.
+            The z3c.autoinclude feature is disabled in the Plone fixture base
+            layer.'''
         self.loadZCML(package=yafowil.plone)
         self.loadZCML(package=pas.plugins.ldap)
         self.loadZCML(package=forests.theme)
 
     def setUpPloneSite(self, portal):
+        """setUpPloneSite.
+
+        :param portal:
+        """
         applyProfile(portal, 'forests.theme:default')
 
 
