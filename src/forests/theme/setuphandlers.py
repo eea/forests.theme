@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+''' setuphandlers module '''
 
 import json
 
@@ -10,6 +11,7 @@ from Products.CMFPlone.interfaces import INonInstallable
 
 @implementer(INonInstallable)
 class HiddenProfiles(object):
+    """HiddenProfiles."""
 
     def getNonInstallableProfiles(self):
         """Hide uninstall profile from site-creation and quickinstaller"""
@@ -44,11 +46,12 @@ def add_catalog_indexes(context, wanted=None):
             catalog.addIndex(name, meta_type)
             indexables.append(name)
 
-    if len(indexables) > 0:
+    if indexables:
         catalog.manage_reindexIndex(ids=indexables)
 
 
 def create_default_homepage():
+    """create_default_homepage."""
     portal = api.portal.get()
 
     tiles = {

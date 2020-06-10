@@ -1,3 +1,4 @@
+''' matrix module '''
 import json
 from collections import OrderedDict
 
@@ -8,6 +9,7 @@ from Products.Five import BrowserView
 from xlrd import open_workbook
 
 
+# pylint: disable=unused-variable
 def truncate(f, n):
     '''Truncates/pads a float f to n decimal places without rounding'''
     s = '{}'.format(f)
@@ -19,6 +21,7 @@ def truncate(f, n):
     return '.'.join([i, (d + '0' * n)[:n]])
 
 
+# pylint: disable=too-many-branches,too-many-locals
 class ImportMatrixData(BrowserView):
     """ Matrix data import
     """
@@ -98,7 +101,9 @@ class ImportMatrixData(BrowserView):
         return "Ok"
 
 
+# pylint: disable=too-many-nested-blocks
 class QueryMatrixData(BrowserView):
+    """QueryMatrixData."""
 
     def __call__(self):
         site = getSite()
@@ -154,6 +159,7 @@ class QueryMatrixData(BrowserView):
 
     @staticmethod
     def get_table_data():
+        """get_table_data."""
         site = getSite()
         anno = IAnnotations(site)
         matrix = anno.get('matrix_0')
@@ -171,6 +177,7 @@ class QueryMatrixData(BrowserView):
 
     @staticmethod
     def get_table_filters():
+        """get_table_filters."""
         site = getSite()
         anno = IAnnotations(site)
         matrix = anno.get('matrix_1', {})

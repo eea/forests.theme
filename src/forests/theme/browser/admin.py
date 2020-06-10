@@ -1,26 +1,35 @@
+''' admin module '''
 
 from forests.theme.browser.site import _extract_menu
 from plone.directives import form
 from plone.memoize import view
 from zope import schema
+from zope.interface import (Invalid, invariant)
 from z3c.form import button
 from Products.CMFCore.utils import getToolByName
-from zope.interface import (Invalid, invariant)
 from Products.Five import BrowserView
 
 
 class InvalidMenuConfiguration(Invalid):
+    """InvalidMenuConfiguration."""
+
     __doc__ = u"The menu format is invalid"
 
 
 class IMainNavigationMenu(form.Schema):
+    """IMainNavigationMenu."""
+
     menu = schema.Text(title=u"Menu structure text", required=True)
 
     @invariant
-    def check_menu(data):
+    def check_menu(self, data):
+        """check_menu.
+
+        :param data:
+        """
         try:
             _extract_menu(data.menu)
-        except Exception, e:
+        except Exception as e:
             raise InvalidMenuConfiguration(e)
 
 
@@ -40,17 +49,23 @@ class MainNavigationMenuEdit(form.SchemaForm):
 
     @property
     def ptool(self):
+        """ptool."""
         return getToolByName(self.context,
                              'portal_properties')['site_properties']
 
     @view.memoize
     def getContent(self):
+        """getContent."""
         content = {'menu': self.ptool.getProperty('main_navigation_menu')}
 
         return content
 
     @button.buttonAndHandler(u"Save")
     def handleApply(self, action):
+        """handleApply.
+
+        :param action:
+        """
         data, errors = self.extractData()
 
         if errors:
@@ -68,25 +83,25 @@ class GoPDB(BrowserView):
     """
 
     def __call__(self):
-        #mtool = getToolByName(self.context, 'portal_membership')
-        #has = mtool.checkPermission("Manage portal", self.context)
+        # mtool = getToolByName(self.context, 'portal_membership')
+        # has = mtool.checkPermission("Manage portal", self.context)
 
-        #this code is helpful in debugging inheritance trees
-        #pyflakes complains that it's unused, so we disable it here
-        #enable if you need it
-#       def classtree(cls, indent):
-#           """ method used in conjunction with instantree to display class
-#               tree
-#           """
-#           print '.'*indent, cls.__name__        # print class name here
-#           for supercls in cls.__bases__:        # recur to all superclasses
-#               classtree(supercls, indent+3)     # may visit super > once
+        # this code is helpful in debugging inheritance trees
+        # pyflakes complains that it's unused, so we disable it here
+        # enable if you need it
+        # def classtree(cls, indent):
+        #    """ method used in conjunction with instantree to display class
+        #        tree
+        #    """
+        #  print '.'*indent, cls.__name__        # print class name here
+        #  for supercls in cls.__bases__:        # recur to all superclasses
+        #      classtree(supercls, indent+3)     # may visit super > once
 
-#       def instancetree(inst):
-#           """ Helper method to recursively print all superclasses
-#           """
-#           print 'Tree of', inst                 # show instance
-#           classtree(inst.__class__, 3)          # climb to its class
+        # def instancetree(inst):
+        #    """ Helper method to recursively print all superclasses
+        #    """
+        #    print 'Tree of', inst                 # show instance
+        #    classtree(inst.__class__, 3)          # climb to its class
 
         import pdb
         pdb.set_trace()

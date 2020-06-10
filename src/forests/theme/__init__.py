@@ -1,3 +1,4 @@
+''' forests.theme '''
 from zope.i18nmessageid import MessageFactory
 
 _ = MessageFactory('forests.theme')
